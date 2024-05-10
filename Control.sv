@@ -1,6 +1,5 @@
 // control decoder
-module Control #(parameter opwidth = 3, mcodebits = 4)(
-  input [mcodebits-1:0] instr,    // subset of machine code (any width you need)
+module Control #(parameter opwidth = 4)(
   output logic RegDst, Branch, 
      MemtoReg, MemWrite, ALUSrc, RegWrite,
   output logic[opwidth-1:0] ALUOp);	   // for up to 8 ALU operations
