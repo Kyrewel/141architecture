@@ -8,6 +8,7 @@ always_comb begin
 // defaults
   RegDst 	=   'b0;   // 1: not in place  just leave 0
   Branch 	=   'b0;   // 1: branch (jump)
+  // random comment
   MemWrite  =	'b0;   // 1: store to memory
   RegWrite  =	'b1;   // 0: for store or no op  1: most other operations 
   MemtoReg  =	'b0;   // 1: load -- route memory instead of ALU to reg_file data in
