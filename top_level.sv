@@ -3,7 +3,7 @@ module top_level(
   input        clk, reset, req, 
   output logic done);
   parameter D = 12,             // program counter width
-    A = 3;             		  // ALU command bit width
+    A = 4;             		  // ALU command bit width
   wire[D-1:0] target, 			  // jump 
               prog_ctr;
   wire        RegWrite;
@@ -39,41 +39,48 @@ module top_level(
          .target          );   
 
 // contains machine code
-  instr_ROM ir1(.prog_ctr,
-               .mach_code);
+  instr_ROM ir1(
+  .prog_ctr(),
+  .mach_code()
+  );
 
 // control decoder
-  Control ctl1(.instr(),
-  .RegDst  (), 
-  .Branch  (relj)  , 
-  .MemWrite , 
-  .ALUSrc   , 
-  .RegWrite   ,     
+  Control ctl1(
+  .instruction(),
+  .Branch(), 
+  .MemWrite(), 
+  .RegWrite(),     
   .MemtoReg(),
-  .ALUOp());
+  .ImmtoReg(),
+  .isPutType(),
+  .ALUOp()
+  );
 
   assign rd_addrA = mach_code[2:0];
   assign rd_addrB = mach_code[5:3];
   assign alu_cmd  = mach_code[8:6];
 
-  reg_file #(.pw(3)) rf1(.dat_in(regfile_dat),	   // loads, most ops
-              .clk         ,
-              .wr_en   (RegWrite),
-              .rd_addrA(rd_addrA),
-              .rd_addrB(rd_addrB),
-              .wr_addr (rd_addrB),      // in place operation
-              .datA_out(datA),
-              .datB_out(datB)); 
+  reg_file #(.pw(3)) rf1(
+  .dat_in(regfile_dat),	   // loads, most ops
+  .clk         ,
+  .wr_en   (RegWrite),
+  .rd_addrA(rd_addrA),
+  .rd_addrB(rd_addrB),
+  .wr_addr (rd_addrB),      // in place operation
+  .datA_out(datA),
+  .datB_out(datB)
+  ); 
 
   assign muxB = ALUSrc? immed : datB;
 
-  alu alu1(.alu_cmd(),
-         .inA    (datA),
-		 .inB    (muxB),
-		 .sc_i   (sc),   // output from sc register
-		 .rslt       ,
-		 .sc_o   (sc_o), // input to sc register
-		 .pari  );  
+  alu alu1(
+  .alu_cmd(),
+  .inA(datA),
+  .inB(muxB),
+  .shiftcarry_in(sc),   // output from sc register
+  .rslt(),
+  .shiftcarry_out(sc_o) // input to sc register 
+  );
 
   dat_mem dm1(.dat_in(datB)  ,  // from reg_file
              .clk           ,
