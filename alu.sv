@@ -4,7 +4,8 @@ module alu(
   input[7:0] inA, inB,	  // 8-bit wide data path
   input shiftcarry_in,            // carry in bit
   output logic[7:0] rslt,       // output result
-  output logic shiftcarry_out     // carry out bit
+  output logic shiftcarry_out,     // carry out bit
+  output logic branchFlag
 );
 
 always_comb begin 
@@ -26,6 +27,15 @@ always_comb begin
       {shiftcarry_out, rslt} = inA - inB + shiftcarry_in
     4'b0111: // pass A
       rslt = inA
+    4'b1000: // less than
+      if(inA < inB)
+        branchFlag = 1;
+    4'b1001: // greater than
+      if(inA > inB)
+        branchFlag = 1;
+    4'b1010: // equal to
+      if (inA == inB)
+        branchFlag = 1;
   endcase
 end
    

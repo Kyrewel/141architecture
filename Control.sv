@@ -52,15 +52,15 @@ always_comb begin
                       end
               'b1001: begin     //branch equal to
                         regWriteFlag = 'b0;
-                        branchFlag = 'b1;
+                        ALUOp = 4'b1010;
                       end
               'b1010: begin     //branch less than
                         regWriteFlag = 'b0;
-                        branchFlag = 'b1;
+                        ALUOp = 4'b1000;
                       end
               'b1011: begin     //branch greater than
                         regWriteFlag = 'b0;
-                        branchFlag = 'b1;
+                        ALUOp = 4'b1001;
                       end
               'b1100: begin     //left shift
                         ALUOp = 4'b0011;

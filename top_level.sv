@@ -8,7 +8,9 @@ module top_level(
               prog_ctr;
   wire  regWriteFlag;
   wire  memWriteFlag;                     // from control to PC; relative jump enable
-  wire  branchFlag; 
+  wire  aluBranchFlag; 
+  wire  controlBranchFlag; 
+  wire  branchFlag
   wire  memToRegFlag; 
   wire  putFlag;
   wire  immtoRegFlag;
@@ -40,6 +42,7 @@ module top_level(
   wire[2:0] rd_addrA, rd_adrB;    // address pointers to reg_file
 
 assign nextInstructionFlag = storeDone || accumulatorDone || writeDone;
+assign branchFlag = controlBranchFlag || aluBranchFlag;
 // fetch subassembly
   PC #(.D(D)) 					  // D sets program counter width
      pc1 (
@@ -65,7 +68,7 @@ PC_LUT #(.D(D))
 // control decoder
   Control ctl1(
   .instruction(mach_code),
-  .branchFlag(branchFlag), 
+  .branchFlag(controlBranchFlag), 
   .memWriteFlag(memWriteFlag), 
   .regWriteFlag(regWriteFlag),     
   .memToRegFlag(memToRegFlag),
@@ -117,6 +120,7 @@ PC_LUT #(.D(D))
   .shiftcarry_in(sc),   // output from sc register
   .rslt(alu_result),
   .shiftcarry_out(sc_o) // input to sc register 
+  .branchFlag(aluBranchFlag)
   );
 
   assign data_memory_addr = memWriteFlag ? r1 : r0;
