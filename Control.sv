@@ -1,20 +1,20 @@
 // control decoder
 module Control(
   input[8:0] instruction,         
-  output logic Branch, 
-     MemtoReg, MemWrite, RegWrite, IsPutType, ImmtoReg
+  output logic branchFlag, 
+     memToRegFlag, memWriteFlag, regWriteFlag, putFlag, immtoRegFlag
   output logic[3:0] ALUOp
 );
 
 always_comb begin
   // defaults
-  IsPutType = 'b0;
-  Branch 	=   'b0;   // 1: branch (jump)
-  MemWrite  =	'b0;   // 1: store to memory
-  RegWrite  =	'b1;   // 0: for store or no op  1: most other operations 
-  MemtoReg  =	'b0;   // 1: load -- route memory instead of ALU to reg_file data in
+  putFlag = 'b0;
+  branchFlag 	=   'b0;   // 1: branch (jump)
+  memWriteFlag  =	'b0;   // 1: store to memory
+  regWriteFlag  =	'b1;   // 0: for store or no op  1: most other operations 
+  memToRegFlag  =	'b0;   // 1: load -- route memory instead of ALU to reg_file data in
   ALUOp	    = 'b0111;
-  ImmtoReg =  'b0;
+  immtoRegFlag =  'b0;
   logic itype = instruction[0:0];
   logic opcode = instruction[4:1];
 
@@ -22,14 +22,14 @@ always_comb begin
     'b0:  begin					// run type
             case (opcode)
               'b0000: begin     // load immediate
-                        ImmtoReg = 'b1;
+                        immtoRegFlag = 'b1;
                       end
               'b0001: begin     // load from memory
-                        MemtoReg = 'b1;
+                        memToRegFlag = 'b1;
                       end
               'b0010: begin     //store to memory
-                        MemWrite = 'b1;
-                        RegWrite = 'b0;
+                        memWriteFlag = 'b1;
+                        regWriteFlag = 'b0;
                       end
               'b0011: begin     //add
                         ALUOp = 4'b0101;
@@ -47,20 +47,20 @@ always_comb begin
                         ALUOp = 4'b0000;
                       end
               'b1000: begin     //jump
-                        RegWrite = 'b0;
-                        Branch = 'b1;
+                        regWriteFlag = 'b0;
+                        branchFlag = 'b1;
                       end
               'b1001: begin     //branch equal to
-                        RegWrite = 'b0;
-                        Branch = 'b1;
+                        regWriteFlag = 'b0;
+                        branchFlag = 'b1;
                       end
               'b1010: begin     //branch less than
-                        RegWrite = 'b0;
-                        Branch = 'b1;
+                        regWriteFlag = 'b0;
+                        branchFlag = 'b1;
                       end
               'b1011: begin     //branch greater than
-                        RegWrite = 'b0;
-                        Branch = 'b1;
+                        regWriteFlag = 'b0;
+                        branchFlag = 'b1;
                       end
               'b1100: begin     //left shift
                         ALUOp = 4'b0011;
@@ -72,8 +72,8 @@ always_comb begin
                   
           end
     'b1:  begin         // put type
-            IsPutType = 'b1;
-            RegWrite = 'b0;
+            putFlag = 'b1;
+            regWriteFlag = 'b0;
           end
   // ...
   endcase

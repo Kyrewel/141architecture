@@ -1,6 +1,6 @@
-module accumulator(
+module Accumulator(
     input wire clk,    // Clock input
-    input wire put,    // Put signal to trigger accumulation
+    input wire putFlag,    // Put signal to trigger accumulation
     input wire [7:0] value, // 8-bit input value
     output logic [7:0] r0,    // 8-bit output register r0
     output logic [7:0] r1,    // 8-bit output register r1
@@ -20,7 +20,7 @@ end
 
 // Implement the accumulator logic here
 always @(posedge clk or posedge reset) begin
-    if (put) begin
+    if (putFlag) begin
         // Accumulation logics
         if (!r0_valid) begin
             internal_reg0 <= value;
@@ -31,6 +31,7 @@ always @(posedge clk or posedge reset) begin
         end else begin
             internal_reg2 <= value;
         end
+        done <= 1;
     end else begin
         r0 <= internal_reg0;
         r1 <= internal_reg1;
@@ -39,6 +40,6 @@ always @(posedge clk or posedge reset) begin
         internal_reg1 <= 0;
         internal_reg2 <= 0;
     end
-    done <= 1;
+    
 end
 endmodule
