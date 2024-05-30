@@ -1,22 +1,20 @@
 // control decoder
-module Control(
+module control(
   input[8:0] instruction,         
-  output logic branchFlag, 
-     memToRegFlag, memWriteFlag, regWriteFlag, putFlag, immtoRegFlag
+  output logic branchFlag, memToRegFlag, memWriteFlag, 
+                regWriteFlag, putFlag, immtoRegFlag,
   output logic[3:0] ALUOp
 );
 
+logic itype;
+logic[3:0] opcode;
+
 always_comb begin
   // defaults
-  putFlag = 'b0;
-  branchFlag 	=   'b0;   // 1: branch (jump)
-  memWriteFlag  =	'b0;   // 1: store to memory
-  regWriteFlag  =	'b1;   // 0: for store or no op  1: most other operations 
-  memToRegFlag  =	'b0;   // 1: load -- route memory instead of ALU to reg_file data in
   ALUOp	    = 'b0111;
   immtoRegFlag =  'b0;
-  logic itype = instruction[0:0];
-  logic opcode = instruction[4:1];
+  itype = instruction[0:0];
+  opcode = instruction[4:1];
 
   case(itype)  
     'b0:  begin					// run type
