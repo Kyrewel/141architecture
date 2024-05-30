@@ -7,17 +7,21 @@ module Accumulator(
     output logic [7:0] r0,    // 8-bit output register r0
     output logic [7:0] r1,    // 8-bit output register r1
     output logic [7:0] r2,    // 8-bit output register r2
+    output logic r0_valid,    // Validity flag for r0
+    output logic r1_valid,    // Validity flag for r1
+    output logic r2_valid,    // Validity flag for r2
     output logic done         // 1-bit done flag
 );
 
 logic [7:0] internal_reg0; // Internal register 0
 logic [7:0] internal_reg1; // Internal register 1
 logic [7:0] internal_reg2; // Internal register 2
-logic r0_valid, r1_valid; // Flags to indicate if r1 and r2 have values stored
+logic r0_valid, r1_valid, r2_valid; // Flags to indicate if r0, r1, and r2 have values stored
 
 initial begin
     r0_valid = 0;
     r1_valid = 0;
+    r2_valid = 0;
     internal_reg0 = 0;
     internal_reg1 = 0;
     internal_reg2 = 0;
@@ -33,8 +37,9 @@ always @(posedge clk or posedge reset) begin
         end else if (!r1_valid) begin
             internal_reg1 <= value;
             r1_valid <= 1;
-        end else begin
+        end else if (!r2_valid) begin
             internal_reg2 <= value;
+            r2_valid <= 1;
         end
         done <= 1;
     end else begin
@@ -44,6 +49,9 @@ always @(posedge clk or posedge reset) begin
         internal_reg0 <= 0;
         internal_reg1 <= 0;
         internal_reg2 <= 0;
+        r0_valid <= 0;
+        r1_valid <= 0;
+        r2_valid <= 0;
     end
     
 end
