@@ -13,6 +13,7 @@ always_comb begin
   // defaults
   ALUOp	    = 'b0111;
   immtoRegFlag =  'b0;
+  regWriteFlag =  'b1;
   itype = instruction[0:0];
   opcode = instruction[4:1];
 

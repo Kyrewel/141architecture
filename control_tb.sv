@@ -25,43 +25,70 @@ module control_tb;
   initial begin
     // Initialize inputs
     instruction = 9'b0;
-
-    // Test various instructions
-    instruction = 9'b000000000; // No operation
+    instruction = 9'b000000000; //load imm
     #10;
-    $display("Test NOP: Expected ALUOp=0111, Got %b", ALUOp);
+    $display("Test load imm: Expected ALUOp=0111, Got %b", ALUOp);
+    $display("Test load imm: Expected immtoRegFlag=1, Got %b", immtoRegFlag);
 
-    instruction = 9'b000000001; // Load from memory
+    instruction = 9'b000000010; //load mem
     #10;
-    $display("Test Load: Expected memToRegFlag=1, Got %b", memToRegFlag);
+    $display("Test load mem: Expected ALUOp=0111, Got %b", ALUOp);
+    $display("Test load mem: Expected memToRegFlag=1, Got %b", memToRegFlag);
 
-    instruction = 9'b000000010; // Store to memory
+    instruction = 9'b000000100; //store to mem
     #10;
-    $display("Test Store: Expected memWriteFlag=1, Got %b", memWriteFlag);
+    $display("Test store mem: Expected ALUOp=0111, Got %b", ALUOp);
+    $display("Test store mem: Expected memWriteFlag=1, Got %b", memWriteFlag);
+    $display("Test store mem: Expected regWriteFlag=0, Got %b", regWriteFlag);
 
-    instruction = 9'b000000011; // Add
+    instruction = 9'b000000110; // add
     #10;
-    $display("Test Add: Expected ALUOp=0101, Got %b", ALUOp);
+    $display("Test add: Expected ALUOp=0101, Got %b", ALUOp);
+    
+    instruction = 9'b000001000; // sub
+    #10;
+    $display("Test sub: Expected ALUOp=0110, Got %b", ALUOp);
 
-    instruction = 9'b000000100; // Subtract
+    instruction = 9'b000001010; // xor
     #10;
-    $display("Test Subtract: Expected ALUOp=0110, Got %b", ALUOp);
+    $display("Test xor: Expected ALUOp=0001, Got %b", ALUOp);
 
-    instruction = 9'b000000101; // XOR
+    instruction = 9'b000001100; // or
     #10;
-    $display("Test XOR: Expected ALUOp=0001, Got %b", ALUOp);
+    $display("Test or: Expected ALUOp=0010, Got %b", ALUOp);
 
-    instruction = 9'b000000110; // OR
+    instruction = 9'b000001110; // and
     #10;
-    $display("Test OR: Expected ALUOp=0010, Got %b", ALUOp);
+    $display("Test store mem: Expected ALUOp=0000, Got %b", ALUOp);
 
-    instruction = 9'b000000111; // AND
+    instruction = 9'b000010000; // jump
     #10;
-    $display("Test AND: Expected ALUOp=0000, Got %b", ALUOp);
+    $display("Test jump: Expected ALUOp=0111, Got %b", ALUOp);
+    $display("Test jump: Expected regWriteFlag=0, Got %b", regWriteFlag);
+    $display("Test jump: Expected branchFlag=1, Got %b", branchFlag);
 
-    instruction = 9'b000001000; // Jump
+    instruction = 9'b000010010; // beq
     #10;
-    $display("Test Jump: Expected branchFlag=1, Got %b", branchFlag);
+    $display("Test beq: Expected ALUOp=1010, Got %b", ALUOp);
+    $display("Test beq: Expected regWriteFlag=0, Got %b", regWriteFlag);
+
+    instruction = 9'b000010100; // blt
+    #10;
+    $display("Test blt: Expected ALUOp=1000, Got %b", ALUOp);
+    $display("Test blt: Expected regWriteFlag=0, Got %b", regWriteFlag);
+
+    instruction = 9'b000010110; // bgt
+    #10;
+    $display("Test bgt: Expected ALUOp=1001, Got %b", ALUOp);
+    $display("Test bgt: Expected regWriteFlag=0, Got %b", regWriteFlag);
+
+    instruction = 9'b000011000; // ls
+    #10;
+    $display("Test ls: Expected ALUOp=0011, Got %b", ALUOp);
+
+    instruction = 9'b000011010; // rs
+    #10;
+    $display("Test rs: Expected ALUOp=0100, Got %b", ALUOp);
 
     // Finish simulation
     $finish;
