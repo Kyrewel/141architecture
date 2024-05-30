@@ -10,7 +10,7 @@ module control_tb;
   wire [3:0] ALUOp;
 
   // Instantiate the Control module
-  Control uut (
+  control uut (
     .instruction(instruction),
     .branchFlag(branchFlag),
     .memToRegFlag(memToRegFlag),

@@ -88,3 +88,70 @@
 # Compile of top_level.sv failed with 3 errors.
 # 13 compiles, 2 failed with 4 errors.
 # Compile of top_level.sv was successful.
+# Compile of accum_tb.sv was successful.
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of control.sv was successful.
+# Compile of control_tb.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# 13 compiles, 1 failed with 1 error.
+vsim -gui work.control_tb work.control
+# vsim -gui work.control_tb work.control 
+# Start time: 18:26:19 on May 29,2024
+# Loading sv_std.std
+# Loading work.control_tb
+# ** Error: (vsim-3033) Instantiation of 'Control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /control_tb File: C:/Users/Max/Documents/GitHub/141architecture/control_tb.sv Line: 13
+#         Searched libraries:
+#             C:/Users/Max/Documents/GitHub/141architecture/work
+# Loading work.control
+# Error loading design
+# End time: 18:26:19 on May 29,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 22
+vsim -gui work.control_tb work.control
+# vsim -gui work.control_tb work.control 
+# Start time: 18:26:30 on May 29,2024
+# Loading sv_std.std
+# Loading work.control_tb
+# ** Error: (vsim-3033) Instantiation of 'Control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /control_tb File: C:/Users/Max/Documents/GitHub/141architecture/control_tb.sv Line: 13
+#         Searched libraries:
+#             C:/Users/Max/Documents/GitHub/141architecture/work
+# Loading work.control
+# Error loading design
+# End time: 18:26:31 on May 29,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 1
+vsim -gui work.control_tb work.control
+# vsim -gui work.control_tb work.control 
+# Start time: 18:27:09 on May 29,2024
+# Loading sv_std.std
+# Loading work.control_tb
+# ** Error: (vsim-3033) Instantiation of 'Control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /control_tb File: C:/Users/Max/Documents/GitHub/141architecture/control_tb.sv Line: 13
+#         Searched libraries:
+#             C:/Users/Max/Documents/GitHub/141architecture/work
+# Loading work.control
+# Error loading design
+# End time: 18:27:09 on May 29,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# Compile of accum_tb.sv was successful.
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of control.sv was successful.
+# Compile of control_tb.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# 13 compiles, 1 failed with 1 error.
