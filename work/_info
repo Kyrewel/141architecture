@@ -1,0 +1,215 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/20.1
+vAccumulator
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1717026959
+!i10b 1
+!s100 9<KhNQ]6OXSKhARdal57?0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I9zJ>PlmN;oRO2S9GQlL?G0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dC:/Users/Max/Documents/GitHub/141architecture
+w1716935244
+8C:/Users/Max/Documents/GitHub/141architecture/accumulator.sv
+FC:/Users/Max/Documents/GitHub/141architecture/accumulator.sv
+!i122 25
+L0 1 50
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1717026959.000000
+!s107 C:/Users/Max/Documents/GitHub/141architecture/accumulator.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/accumulator.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+n@accumulator
+valu
+R0
+R1
+!i10b 1
+!s100 dSVBl[ARc8;Gj23@`Th@o3
+R2
+IM;HdE4mDiC9=M>H^5V89I3
+R3
+S1
+R4
+w1717026923
+8C:/Users/Max/Documents/GitHub/141architecture/alu.sv
+FC:/Users/Max/Documents/GitHub/141architecture/alu.sv
+!i122 26
+L0 2 45
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Max/Documents/GitHub/141architecture/alu.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/alu.sv|
+!i113 1
+R7
+R8
+valu_tb
+R0
+!s110 1717026961
+!i10b 1
+!s100 NBnXQ`[0X;k[jd6N]e^cn1
+R2
+Ic]8V9bAk1Vj__hW]lz=m;2
+R3
+S1
+R4
+w1717026950
+8C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv
+FC:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv
+!i122 32
+L0 4 75
+R5
+r1
+!s85 0
+31
+!s108 1717026961.000000
+!s107 C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv|
+!i113 1
+R7
+R8
+vdat_mem
+R0
+Z9 !s110 1717026960
+!i10b 1
+!s100 J8QLPliT?PoE<^`iZ@Bhe2
+R2
+IP_BjUN<5ZMfc7H[^YQ[2N3
+R3
+S1
+R4
+w1716934808
+8C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv
+FC:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv
+!i122 27
+L0 2 21
+R5
+r1
+!s85 0
+31
+Z10 !s108 1717026960.000000
+!s107 C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv|
+!i113 1
+R7
+R8
+vinstr_ROM
+R0
+R9
+!i10b 1
+!s100 41ZD;EQmFTDahUcizPkKf1
+R2
+Il0b;JN1@GeglaBBGkVHTM0
+R3
+S1
+R4
+Z11 w1716933403
+8C:/Users/Max/Documents/GitHub/141architecture/instr_ROM.sv
+FC:/Users/Max/Documents/GitHub/141architecture/instr_ROM.sv
+!i122 28
+L0 4 11
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Max/Documents/GitHub/141architecture/instr_ROM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/instr_ROM.sv|
+!i113 1
+R7
+R8
+ninstr_@r@o@m
+vPC
+R0
+R9
+!i10b 1
+!s100 oEXX6>h>df3YFV2?k<fe53
+R2
+I_EKA;=kLK7VdFiKJf1>d91
+R3
+S1
+R4
+R11
+8C:/Users/Max/Documents/GitHub/141architecture/PC.sv
+FC:/Users/Max/Documents/GitHub/141architecture/PC.sv
+!i122 29
+L0 4 20
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Max/Documents/GitHub/141architecture/PC.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/PC.sv|
+!i113 1
+R7
+R8
+n@p@c
+vPC_LUT
+R0
+R9
+!i10b 1
+!s100 NRKIST[I?a5:6n]XkXW033
+R2
+Io?I3znJ9F;df12>^Q5O8E0
+R3
+S1
+R4
+R11
+8C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv
+FC:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv
+!i122 30
+L0 1 14
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv|
+!i113 1
+R7
+R8
+n@p@c_@l@u@t
+vreg_file
+R0
+R9
+!i10b 1
+!s100 HhFZb=B<`_aCWEb50AZ332
+R2
+IjQ@ZL3nkcOMYFk_n]FRzD2
+R3
+S1
+R4
+w1716934944
+8C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv
+FC:/Users/Max/Documents/GitHub/141architecture/reg_file.sv
+!i122 31
+L0 3 25
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv|
+!i113 1
+R7
+R8

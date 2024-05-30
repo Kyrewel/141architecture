@@ -19,9 +19,10 @@ module reg_file #(parameter pw=4)(
 
 // writes are sequential (clocked)
   always_ff @(posedge clk)
-    if(wr_en)				   // anything but stores or no ops
+    if(wr_en) begin				   // anything but stores or no ops
       core[wr_addr] <= dat_in;
 	  done <= 1; 
+	end
 
 endmodule
 /*

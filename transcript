@@ -1,0 +1,101 @@
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv failed with 3 errors.
+# Compile of alu_tb.sv was successful.
+# 11 compiles, 3 failed with 5 errors.
+# Compile of alu_tb.sv was successful.
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv failed with 3 errors.
+# Compile of alu_tb.sv was successful.
+# 11 compiles, 3 failed with 5 errors.
+vsim -gui work.alu work.alu_tb
+# vsim -gui work.alu work.alu_tb 
+# Start time: 16:51:35 on May 29,2024
+# Loading sv_std.std
+# Loading work.alu
+# Loading work.alu_tb
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/uut File: C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv Line: 16
+# ** Warning: (vsim-3722) C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv(16): [TFMPC] - Missing connection for port 'branchFlag'.
+run -all
+# Time =                    0, Command = 0000, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 00000000, Shift Carry Out = x
+# Test AND: Expected 00000000, Got 00000000
+# Time =                 1000, Command = 0001, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 11111111, Shift Carry Out = x
+# Test XOR: Expected 11111111, Got 11111111
+# Time =                 2000, Command = 0010, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 11111111, Shift Carry Out = x
+# Test OR: Expected 11111111, Got 11111111
+# Time =                 3000, Command = 0011, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 01010100, Shift Carry Out = 1
+# Test logical left shift: Expected 01010100, Got 01010100
+# Time =                 4000, Command = 0100, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 01010101, Shift Carry Out = 0
+# Test logical right shift: Expected 01010101, Got 01010101
+# Time =                 5000, Command = 0101, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 11111111, Shift Carry Out = 0
+# Test ADD: Expected 11111111, Got 11111111
+# Time =                 6000, Command = 0110, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 01010101, Shift Carry Out = 0
+# Test SUBTRACT: Expected 01010101, Got 01010101
+# Time =                 7000, Command = 0111, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 10101010, Shift Carry Out = 0
+# Test PASS A: Expected 10101010, Got 10101010
+# ** Note: $finish    : C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv(69)
+#    Time: 8 ns  Iteration: 0  Instance: /alu_tb
+# 1
+# Break in Module alu_tb at C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv line 69
+quit -sim
+# End time: 16:55:50 on May 29,2024, Elapsed time: 0:04:15
+# Errors: 0, Warnings: 6
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of Control.sv failed with 1 errors.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv failed with 3 errors.
+# Compile of alu_tb.sv was successful.
+# 11 compiles, 3 failed with 5 errors.
+vsim -gui work.alu_tb work.alu
+# vsim -gui work.alu_tb work.alu 
+# Start time: 16:56:19 on May 29,2024
+# Loading sv_std.std
+# Loading work.alu_tb
+# Loading work.alu
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/uut File: C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv Line: 16
+# ** Warning: (vsim-3722) C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv(16): [TFMPC] - Missing connection for port 'branchFlag'.
+run -continue
+run -all
+# Time =                    0, Command = 0000, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 00000000, Shift Carry Out = 0
+# Test AND: Expected 00000000, Got 00000000
+# Time =                 1000, Command = 0001, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 11111111, Shift Carry Out = 0
+# Test XOR: Expected 11111111, Got 11111111
+# Time =                 2000, Command = 0010, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 11111111, Shift Carry Out = 0
+# Test OR: Expected 11111111, Got 11111111
+# Time =                 3000, Command = 0011, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 01010100, Shift Carry Out = 1
+# Test logical left shift: Expected 01010100, Got 01010100
+# Time =                 4000, Command = 0100, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 01010101, Shift Carry Out = 0
+# Test logical right shift: Expected 01010101, Got 01010101
+# Time =                 5000, Command = 0101, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 11111111, Shift Carry Out = 0
+# Test ADD: Expected 11111111, Got 11111111
+# Time =                 6000, Command = 0110, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 01010101, Shift Carry Out = 0
+# Test SUBTRACT: Expected 01010101, Got 01010101
+# Time =                 7000, Command = 0111, inA = 10101010, inB = 01010101, Shift Carry In = 0, Result = 10101010, Shift Carry Out = 0
+# Test PASS A: Expected 10101010, Got 10101010
+# ** Note: $finish    : C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv(69)
+#    Time: 8 ns  Iteration: 0  Instance: /alu_tb
+# 1
+# Break in Module alu_tb at C:/Users/Max/Documents/GitHub/141architecture/alu_tb.sv line 69

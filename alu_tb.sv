@@ -31,39 +31,39 @@ module alu_tb;
     alu_cmd = 0;
 
     // Apply test vectors
-    #10 inA = 8'b10101010; inB = 8'b01010101; shiftcarry_in = 1'b0;
+    inA = 8'b10101010; inB = 8'b01010101; shiftcarry_in = 1'b0;
 
     // Test AND
     alu_cmd = 4'b0000;
-    #10;
+    #1 $display("Test AND: Expected %b, Got %b", inA & inB, rslt);
 
     // Test XOR
     alu_cmd = 4'b0001;
-    #10;
+    #1 $display("Test XOR: Expected %b, Got %b", inA ^ inB, rslt);
 
     // Test OR
     alu_cmd = 4'b0010;
-    #10;
+    #1 $display("Test OR: Expected %b, Got %b", inA | inB, rslt);
 
     // Test logical left shift
     alu_cmd = 4'b0011;
-    #10;
+    #1 $display("Test logical left shift: Expected %b, Got %b", inA << 1, rslt);
 
     // Test logical right shift
     alu_cmd = 4'b0100;
-    #10;
+    #1 $display("Test logical right shift: Expected %b, Got %b", inA >> 1, rslt);
 
     // Test ADD
     alu_cmd = 4'b0101;
-    #10;
+    #1 $display("Test ADD: Expected %b, Got %b", inA + inB, rslt);
 
     // Test SUBTRACT
     alu_cmd = 4'b0110;
-    #10;
+    #1 $display("Test SUBTRACT: Expected %b, Got %b", inA - inB, rslt);
 
     // Test PASS A
     alu_cmd = 4'b0111;
-    #10;
+    #1 $display("Test PASS A: Expected %b, Got %b", inA, rslt);
 
     // Finish simulation
     $finish;

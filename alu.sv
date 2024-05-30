@@ -10,23 +10,27 @@ module alu(
 
 always_comb begin 
   rslt = 'b0;            
-  case(alu_command)
+  shiftcarry_out = 'b0;
+  branchFlag = 'b0;
+  case(alu_cmd)
     4'b0000: // bitwise AND
-      rslt = inA & inB
+
+
+      rslt = inA & inB;
 	  4'b0001: // bitwise XOR
-      rslt = inA ^ inB
+      rslt = inA ^ inB;
 	  4'b0010: // bitwise OR
-      rslt = inA | inB
+      rslt = inA | inB;
 	  4'b0011: // logical left shift
       {shiftcarry_out, rslt} = {inA, shiftcarry_in};
 	  4'b0100: // logical right shift
       {rslt, shiftcarry_out} = {shiftcarry_in,inA};
 	  4'b0101: // logical add
-      {shiftcarry_out, rslt} = inA + inB + shiftcarry_in
+      {shiftcarry_out, rslt} = inA + inB + shiftcarry_in;
 	  4'b0110: // logical subtract
-      {shiftcarry_out, rslt} = inA - inB + shiftcarry_in
+      {shiftcarry_out, rslt} = inA - inB + shiftcarry_in;
     4'b0111: // pass A
-      rslt = inA
+      rslt = inA;
     4'b1000: // less than
       if(inA < inB)
         branchFlag = 1;
