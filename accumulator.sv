@@ -16,7 +16,6 @@ module Accumulator(
 logic [7:0] internal_reg0; // Internal register 0
 logic [7:0] internal_reg1; // Internal register 1
 logic [7:0] internal_reg2; // Internal register 2
-logic r0_valid, r1_valid, r2_valid; // Flags to indicate if r0, r1, and r2 have values stored
 
 initial begin
     r0_valid = 0;

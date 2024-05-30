@@ -29,3 +29,62 @@
 # 13 compiles, 3 failed with 8 errors.
 # Compile of control.sv failed with 4 errors.
 # Compile of control.sv was successful.
+# Compile of accum_tb.sv was successful.
+# Compile of accumulator.sv failed with 3 errors.
+# Compile of alu.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of control.sv was successful.
+# Compile of control_tb.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv failed with 3 errors.
+# 13 compiles, 3 failed with 7 errors.
+# Compile of accum_tb.sv was successful.
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of control.sv was successful.
+# Compile of control_tb.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv failed with 3 errors.
+# 13 compiles, 2 failed with 4 errors.
+# Compile of accum_tb.sv was successful.
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of control.sv was successful.
+# Compile of control_tb.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv failed with 2 errors.
+# 13 compiles, 2 failed with 3 errors.
+# Compile of top_level.sv failed with 3 errors.
+# Compile of top_level.sv failed with 3 errors.
+# Compile of accum_tb.sv was successful.
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of control.sv was successful.
+# Compile of control_tb.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 1 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv failed with 3 errors.
+# 13 compiles, 2 failed with 4 errors.
+# Compile of top_level.sv was successful.

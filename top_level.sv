@@ -10,7 +10,7 @@ module top_level(
   wire  memWriteFlag;                     // from control to PC; relative jump enable
   wire  aluBranchFlag; 
   wire  controlBranchFlag; 
-  wire  branchFlag
+  wire  branchFlag;
   wire  memToRegFlag; 
   wire  putFlag;
   wire  immtoRegFlag;
@@ -39,14 +39,14 @@ module top_level(
         ALUSrc;		              // immediate switch
   wire[A-1:0] alu_cmd;
   wire[8:0]   mach_code;          // machine code
-  wire[2:0] rd_addrA, rd_adrB;    // address pointers to reg_file
+  wire[2:0] rd_addrA, rd_addrB;    // address pointers to reg_file
 
 assign nextInstructionFlag = storeDone || accumulatorDone || writeDone;
 assign branchFlag = controlBranchFlag || aluBranchFlag;
 // fetch subassembly
   PC #(.D(D)) 					  // D sets program counter width
      pc1 (
-  .reset()            ,
+  .reset(reset)            ,
   .clk(clk)              ,
   .nextFlag(nextInstructionFlag),
   .absjump_en (branchFlag),
@@ -86,19 +86,22 @@ PC_LUT #(.D(D))
   .r0(r0),
   .r1(r1),
   .r2(r2),
-  .done(accumulatorDone),
-  )
+  .done(accumulatorDone)
+  );
 
   assign wr_reg  = r0[7:4];
   assign rd_regA = r1[7:4];
   assign rd_regB = r2[7:4];
 
-  if (immtoRegFlag) begin
-    assign reg_file_data_in = r1;
-  end else if (memToRegFlag) begin
-    assign reg_file_data_in = mem_data_out;
-  end else begin
-    assign reg_file_data_in = alu_result;
+  logic[7:0] reg_file_data_in; // Changed from wire to logic to allow procedural assignments
+  always_comb begin
+    if (immtoRegFlag) begin
+      reg_file_data_in = r1;
+    end else if (memToRegFlag) begin
+      reg_file_data_in = mem_data_out;
+    end else begin
+      reg_file_data_in = alu_result;
+    end
   end
 
   reg_file #(.pw(3)) rf1(
@@ -117,9 +120,9 @@ PC_LUT #(.D(D))
   .alu_cmd(alu_cmd),
   .inA(datA),
   .inB(datB),
-  .shiftcarry_in(sc),   // output from sc register
+  .shiftcarry_in(sc_in),   // output from sc register
   .rslt(alu_result),
-  .shiftcarry_out(sc_o) // input to sc register 
+  .shiftcarry_out(sc_in), // input to sc register 
   .branchFlag(aluBranchFlag)
   );
 
@@ -139,7 +142,7 @@ PC_LUT #(.D(D))
     if(sc_clr)
 	  sc_in <= 'b0;
     else if(sc_en)
-      sc_in <= sc_o;
+      sc_in <= sc_in;
   end
 
   assign done = prog_ctr == 128;
