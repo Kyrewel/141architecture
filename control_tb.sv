@@ -24,7 +24,6 @@ module control_tb;
   // Test sequence
   initial begin
     // Initialize inputs
-    instruction = 9'b0;
     instruction = 9'b000000000; //load imm
     #10;
     $display("Test load imm: Expected ALUOp=0111, Got %b", ALUOp);
