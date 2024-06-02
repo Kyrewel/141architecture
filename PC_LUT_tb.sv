@@ -2,25 +2,20 @@
 
 module PC_LUT_tb;
 
-  // Parameters
-  parameter D = 12; // Depth of the LUT
-
   // Inputs
-  reg [D-1:0] prog_ctr;
+  reg [7:0] tag,
 
   // Outputs
-  wire [8:0] mach_code;
+  wire [11:0] target;
 
   // Instantiate the PC_LUT module
   PC_LUT #(.D(D)) uut (
-    .prog_ctr(prog_ctr),
-    .mach_code(mach_code)
+    .tag(tag),
+    .target(target)
   );
 
   // Test sequence
   initial begin
-    // Initialize inputs
-    prog_ctr = 0;
 
     // Display the machine code at different addresses
     $display("Testing PC_LUT with various program counter values:");

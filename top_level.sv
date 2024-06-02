@@ -51,12 +51,12 @@ assign branchFlag = controlBranchFlag || aluBranchFlag;
   .nextFlag(nextInstructionFlag),
   .absjump_en (branchFlag),
 	.target(target)           ,
-	.prog_ctr(prog_ctr)          );
-
+	.prog_ctr(prog_ctr)          
+  );
+  
 // lookup table to facilitate jumps/branches
-PC_LUT #(.D(D))
-  pl1 (
-  .addr  (r2),
+  PC_LUT pl1 (
+  .tag  (r2),
   .target(target));   
 
 // contains machine code
