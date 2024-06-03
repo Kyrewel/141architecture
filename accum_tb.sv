@@ -39,11 +39,9 @@ module Accumulator_tb;
   // Test sequence
   initial begin
     // Initialize inputs
-    reset = 1;
     putFlag = 0;
     value = 0;
     #10;
-    reset = 0;
 
     // Test 1: Accumulate one value
     putFlag = 1;
@@ -84,8 +82,6 @@ module Accumulator_tb;
     value = 8'd60; // Third value
     #10;
     putFlag = 0;
-    #10;
-    #10;
 
 
     // Test 3.5: Check reset of valid bits
@@ -97,9 +93,10 @@ module Accumulator_tb;
 
     // Check results
     #10;
-    if (r0 == 8'd10 && r1 == 8'd20 && r2 == 8'd30 && r0_valid && r1_valid && r2_valid && done == 1) begin
+    if (r0 == 8'd40 && r1 == 8'd50 && r2 == 8'd60 && !r0_valid && !r1_valid && !r2_valid && done == 0) begin
       $display("Test Passed: Accumulation correct.");
     end else begin
+
       $display("Test Failed: Accumulation incorrect.");
     end
 
@@ -109,8 +106,8 @@ module Accumulator_tb;
 
   // Monitor changes
   initial begin
-    $monitor("Time = %t, Reset = %b, PutFlag = %b, Value = %b, r0 = %b, r1 = %b, r2 = %b, r0_valid = %b, r1_valid = %b, r2_valid = %b, Done = %b",
-             $time, reset, putFlag, value, r0, r1, r2, r0_valid, r1_valid, r2_valid, done);
+    $monitor("Time = %t, PutFlag = %b, Value = %b, r0 = %b, r1 = %b, r2 = %b, r0_valid = %b, r1_valid = %b, r2_valid = %b, Done = %b",
+             $time, putFlag, value, r0, r1, r2, r0_valid, r1_valid, r2_valid, done);
   end
 
 endmodule

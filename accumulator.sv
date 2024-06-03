@@ -44,12 +44,10 @@ always @(posedge clk) begin
         r0 <= internal_reg0;
         r1 <= internal_reg1;
         r2 <= internal_reg2;
-        internal_reg0 <= 0;
-        internal_reg1 <= 0;
-        internal_reg2 <= 0;
         r0_valid <= 0;
         r1_valid <= 0;
         r2_valid <= 0;
+        done <= 0;
     end
     
 end

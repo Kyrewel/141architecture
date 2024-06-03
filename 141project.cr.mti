@@ -60,6 +60,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	control
 
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/top_level.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/top_level.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top_level
+
+Top level modules:
+	top_level
+
 } {} {}} C:/Users/Max/Documents/GitHub/141architecture/prog3.sv {0 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/prog3.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 ** Error: (vlog-13069) C:/Users/Max/Documents/GitHub/141architecture/prog3.sv(1): near "11111": syntax error, unexpected INTEGER NUMBER, expecting class.
