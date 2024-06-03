@@ -28,7 +28,8 @@ module top_level(
               muxB, 
 			  rslt,               // alu output
               immed;
-  logic sc_in,   				  // shift/carry out from/to ALU
+  logic sc_out,   				  // shift/carry out from/to ALU
+      sc_in,           // shift/carry in to ALU
    		pariQ,              	  // registered parity flag from ALU
 		zeroQ;                    // registered zero flag from ALU 
   wire  pari,
@@ -39,7 +40,8 @@ module top_level(
         ALUSrc;		              // immediate switch
   wire[A-1:0] alu_cmd;
   wire[8:0]   mach_code;          // machine code
-  wire[2:0] rd_addrA, rd_addrB;    // address pointers to reg_file
+  wire[2:0] rd_addrA, rd_addrB;    // address pointers to reg_file\
+  logic r0_val, r1_val, r2_val;
 
 assign nextInstructionFlag = storeDone || accumulatorDone || writeDone;
 assign branchFlag = controlBranchFlag || aluBranchFlag;
@@ -66,7 +68,7 @@ assign branchFlag = controlBranchFlag || aluBranchFlag;
   );
 
 // control decoder
-  Control ctl1(
+  control ctl1(
   .instruction(mach_code),
   .branchFlag(controlBranchFlag), 
   .memWriteFlag(memWriteFlag), 
@@ -79,6 +81,11 @@ assign branchFlag = controlBranchFlag || aluBranchFlag;
 
   assign putValue = mach_code[7:0];
 
+
+  assign r0_val = 0;    // Validity flag for r0
+  assign r1_val = 0;    // Validity flag for r1
+  assign r2_val = 0;    // Validity flag for r2
+
   Accumulator acum1(
   .clk(clk),
   .putFlag(putFlag),
@@ -86,6 +93,9 @@ assign branchFlag = controlBranchFlag || aluBranchFlag;
   .r0(r0),
   .r1(r1),
   .r2(r2),
+  .r0_valid(r0_val),
+  .r1_valid(r1_val),
+  .r2_valid(r2_val),
   .done(accumulatorDone)
   );
 
@@ -120,9 +130,9 @@ assign branchFlag = controlBranchFlag || aluBranchFlag;
   .alu_cmd(alu_cmd),
   .inA(datA),
   .inB(datB),
-  .shiftcarry_in(sc_in),   // output from sc register
+  .shiftcarry_in(sc_in),   // input from sc register
   .rslt(alu_result),
-  .shiftcarry_out(sc_in), // input to sc register 
+  .shiftcarry_out(sc_out), // output to sc register 
   .branchFlag(aluBranchFlag)
   );
 

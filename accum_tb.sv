@@ -4,7 +4,6 @@ module Accumulator_tb;
 
   // Inputs
   reg clk;
-  reg reset;
   reg putFlag;
   reg [7:0] value;
 
@@ -20,7 +19,6 @@ module Accumulator_tb;
   // Instantiate the Accumulator module
   Accumulator uut (
     .clk(clk),
-    .reset(reset),
     .putFlag(putFlag),
     .value(value),
     .r0(r0),
@@ -86,6 +84,9 @@ module Accumulator_tb;
     value = 8'd60; // Third value
     #10;
     putFlag = 0;
+    #10;
+    #10;
+
 
     // Test 3.5: Check reset of valid bits
     if (!r0_valid && !r1_valid && !r2_valid) begin

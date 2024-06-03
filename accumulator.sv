@@ -1,6 +1,5 @@
 module Accumulator(
     input wire clk,    // Clock input
-    input wire reset,  // Reset input
     input wire putFlag,    // Put signal to trigger accumulation
     input wire [7:0] value, // 8-bit input value
 
@@ -27,7 +26,7 @@ initial begin
 end
 
 // Implement the accumulator logic here
-always @(posedge clk or posedge reset) begin
+always @(posedge clk) begin
     if (putFlag) begin
         // Accumulation logics
         if (!r0_valid) begin

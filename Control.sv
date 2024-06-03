@@ -11,14 +11,19 @@ logic[3:0] opcode;
 
 always_comb begin
   // defaults
-  ALUOp	    = 'b0111;
-  immtoRegFlag =  'b0;
-  regWriteFlag =  'b1;
+  ALUOp         = 'b0111;
+  immtoRegFlag  = 'b0;
+  regWriteFlag  = 'b1;
+  memToRegFlag  = 'b0;
+  memWriteFlag  = 'b0;
+  branchFlag    = 'b0;
+  putFlag       = 'b0;
+
   itype = instruction[0:0];
   opcode = instruction[4:1];
 
   case(itype)  
-    'b0:  begin					// run type
+    'b0:  begin          // run type
             case (opcode)
               'b0000: begin     // load immediate
                         immtoRegFlag = 'b1;
@@ -66,17 +71,16 @@ always_comb begin
                       end
               'b1101: begin     //right shift
                         ALUOp = 4'b0100;
-                      end                     
+                      end
+              default: begin
+                ALUOp = 4'b0111;
+              end                     
             endcase      
-                  
           end
-    'b1:  begin         // put type
+    default:  begin         // put type
             putFlag = 'b1;
             regWriteFlag = 'b0;
           end
-  // ...
   endcase
-
 end
-	
 endmodule
