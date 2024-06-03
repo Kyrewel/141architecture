@@ -214,7 +214,7 @@ R6
 ninstr_@r@o@m
 vinstr_ROM_tb
 R0
-!s110 1717378908
+!s110 1717381790
 !i10b 1
 !s100 J9Eh`B[ez=Q0P5B^ZUi<o1
 R1
@@ -222,16 +222,16 @@ ILQeIVXIz`g>S3=I9X5REO0
 R2
 S1
 R3
-w1717034000
+w1717381747
 8C:/Users/Max/Documents/GitHub/141architecture/instr_ROM_tb.sv
 FC:/Users/Max/Documents/GitHub/141architecture/instr_ROM_tb.sv
-!i122 241
+!i122 252
 L0 3 36
 R4
 r1
 !s85 0
 31
-Z11 !s108 1717378907.000000
+!s108 1717381789.000000
 !s107 C:/Users/Max/Documents/GitHub/141architecture/instr_ROM_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/instr_ROM_tb.sv|
 !i113 1
@@ -240,7 +240,7 @@ R6
 ninstr_@r@o@m_tb
 vPC
 R0
-Z12 !s110 1717378905
+!s110 1717378905
 !i10b 1
 !s100 oEXX6>h>df3YFV2?k<fe53
 R1
@@ -248,7 +248,7 @@ I_EKA;=kLK7VdFiKJf1>d91
 R2
 S1
 R3
-Z13 w1716933403
+w1716933403
 8C:/Users/Max/Documents/GitHub/141architecture/PC.sv
 FC:/Users/Max/Documents/GitHub/141architecture/PC.sv
 !i122 237
@@ -266,7 +266,7 @@ R6
 n@p@c
 vPC_LUT
 R0
-R12
+!s110 1717381370
 !i10b 1
 !s100 NRKIST[I?a5:6n]XkXW033
 R1
@@ -274,25 +274,51 @@ Io?I3znJ9F;df12>^Q5O8E0
 R2
 S1
 R3
-R13
+w1717381331
 8C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv
 FC:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv
-!i122 238
+!i122 250
 L0 1 14
 R4
 r1
 !s85 0
 31
-!s108 1717378905.000000
+!s108 1717381367.000000
 !s107 C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv|
 !i113 1
 R5
 R6
 n@p@c_@l@u@t
+vPC_LUT_tb
+R0
+!s110 1717381493
+!i10b 1
+!s100 _07lmFD2D6619aOilnFoD2
+R1
+IWbGXR9bMZVomVzC^BZ@_V2
+R2
+S1
+R3
+w1717381488
+8C:/Users/Max/Documents/GitHub/141architecture/PC_LUT_tb.sv
+FC:/Users/Max/Documents/GitHub/141architecture/PC_LUT_tb.sv
+!i122 251
+L0 3 34
+R4
+r1
+!s85 0
+31
+!s108 1717381492.000000
+!s107 C:/Users/Max/Documents/GitHub/141architecture/PC_LUT_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/PC_LUT_tb.sv|
+!i113 1
+R5
+R6
+n@p@c_@l@u@t_tb
 vreg_file
 R0
-Z14 !s110 1717378907
+Z11 !s110 1717378907
 !i10b 1
 !s100 HhFZb=B<`_aCWEb50AZ332
 R1
@@ -317,7 +343,7 @@ R5
 R6
 vtop_level
 R0
-R14
+R11
 !i10b 1
 !s100 Uida2>aY1RB79^V5G?3=z0
 R1
@@ -334,7 +360,7 @@ R4
 r1
 !s85 0
 31
-R11
+!s108 1717378907.000000
 !s107 C:/Users/Max/Documents/GitHub/141architecture/top_level.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/top_level.sv|
 !i113 1
