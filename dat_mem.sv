@@ -17,6 +17,9 @@ module dat_mem (
     if(wr_en) begin				  // wr_en usually = 0; = 1 		
       core[addr] <= dat_in;
       done <= 1; 
+    end else begin
+      done <= 0;
     end
 
 endmodule
+

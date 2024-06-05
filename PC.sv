@@ -9,15 +9,17 @@ module PC #(parameter D=12)(
   input       [D-1:0] target,	// how far/where to jump
   output logic[D-1:0] prog_ctr
 );
+  logic [D-1:0] counter;
 
-  always_ff @(posedge clk)
-    if(nextFlag) begin
-      if(reset)
-        prog_ctr <= '0;
-      else if(absjump_en)
-        prog_ctr <= target;
+  always_ff @(posedge clk) begin
+    if (reset) begin
+      counter <= 0;
+    end else if (nextFlag) begin
+      if (absjump_en)
+        counter <= target;
       else
-          prog_ctr <= prog_ctr + 'b1;
+        counter <= counter + 1;
     end
-
+    prog_ctr <= counter; // Update every cycle
+  end
 endmodule

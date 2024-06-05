@@ -22,6 +22,8 @@ module reg_file #(parameter pw=4)(
     if(wr_en) begin				   // anything but stores or no ops
       core[wr_addr] <= dat_in;
 	  done <= 1; 
+	end else begin
+	  done <= 0;
 	end
 
 endmodule
