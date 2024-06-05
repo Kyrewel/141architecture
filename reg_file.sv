@@ -7,7 +7,6 @@ module reg_file #(parameter pw=4)(
   input[pw:0] wr_addr,		  // write address pointer
               rd_addrA,		  // read address pointers
 			  rd_addrB,
-  output logic done,
   output logic[7:0] datA_out, // read data
                     datB_out);
 
@@ -18,13 +17,22 @@ module reg_file #(parameter pw=4)(
   assign datB_out = core[rd_addrB];
 
 // writes are sequential (clocked)
-  always_ff @(posedge clk)
+  always_ff @(posedge clk) begin
     if(wr_en) begin				   // anything but stores or no ops
       core[wr_addr] <= dat_in;
-	  done <= 1; 
-	end else begin
-	  done <= 0;
 	end
+  end
+  // Debugging code to print the contents of the core register array
+  always_ff @(posedge clk) begin
+    if (wr_en) begin
+      $display("Write operation: Writing %h to address %h", dat_in, wr_addr);
+    end
+    // Print the entire core register array for debugging
+    $display("Core Register Contents:");
+    for (int i = 0; i < 2**pw; i++) begin
+      $display("core[%0d] = %h", i, core[i]);
+    end
+  end
 
 endmodule
 /*

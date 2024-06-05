@@ -1,9 +1,10 @@
 // control decoder
 module control(
-  input[8:0] instruction,         
+  input[8:0] instruction,
   output logic branchFlag, memToRegFlag, memWriteFlag, 
-                regWriteFlag, putFlag, immtoRegFlag,
-  output logic[3:0] ALUOp
+                regWriteFlag, putEn, opEn, immtoRegFlag,
+  output logic[3:0] ALUOp,
+  output logic[7:0] value
 );
 
 logic itype;
@@ -11,16 +12,18 @@ logic[3:0] opcode;
 
 always_comb begin
   // defaults
-  ALUOp         = 'b0111;
+  ALUOp         = 'b1111;
   immtoRegFlag  = 'b0;
   regWriteFlag  = 'b1;
   memToRegFlag  = 'b0;
   memWriteFlag  = 'b0;
   branchFlag    = 'b0;
-  putFlag       = 'b0;
+  putEn       = 'b0;
+  opEn        = 'b1;
 
   itype = instruction[0:0];
   opcode = instruction[4:1];
+  value = instruction[8:1];
 
   case(itype)  
     'b0:  begin          // run type
@@ -56,15 +59,15 @@ always_comb begin
                       end
               'b1001: begin     //branch equal to
                         regWriteFlag = 'b0;
-                        ALUOp = 4'b1010;
+                        ALUOp = 4'b1001;
                       end
               'b1010: begin     //branch less than
                         regWriteFlag = 'b0;
-                        ALUOp = 4'b1000;
+                        ALUOp = 4'b0111;
                       end
               'b1011: begin     //branch greater than
                         regWriteFlag = 'b0;
-                        ALUOp = 4'b1001;
+                        ALUOp = 4'b1000;
                       end
               'b1100: begin     //left shift
                         ALUOp = 4'b0011;
@@ -73,12 +76,13 @@ always_comb begin
                         ALUOp = 4'b0100;
                       end
               default: begin
-                ALUOp = 4'b0111;
+                ALUOp = 4'b1111;
               end                     
             endcase      
           end
     'b1:  begin         // put type
-            putFlag = 'b1;
+            putEn = 'b1;
+            opEn = 'b0;
             regWriteFlag = 'b0;
           end
   endcase

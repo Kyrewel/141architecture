@@ -1,4 +1,39 @@
-C:/Users/Max/Documents/GitHub/141architecture/accumulator.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/accumulator.sv
+C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module reg_file
+
+Top level modules:
+	reg_file
+
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/instr_ROM.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/instr_ROM.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module instr_ROM
+
+Top level modules:
+	instr_ROM
+
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/testbenches/PC_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/testbenches/PC_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_tb
+
+Top level modules:
+	PC_tb
+
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dat_mem
+
+Top level modules:
+	dat_mem
+
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/testbenches/accum_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module accum_tb
+
+Top level modules:
+	accum_tb
+
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/accumulator.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/accumulator.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Accumulator
 
@@ -12,19 +47,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	control
 
-} {} {}} C:/Users/Max/Documents/GitHub/141architecture/instr_ROM.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/instr_ROM.sv
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/top_level.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/top_level.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module instr_ROM
+-- Compiling module top_level
 
 Top level modules:
-	instr_ROM
+	top_level
 
-} {} {}} C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/testbenches/accum_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/testbenches/accum_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module reg_file
+-- Compiling module accum_tb
 
 Top level modules:
-	reg_file
+	accum_tb
 
 } {} {}} C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -40,18 +75,11 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	alu
 
-} {} {}} C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/PC_LUT.sv
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/PC.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/PC.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module PC_LUT
+-- Compiling module PC
 
 Top level modules:
-	PC_LUT
-
-} {} {}} C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module dat_mem
-
-Top level modules:
-	dat_mem
+	PC
 
 } {} {}}

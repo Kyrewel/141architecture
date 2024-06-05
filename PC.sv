@@ -5,28 +5,26 @@ module PC #(parameter D=12)(
   input reset,					// synchronous reset
         clk,
         absjump_en,				// abs. jump enable
-        nextFlag,
   input       [D-1:0] target,	// how far/where to jump
   output logic[D-1:0] prog_ctr
 );
-  $info("PC module reached");
-  logic [D-1:0] counter;
-
+  logic [3:0] numCyclesPassed = 0;
+  logic [D-1:0] counter = 0;
+  
   always_ff @(posedge clk) begin
     $info("************************ PC MODULE *************************");
     if (reset) begin
       counter <= 0;
-    end else if (nextFlag) begin
-      if (absjump_en)
+      numCyclesPassed <= 0;
+    end else if (numCyclesPassed % 6 === 0) begin
+      if (absjump_en) begin
         counter <= target;
-      else
+      end else begin
         counter <= counter + 1;
+      end
     end
     prog_ctr <= counter; // Update every cycle
-    $info("CURRENT PROG CTR ------ program counter: %d", counter);
-  end
-  always_comb begin
-    prog_ctr = counter;
+    numCyclesPassed <= numCyclesPassed + 1;
   end
 
 endmodule
