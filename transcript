@@ -420,3 +420,96 @@ run -all
 #    Time: 80 ns  Iteration: 0  Instance: /reg_file_tb
 # 1
 # Break in Module reg_file_tb at C:/Users/Max/Documents/GitHub/141architecture/reg_file_tb.sv line 79
+quit -sim
+# End time: 20:06:30 on Jun 04,2024, Elapsed time: 0:31:51
+# Errors: 0, Warnings: 4
+# Compile of accum_tb.sv was successful.
+# Compile of accumulator.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of control.sv was successful.
+# Compile of control_tb.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of prog3.sv failed with 2 errors.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of instr_ROM_tb.sv was successful.
+# Compile of PC_LUT_tb.sv was successful.
+# Compile of PC_tb.sv was successful.
+# Compile of reg_file_tb.sv was successful.
+# 17 compiles, 1 failed with 2 errors.
+# Load canceled
+# Compile of top_level_tb.sv was successful.
+# Load canceled
+vsim -gui work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
+# vsim -gui work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
+# Start time: 20:09:27 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.instr_ROM
+# Loading work.control
+# Loading work.Accumulator
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'rd_addrA'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(8).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'rd_addrB'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(9).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (3) for port 'wr_addr'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(7).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dm1'.  Expected 6, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/dm1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 141
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'addr'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv(6).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/dm1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 141
+# ** Warning: (vsim-3722) C:/Users/Max/Documents/GitHub/141architecture/top_level.sv(141): [TFMPC] - Missing connection for port 'done'.
+quit -sim
+# Compile of top_level.sv was successful.
+# End time: 20:14:14 on Jun 04,2024, Elapsed time: 0:04:47
+# Errors: 0, Warnings: 13
+# Compile of top_level.sv was successful.
+vsim -gui work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
+# vsim -gui work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
+# Start time: 20:17:01 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.instr_ROM
+# Loading work.control
+# Loading work.Accumulator
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'rd_addrA'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(8).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'rd_addrB'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(9).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'wr_addr'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(7).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'addr'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv(6).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/dm1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 141
+run -all
+run -all
+add wave -position insertpoint sim:/top_level/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'rd_addrA'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(8).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'rd_addrB'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(9).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'wr_addr'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/reg_file.sv(7).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/rf1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 117
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'addr'. The port definition is at: C:/Users/Max/Documents/GitHub/141architecture/dat_mem.sv(6).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level/dm1 File: C:/Users/Max/Documents/GitHub/141architecture/top_level.sv Line: 141
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# End time: 20:19:43 on Jun 04,2024, Elapsed time: 0:02:42
+# Errors: 0, Warnings: 5

@@ -27,6 +27,7 @@ end
 
 // Implement the accumulator logic here
 always @(posedge clk) begin
+    $display("************************ ACCUMULATOR MODULE *************************");
     if (putFlag) begin
         // Accumulation logics
         if (!r0_valid) begin
@@ -39,16 +40,18 @@ always @(posedge clk) begin
             internal_reg2 <= value;
             r2_valid <= 1;
         end
+        $display("PUTTING VALUE ------ internal_reg0: %d, internal_reg1: %d, internal_reg2: %d", internal_reg0, internal_reg1, internal_reg2);
+        $display("VALID VALUES ------ r0_valid: %b, r1_valid: %b, r2_valid: %b", r0_valid, r1_valid, r2_valid);
         done <= 1;
     end else begin
         r0 <= internal_reg0;
         r1 <= internal_reg1;
         r2 <= internal_reg2;
+        $display("COMMAND READY ------ r0: %d, r1: %d, r2: %d", r0, r1, r2);
         r0_valid <= 0;
         r1_valid <= 0;
         r2_valid <= 0;
         done <= 0;
     end
-    
 end
 endmodule

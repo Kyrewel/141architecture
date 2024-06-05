@@ -99,9 +99,9 @@ assign branchFlag = controlBranchFlag || aluBranchFlag;
   .done(accumulatorDone)
   );
 
-  assign wr_reg  = r0[7:4];
-  assign rd_regA = r1[7:4];
-  assign rd_regB = r2[7:4];
+  assign wr_reg  = r0[3:0];
+  assign rd_regA = r1[3:0];
+  assign rd_regB = r2[3:0];
 
   logic[7:0] reg_file_data_in; // Changed from wire to logic to allow procedural assignments
   always_comb begin
@@ -120,7 +120,7 @@ assign branchFlag = controlBranchFlag || aluBranchFlag;
   .wr_en(regWriteFlag),
   .rd_addrA(rd_regA),
   .rd_addrB(rd_regB),
-  .wr_addr(rd_addrB),      // in place operation
+  .wr_addr(wr_reg),      // in place operation
   .datA_out(datA),
   .datB_out(datB),
   .done(writeDone)
@@ -143,7 +143,8 @@ assign branchFlag = controlBranchFlag || aluBranchFlag;
   .clk(clk)           ,
 	.wr_en  (memWriteFlag), // stores
 	.addr   (data_memory_addr),
-  .dat_out(mem_data_out));
+  .dat_out(mem_data_out),
+  .done(storeDone));
 
 // registered flags from ALU
   always_ff @(posedge clk) begin
