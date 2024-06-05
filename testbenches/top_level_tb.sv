@@ -21,8 +21,9 @@ module top_level_tb;
     clk = 0;
     forever #5 clk = ~clk; // Clock period of 10 time units
   end
+  
 
-  // Reset generation
+  // // Reset generation
   initial begin
     reset = 1;
     #15 reset = 0; // Reset is asserted for 15 time units
@@ -30,11 +31,11 @@ module top_level_tb;
 
   // Test sequence
   initial begin
-    req = 0;
-    #20;
-    req = 1; // Send a request signal
-    #10;
-    req = 0;
+    // req = 0;
+    // #20;
+    // req = 1; // Send a request signal
+    // #10;
+    // req = 0;
     #100; // Wait for 100 time units to observe the behavior
     $finish; // End the simulation
   end

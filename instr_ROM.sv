@@ -9,7 +9,11 @@ module instr_ROM #(parameter D=12)(
   initial							    // load the program
     $readmemb("mach_code.txt",core);
 
-  always_comb  mach_code = core[prog_ctr];
+  always_comb begin
+    mach_code = core[prog_ctr];
+  end
+
+
 
 endmodule
 

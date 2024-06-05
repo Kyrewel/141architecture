@@ -77,7 +77,7 @@ always_comb begin
               end                     
             endcase      
           end
-    default:  begin         // put type
+    'b1:  begin         // put type
             putFlag = 'b1;
             regWriteFlag = 'b0;
           end
