@@ -7,8 +7,11 @@ module reg_file #(parameter pw=4)(
   input[pw:0] wr_addr,		  // write address pointer
               rd_addrA,		  // read address pointers
 			  rd_addrB,
+  input wire [11:0] prog_ctr,
   output logic[7:0] datA_out, // read data
                     datB_out);
+					
+  logic [11:0] oldPC = -1;
 
   logic[7:0] core[2**pw];    // 2-dim array  8 wide  16 deep
 
@@ -18,9 +21,10 @@ module reg_file #(parameter pw=4)(
 
 // writes are sequential (clocked)
   always_ff @(posedge clk) begin
-    if(wr_en) begin				   // anything but stores or no ops
+    if(wr_en && oldPC !== prog_ctr) begin				   // anything but stores or no ops
       core[wr_addr] <= dat_in;
 	end
+	oldPC <= prog_ctr;
   end
   // Debugging code to print the contents of the core register array
   always_ff @(posedge clk) begin

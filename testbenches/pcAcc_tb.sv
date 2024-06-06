@@ -109,7 +109,7 @@ module pcAcc_tb;
     #10;
     reset = 0;
 
-    #400;
+    #600;
     $finish;
   end
 

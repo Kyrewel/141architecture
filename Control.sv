@@ -85,6 +85,11 @@ always_comb begin
             opEn = 'b0;
             regWriteFlag = 'b0;
           end
+    default: begin
+      putEn = 'b0;
+      opEn = 'b0;
+      regWriteFlag = 'b0;
+    end
   endcase
 end
 endmodule

@@ -26,11 +26,7 @@ module PC_tb;
     #10; // Wait for a clock edge
     reset = 0;
     // takes one cycle to update flag inside PC, then will start updating prog_ctr correctly next cycle
-
-    for (int i = 0; i < 15; i++) begin
-        #30; 
-    end
-
+    #500;
     $finish;
   end
 
