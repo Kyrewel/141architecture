@@ -24,34 +24,30 @@ end
 always @(posedge clk) begin
     if (oldPC !== prog_ctr) begin
         oldPC <= prog_ctr;
-        $info("************************ ACCUMULATOR MODULE *************************");
         if (putEn && !opEn) begin
             // Accumulation logics
             if (!r0_valid) begin
-                $info("SETTING R0 ------ value: %d", value);
+                $info("AC: time=%t putting %d in r0", value);
                 r0 <= value;
                 r0_valid <= 1;
             end else if (!r1_valid) begin
-                $info("SETTING R1 ------ value: %d", value);
+                $info("AC: time=%t putting %d in r1", value);
                 r1 <= value;
                 r1_valid <= 1;
             end else if (!r2_valid) begin
-                $info("SETTING R2 ------ value: %d", value);
+                $info("AC: time=%t putting %d in r2", value);
                 r2 <= value;
                 r2_valid <= 1;
             end
-            $info("PUTTING VALUE ------ r0: %d, r1: %d, r2: %d", r0, r1, r2);
-            $info("VALID VALUES ------ r0_valid: %b, r1_valid: %b, r2_valid: %b", r0_valid, r1_valid, r2_valid);
         end else if (opEn && !putEn) begin
-            $info("RESETTING VALID BITS");
+            $info("AC: time=%t resetting valid bits");
             r0_valid <= 0;
             r1_valid <= 0;
             r2_valid <= 0;
         end else begin
-            $error("ERROR:: PUT AND OP ENABLE BOTH ARE ACTIVE OR INACTIVE");
+            // $error("ERROR:: PUT AND OP ENABLE BOTH ARE ACTIVE OR INACTIVE");
         end 
-        $info("\n\n\n");
-        $info("\n\n\n");
+        $info("AC: values - time=%t, r0: %d, r1: %d, r2: %d, r0_valid: %b, r1_valid: %b, r2_valid: %b", $time, r0, r1, r2, r0_valid, r1_valid, r2_valid);
     end
 end
 endmodule

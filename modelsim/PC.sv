@@ -13,14 +13,15 @@ module PC #(parameter D=12)(
   logic [D-1:0] counter = 0;
   
   always_ff @(posedge clk) begin
-    $info("************************ PC MODULE *************************");
     if (reset) begin
       counter <= 0;
       numCyclesPassed <= 0;
     end else if (numCyclesPassed % 6 === 0) begin
       if (absjump_en) begin
+        $info("PC: branching to: %d", target);
         counter <= target;
       end else begin
+        $info("PC: incrementing ctr: %d", counter + 1);
         counter <= counter + 1;
       end
     end
