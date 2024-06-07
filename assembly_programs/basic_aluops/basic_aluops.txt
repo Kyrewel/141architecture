@@ -1,0 +1,41 @@
+//loads value 13 into register 0
+put 0
+put 13
+li
+//loads value 9 into register 1
+put 1
+put 9
+li
+//adds reg 0 and reg 1 and stores into reg 3
+put 3
+put 0
+put 1
+add
+//subs reg 0 and reg 1 and stores into reg 4
+put 4
+put 0
+put 1
+sub
+//xor reg 0 and reg 1 and stores into reg 5
+put 5
+put 0
+put 1
+xor
+//or reg 0 and reg 1 and stores into reg 6
+put 6
+put 0
+put 1
+or
+//and reg 0 and reg 1 and stores into reg 7
+put 7
+put 0
+put 1
+and
+//lsf value in reg 0 by 1 and stores into reg 8
+put 8
+put 0
+lsf
+//rsf value in reg 0 by 1 and stores into reg 9
+put 9
+put 0
+rsf

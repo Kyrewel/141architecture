@@ -1,0 +1,30 @@
+//loads value 0 into register 0
+put 0
+put 0
+li
+//loads value 4 into register 2
+put 2
+put 4
+li
+//loads value 1 into register 1
+put 1
+put 1
+li
+//for loops that loops when r0 < r1
+loop:
+put 15
+put 0
+put 0
+add
+put 0
+put 15
+put 1
+add
+put 0
+put 2
+put loop
+blt
+//loads 1 into reg 14 when finished
+put 14
+put 1
+li

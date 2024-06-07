@@ -1,0 +1,12 @@
+//loads value 9 into register 0
+put 0
+put 9
+li
+//st value from reg 0 into addr 0
+put 0
+put 0
+st
+//loads value from addr 0 into register 2
+put 2
+put 0
+ld

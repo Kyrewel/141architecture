@@ -63,7 +63,9 @@ def find_all_tags(file_name):
     numTags = 0
     for line in program_code:
         if len(line) != 0:
-            if ":" in line:
+            if "//" in line:
+                pass
+            elif ":" in line:
                 tag_to_id[line[:-1]] = numTags
                 id_to_line.append(str(prog_ctr+1))
                 numTags += 1
@@ -75,16 +77,16 @@ def find_all_tags(file_name):
 
 def convertfile(file_name):
 
-    tag_to_id, id_to_line, new_program_code = find_all_tags(file_name)
+    tag_to_id, id_to_line, new_program_code = find_all_tags(file_name + ".txt")
     mach_code = convert_assembly(tag_to_id, new_program_code)
 
-    f = open(f"{file_name}_machcode", "w")
+    f = open(f"{file_name}_machcode.txt", "w")
     f.write(mach_code)
     f.close()
 
-    f = open(f"{file_name}_tag_to_instruction", "w")
+    f = open(f"{file_name}_tag_to_instruction.txt", "w")
     f.write("\n".join(id_to_line))
     f.close()
 
-program_file = "test_program.txt"
+program_file = "data_mem/data_mem"
 convertfile(program_file)
