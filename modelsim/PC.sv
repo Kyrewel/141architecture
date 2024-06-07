@@ -5,7 +5,7 @@
 module PC #(parameter D=12)(
   input reset,					// synchronous reset
         clk,
-        absjump_en,				// abs. jump enable
+        branchFlag,				// abs. jump enable
   input       [D-1:0] target,	// how far/where to jump
   output logic[D-1:0] prog_ctr
 );
@@ -17,7 +17,7 @@ module PC #(parameter D=12)(
       counter <= 0;
       numCyclesPassed <= 0;
     end else if (numCyclesPassed % 6 === 0) begin
-      if (absjump_en) begin
+      if (branchFlag) begin
         $info("PC: branching to: %d", target);
         counter <= target;
       end else begin

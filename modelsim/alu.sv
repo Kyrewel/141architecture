@@ -13,29 +13,39 @@ always_comb begin
   shiftcarry_out = 'b0;
   branchFlag = 'b0;
   case(ALUOp)
-    4'b0000: // bitwise AND
+    4'b0000: begin // bitwise AND
       rslt = inA & inB;
-	  4'b0001: // bitwise XOR
+    end
+	  4'b0001: begin // bitwise XOR
       rslt = inA ^ inB;
-	  4'b0010: // bitwise OR
+    end
+	  4'b0010: begin// bitwise OR
       rslt = inA | inB;
-	  4'b0011: // logical left shift
+    end
+	  4'b0011: begin // logical left shift
       {shiftcarry_out, rslt} = {inA, shiftcarry_in};
-	  4'b0100: // logical right shift
+    end
+	  4'b0100: begin // logical right shift
       {rslt, shiftcarry_out} = {shiftcarry_in,inA};
-	  4'b0101: // logical add
+    end
+	  4'b0101: begin // logical add
       {shiftcarry_out, rslt} = inA + inB + shiftcarry_in;
-	  4'b0110: // logical subtract
+    end
+	  4'b0110: begin // logical subtract
       {shiftcarry_out, rslt} = inA - inB + shiftcarry_in;
-    4'b0111: // less than
+    end
+    4'b0111: begin // less than
       if(inA < inB)
         branchFlag = 1;
-    4'b1000: // greater than
+    end
+    4'b1000: begin // greater than
       if(inA > inB)
         branchFlag = 1;
-    4'b1001: // equal to
+    end
+    4'b1001: begin // equal to
       if (inA == inB)
         branchFlag = 1;
+    end
     default:
       rslt = inA;
   endcase

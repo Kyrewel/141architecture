@@ -11,7 +11,6 @@ module top_level(
       memWriteFlag, 
       aluBranchFlag, 
       controlBranchFlag, 
-      absjump_en,
       memToRegFlag,
       immtoRegFlag,
       putEn,
@@ -38,10 +37,16 @@ module top_level(
   PC pc(
     .reset(reset),
     .clk(clk),
-    .absjump_en(absjump_en),
+    .branchFlag(aluBranchFlag || controlBranchFlag),
     .target(target),
     .prog_ctr(prog_ctr)
   );
+
+// program look up module
+  PC_LUT pl1 (
+    .tag  (r2),
+    .target(target)
+  );   
 
 // accumulator module
   Accumulator acc(
@@ -101,6 +106,7 @@ module top_level(
     end
   end
 
+// register file module
   reg_file rf(
     .dat_in(reg_file_data_in),
     .clk(clk),
@@ -113,11 +119,20 @@ module top_level(
     .prog_ctr(prog_ctr)
   ); 
 
+  dat_mem dm (
+    .dat_in(datA),
+    .clk(clk),
+    .wr_en(wr_en),
+    .addr(memWriteFlag ? r1 : r0),
+    .done(done),
+    .prog_ctr(prog_ctr),
+    .dat_out(dat_out)
+  );
+
+  assign done = program_done;
+
   always_ff @(posedge clk) begin
     $info("Time: %0t | regWriteFlag: %b | memWriteFlag: %b | aluBranchFlag: %b | controlBranchFlag: %b | absjump_en: %b | memToRegFlag: %b | immtoRegFlag: %b | putEn: %b | opEn: %b | program_done: %b",
              $time, regWriteFlag, memWriteFlag, aluBranchFlag, controlBranchFlag, absjump_en, memToRegFlag, immtoRegFlag, putEn, opEn, program_done);
   end
-
-  assign done = program_done;
-
 endmodule
