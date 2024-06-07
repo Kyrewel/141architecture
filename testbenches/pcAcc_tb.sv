@@ -10,6 +10,7 @@ module pcAcc_tb;
   reg  branchFlag;
   reg  memToRegFlag; 
   reg  immtoRegFlag;
+  reg  done;
   wire[8:0]   mach_code;          // machine code
   wire[7:0]   put_value;
   wire [7:0]  r0, r1, r2;
@@ -63,7 +64,8 @@ module pcAcc_tb;
 
   instr_ROM rom1(
     .mach_code(mach_code),
-    .prog_ctr(prog_ctr)
+    .prog_ctr(prog_ctr),
+    .program_done(done)
   );
 
   alu alu1(
@@ -95,7 +97,8 @@ module pcAcc_tb;
   .rd_addrB(r2[3:0]),
   .wr_addr(r0[3:0]),      // in place operation
   .datA_out(datA),
-  .datB_out(datB)
+  .datB_out(datB),
+  .prog_ctr(prog_ctr)
   ); 
 
   // Clock generation
@@ -104,13 +107,10 @@ module pcAcc_tb;
     forever #5 clk = ~clk;
   end
 
-  initial begin
-    reset = 1;
-    #10;
-    reset = 0;
-
-    #600;
-    $finish;
+  always_comb begin
+    if (done) begin
+      $finish;
+    end
   end
 
   // Monitor outputs
