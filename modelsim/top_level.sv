@@ -32,6 +32,9 @@ module top_level(
   wire [7:0]  datA,datB;
   //data memory output
   wire [7:0]   mem_data_out;
+  //target
+  wire [12:0]   target;
+
 
 // program counter module
   PC pc(
@@ -124,9 +127,8 @@ module top_level(
     .clk(clk),
     .wr_en(wr_en),
     .addr(memWriteFlag ? r1 : r0),
-    .done(done),
     .prog_ctr(prog_ctr),
-    .dat_out(dat_out)
+    .dat_out(mem_data_out)
   );
 
   assign done = program_done;
