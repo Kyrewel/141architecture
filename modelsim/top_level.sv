@@ -135,6 +135,6 @@ module top_level(
 
   always_ff @(posedge clk) begin
     $info("Time: %0t | regWriteFlag: %b | memWriteFlag: %b | aluBranchFlag: %b | controlBranchFlag: %b | branchFlag: %b | memToRegFlag: %b | immtoRegFlag: %b | putEn: %b | opEn: %b | program_done: %b",
-             $time, regWriteFlag, memWriteFlag, aluBranchFlag, controlBranchFlag, branchFlag, memToRegFlag, immtoRegFlag, putEn, opEn, program_done);
+             $time, regWriteFlag, memWriteFlag, aluBranchFlag, controlBranchFlag, aluBranchFlag || controlBranchFlag, memToRegFlag, immtoRegFlag, putEn, opEn, program_done);
   end
 endmodule
