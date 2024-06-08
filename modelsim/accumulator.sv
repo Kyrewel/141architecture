@@ -27,20 +27,20 @@ always @(posedge clk) begin
         if (putEn && !opEn) begin
             // Accumulation logics
             if (!r0_valid) begin
-                $info("AC: time=%t putting %d in r0", value);
+                $info("AC: time=%t putting %d in r0", $time, value);
                 r0 <= value;
                 r0_valid <= 1;
             end else if (!r1_valid) begin
-                $info("AC: time=%t putting %d in r1", value);
+                $info("AC: time=%t putting %d in r1", $time, value);
                 r1 <= value;
                 r1_valid <= 1;
             end else if (!r2_valid) begin
-                $info("AC: time=%t putting %d in r2", value);
+                $info("AC: time=%t putting %d in r2", $time, value);
                 r2 <= value;
                 r2_valid <= 1;
             end
         end else if (opEn && !putEn) begin
-            $info("AC: time=%t resetting valid bits");
+            $info("AC: time=%t resetting valid bits", $time);
             r0_valid <= 0;
             r1_valid <= 0;
             r2_valid <= 0;
