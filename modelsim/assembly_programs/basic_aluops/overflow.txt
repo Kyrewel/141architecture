@@ -6,7 +6,21 @@ put 1
 put 64
 li
 
+put 4
+put 0
+li
+
+put 5
+put 0
+li
+
 put 3
 put 0
 put 1
 add
+
+put 4
+put 5
+put 15
+add
+
