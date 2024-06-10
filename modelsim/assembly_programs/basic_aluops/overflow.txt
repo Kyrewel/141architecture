@@ -1,0 +1,12 @@
+put 0
+put 64
+li
+
+put 1
+put 64
+li
+
+put 3
+put 0
+put 1
+add
