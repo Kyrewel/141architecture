@@ -49,6 +49,7 @@ always_comb begin
     default:
       rslt = inA;
   endcase
+  $monitor("ALU Result: %b", rslt); // Monitor for rslt added
 end
    
 endmodule

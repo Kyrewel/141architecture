@@ -33,8 +33,15 @@ module top_level(
   //data memory output
   wire [7:0]   mem_data_out;
   //target
-  wire [12:0]   target;
+  wire [11:0]   target;
 
+  wire sc_in = 0;
+  wire sc_out
+
+// mem[0,1] = R3, R4
+// ADD R3  R1  R2
+// R15 = 1
+// Add R4 R15 R0
 
 // program counter module
   PC pc(
@@ -97,6 +104,12 @@ module top_level(
   .shiftcarry_out(sc_out), 
   .branchFlag(aluBranchFlag)
   );
+  
+  // CAREFUL FOR TIMING
+  always_comb begin
+    rf.core[15] = sc_out;
+  end
+
 
   logic[7:0] reg_file_data_in; // Changed from wire to logic to allow procedural assignments
   always_comb begin

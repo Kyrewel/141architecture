@@ -220,10 +220,10 @@ Resolution = ps
 UserTimeUnit = default
 
 ; Default run length
-RunLength = 100 ps
+RunLength = 0 ps
 
 ; Maximum iterations that can be run without advancing simulation time
-IterationLimit = 5000
+IterationLimit = 10000000
 
 ; Directive to license manager:
 ; vhdl          Immediately reserve a VHDL license
@@ -238,7 +238,7 @@ IterationLimit = 5000
 
 ; Stop the simulator after a VHDL/Verilog assertion message
 ; 0 = Note  1 = Warning  2 = Error  3 = Failure  4 = Fatal
-BreakOnAssertion = 3
+BreakOnAssertion = 4
 
 ; Assertion Message Format
 ; %S - Severity Level 
@@ -377,6 +377,7 @@ ConcurrentFileLimit = 40
 ; Default is on, uncomment to turn off.
 ; NoAutoSDFCompile = 1
 
+DelayFileOpen = 1
 [lmc]
 
 [msg_system]
@@ -412,21 +413,21 @@ Project_DefaultLib = work
 Project_SortMethod = unused
 Project_Files_Count = 12
 Project_File_0 = C:/Users/Max/Documents/GitHub/141architecture/modelsim/instr_ROM.sv
-Project_File_P_0 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717633581 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 vlog_showsource 0 vlog_hazard 0 cover_optlevel 3 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to work vlog_options {} compile_order 4 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_P_0 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_fsm 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1718054252 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 vlog_showsource 0 vlog_hazard 0 cover_optlevel 3 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to work vlog_options {} compile_order 4 cover_expr 0 dont_compile 0 cover_stmt 0
 Project_File_1 = C:/Users/Max/Documents/GitHub/141architecture/testbenches/alu_tb.sv
 Project_File_P_1 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_fsm 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717028290 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 vlog_showsource 0 vlog_hazard 0 cover_optlevel 3 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to work vlog_options {} compile_order 9 cover_expr 0 dont_compile 0 cover_stmt 0
 Project_File_2 = C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv
-Project_File_P_2 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717866858 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 cover_optlevel 3 vlog_hazard 0 vlog_showsource 0 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to work vlog_upper 0 cover_noshort 0 compile_order 3 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_P_2 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_fsm 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717868003 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 vlog_showsource 0 vlog_hazard 0 cover_optlevel 3 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to work vlog_options {} compile_order 3 cover_expr 0 dont_compile 0 cover_stmt 0
 Project_File_3 = C:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv
-Project_File_P_3 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717867007 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 cover_optlevel 3 vlog_hazard 0 vlog_showsource 0 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to work vlog_upper 0 cover_noshort 0 compile_order 0 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_P_3 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 folder {Top Level} last_compile 1718054105 cover_fsm 0 cover_branch 0 vlog_noload 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 vlog_showsource 0 vlog_hazard 0 cover_optlevel 3 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to work vlog_options {} compile_order 0 cover_expr 0 dont_compile 0 cover_stmt 0
 Project_File_4 = C:/Users/Max/Documents/GitHub/141architecture/modelsim/control.sv
 Project_File_P_4 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 vlog_noload 0 folder {Top Level} last_compile 1717633051 cover_fsm 0 cover_branch 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 vlog_showsource 0 vlog_hazard 0 cover_optlevel 3 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to work vlog_options {} compile_order 2 cover_expr 0 dont_compile 0 cover_stmt 0
 Project_File_5 = C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv
-Project_File_P_5 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717866858 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 cover_optlevel 3 vlog_hazard 0 vlog_showsource 0 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to work vlog_upper 0 cover_noshort 0 compile_order 8 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_P_5 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 folder {Top Level} last_compile 1718055108 cover_fsm 0 cover_branch 0 vlog_noload 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 vlog_showsource 0 vlog_hazard 0 cover_optlevel 3 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to work vlog_options {} compile_order 8 cover_expr 0 dont_compile 0 cover_stmt 0
 Project_File_6 = C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv
 Project_File_P_6 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717866858 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 cover_optlevel 3 vlog_hazard 0 vlog_showsource 0 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to work vlog_upper 0 cover_noshort 0 compile_order 5 dont_compile 0 cover_expr 0 cover_stmt 0
 Project_File_7 = C:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv
-Project_File_P_7 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717866858 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 cover_optlevel 3 vlog_hazard 0 vlog_showsource 0 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to work vlog_upper 0 cover_noshort 0 compile_order 7 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_P_7 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 vlog_noload 0 folder {Top Level} last_compile 1718054474 cover_fsm 0 cover_branch 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 cover_optlevel 3 vlog_hazard 0 vlog_showsource 0 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to work vlog_upper 0 cover_noshort 0 compile_order 7 dont_compile 0 cover_expr 0 cover_stmt 0
 Project_File_8 = C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv
 Project_File_P_8 = cover_toggle 0 file_type systemverilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat SV vlog_nodebug 0 cover_fsm 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1717866858 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 vlog_showsource 0 vlog_hazard 0 cover_optlevel 3 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to work vlog_options {} compile_order 11 cover_expr 0 dont_compile 0 cover_stmt 0
 Project_File_9 = C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC_LUT.sv

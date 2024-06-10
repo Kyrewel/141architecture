@@ -47,7 +47,7 @@ always @(posedge clk) begin
         end else begin
             // $error("ERROR:: PUT AND OP ENABLE BOTH ARE ACTIVE OR INACTIVE");
         end 
-        $info("AC: values - time=%t, r0: %d, r1: %d, r2: %d, r0_valid: %b, r1_valid: %b, r2_valid: %b", $time, r0, r1, r2, r0_valid, r1_valid, r2_valid);
+        $info("AC: values -- r0: %d, r1: %d, r2: %d, r0_valid: %b, r1_valid: %b, r2_valid: %b", r0, r1, r2, r0_valid, r1_valid, r2_valid);
     end
 end
 endmodule

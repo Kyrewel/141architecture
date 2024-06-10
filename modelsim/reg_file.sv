@@ -31,7 +31,7 @@ module reg_file #(parameter pw=4)(
   always_ff @(posedge clk) begin
     $info("---------- RF CORE ----------");
     for (int i = 0; i < 2**pw; i++) begin
-      $info("RF: core[%0d] = %h", i, core[i]);
+      $display("RF: core[%0d] = %d", i, core[i]);
     end
   end
 
