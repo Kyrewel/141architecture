@@ -16,7 +16,7 @@ module PC #(parameter D=12)(
     if (reset) begin
       counter <= 0;
       numCyclesPassed <= 0;
-    end else if (numCyclesPassed % 6 === 0) begin
+    end else if (numCyclesPassed % 10 === 0) begin
       if (branchFlag) begin
         $info("PC: branching to: %d", target);
         counter <= target;

@@ -13,7 +13,7 @@ module reg_file #(parameter pw=4)(
 					
   logic [11:0] oldPC = -1;
 
-  logic[7:0] core[2**pw];    // 2-dim array  8 wide  16 deep
+  logic [7:0] core[2**pw];    // 2-dim array  8 wide  16 deep
 
 // reads are combinational
   assign datA_out = core[rd_addrA];
@@ -33,7 +33,8 @@ module reg_file #(parameter pw=4)(
     for (int i = 0; i < 2**pw; i++) begin
       $display("RF: core[%0d] = %d", i, core[i]);
     end
-  end
+end
+  
 
 endmodule
 /*

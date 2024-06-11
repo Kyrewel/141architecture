@@ -36,7 +36,7 @@ module top_level(
   wire [11:0]   target;
 
   wire sc_in = 0;
-  wire sc_out
+  wire sc_out;
 
 // mem[0,1] = R3, R4
 // ADD R3  R1  R2
@@ -107,7 +107,9 @@ module top_level(
   
   // CAREFUL FOR TIMING
   always_comb begin
-    rf.core[15] = sc_out;
+    if ((sc_out === 'b0 || sc_out === 'b1) && r1 !== 15 && r2 !== 15) begin
+      rf.core[15] = sc_out;
+    end
   end
 
 
@@ -138,8 +140,8 @@ module top_level(
   dat_mem dm (
     .dat_in(datA),
     .clk(clk),
-    .wr_en(wr_en),
-    .addr(memWriteFlag ? r1 : r0),
+    .wr_en(memWriteFlag),
+    .addr(memWriteFlag ? r0 : r1),
     .prog_ctr(prog_ctr),
     .dat_out(mem_data_out)
   );

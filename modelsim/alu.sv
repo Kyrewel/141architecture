@@ -1,16 +1,18 @@
 // combinational -- no clock
 module alu(
   input[3:0] ALUOp,         // ALU instructions
-  input[7:0] inA, inB,	  // 8-bit wide data path
+  input [7:0] inA, inB,	  // 8-bit wide data path
   input shiftcarry_in,            // carry in bit
-  output logic[7:0] rslt,       // output result
+  output logic [7:0] rslt,       // output result
   output logic shiftcarry_out,     // carry out bit
   output logic branchFlag
 );
 
+logic [7:0] tempAdd;
+
 always_comb begin 
   rslt = 'b0;            
-  shiftcarry_out = 'b0;
+  shiftcarry_out = 'bx;
   branchFlag = 'b0;
   case(ALUOp)
     4'b0000: begin // bitwise AND
@@ -23,16 +25,62 @@ always_comb begin
       rslt = inA | inB;
     end
 	  4'b0011: begin // logical left shift
-      {shiftcarry_out, rslt} = {inA, shiftcarry_in};
+      {shiftcarry_out, rslt} = inA << 1;
+      rslt[0] = shiftcarry_in; // Fill LSB with carry in
     end
 	  4'b0100: begin // logical right shift
-      {rslt, shiftcarry_out} = {shiftcarry_in,inA};
+      {shiftcarry_out, rslt} = inA >> 1;
+      rslt[7] = 0; // Clear MSB to ensure it's a logical shift
     end
-	  4'b0101: begin // logical add
-      {shiftcarry_out, rslt} = inA + inB + shiftcarry_in;
+	  4'b0101: begin  // signed add
+      // Check for overflow, then do add operation
+      tempAdd = inA + inB;
+      if (inA[7] == 0 && inB[7] == 0) begin // both positive
+        if (tempAdd[7] == 1) begin
+          // Positive overflow
+          shiftcarry_out = 1;
+          tempAdd[7] = 0; // Correct overflow
+        end else begin
+          shiftcarry_out = 0;
+        end
+      end else if (inA[7] == 1 && inB[7] == 1) begin // both negative
+        if (tempAdd[7] == 0) begin
+          // Negative overflow
+          shiftcarry_out = 1;
+          tempAdd[7] = 1; // Correct overflow
+        end else begin
+          shiftcarry_out = 0;
+        end
+      end else begin // one positive, one negative
+        // No overflow possible
+        shiftcarry_out = 0;
+      end
+      rslt = tempAdd;
     end
-	  4'b0110: begin // logical subtract
-      {shiftcarry_out, rslt} = inA - inB + shiftcarry_in;
+	  4'b0110: begin // signed subtract
+    // Check for overflow, then do subtract operation
+    tempAdd = inA - inB;
+    if (inA[7] == 0 && inB[7] == 1) begin // positive - negative
+        if (tempAdd[7] == 1) begin
+            // Positive overflow
+            shiftcarry_out = 1;
+            tempAdd[7] = 0; // Correct overflow
+        end else begin
+            shiftcarry_out = 0;
+        end
+    end else if (inA[7] == 1 && inB[7] == 0) begin // negative - positive
+        if (tempAdd[7] == 0) begin
+            // Negative overflow
+            shiftcarry_out = 1;
+            tempAdd[7] = 1; // Correct overflow
+        end else begin
+            shiftcarry_out = 0;
+        end
+    end else begin // both positive or both negative
+        // No overflow possible
+        shiftcarry_out = 0;
+    end
+    rslt = tempAdd;
     end
     4'b0111: begin // less than
       if(inA < inB)
@@ -50,6 +98,7 @@ always_comb begin
       rslt = inA;
   endcase
   $monitor("ALU Result: %b", rslt); // Monitor for rslt added
+$monitor("Current Opcode: %b", ALUOp);  
 end
    
 endmodule
