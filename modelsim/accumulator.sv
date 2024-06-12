@@ -27,27 +27,27 @@ always @(posedge clk) begin
         if (putEn && !opEn) begin
             // Accumulation logics
             if (!r0_valid) begin
-                $info("AC: time=%t putting %d in r0", $time, value);
+                $display("AC: time=%t putting %d in r0", $time, value);
                 r0 <= value;
                 r0_valid <= 1;
             end else if (!r1_valid) begin
-                $info("AC: time=%t putting %d in r1", $time, value);
+                $display("AC: time=%t putting %d in r1", $time, value);
                 r1 <= value;
                 r1_valid <= 1;
             end else if (!r2_valid) begin
-                $info("AC: time=%t putting %d in r2", $time, value);
+                $display("AC: time=%t putting %d in r2", $time, value);
                 r2 <= value;
                 r2_valid <= 1;
             end
         end else if (opEn && !putEn) begin
-            $info("AC: time=%t resetting valid bits", $time);
+            $display("AC: time=%t resetting valid bits", $time);
             r0_valid <= 0;
             r1_valid <= 0;
             r2_valid <= 0;
         end else begin
             // $error("ERROR:: PUT AND OP ENABLE BOTH ARE ACTIVE OR INACTIVE");
         end 
-        $info("AC: values -- r0: %d, r1: %d, r2: %d, r0_valid: %b, r1_valid: %b, r2_valid: %b", r0, r1, r2, r0_valid, r1_valid, r2_valid);
+        $monitor("AC: values -- r0: %d, r1: %d, r2: %d, r0_valid: %b, r1_valid: %b, r2_valid: %b", r0, r1, r2, r0_valid, r1_valid, r2_valid);
     end
 end
 endmodule

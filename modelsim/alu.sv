@@ -98,7 +98,7 @@ always_comb begin
       rslt = inA;
   endcase
   $monitor("ALU Result: %b", rslt); // Monitor for rslt added
-$monitor("Current Opcode: %b", ALUOp);  
+$monitor("Current Opcode: %b, Current inA: %d, Current inB: %d", ALUOp, inA, inB);  
 end
    
 endmodule

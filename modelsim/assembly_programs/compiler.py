@@ -67,7 +67,7 @@ def find_all_tags(file_name):
                 pass
             elif ":" in line:
                 tag_to_id[line[:-1]] = numTags
-                id_to_line.append(str(prog_ctr+1))
+                id_to_line.append(str(prog_ctr))
                 numTags += 1
             else:
                 new_program_code.append(line)

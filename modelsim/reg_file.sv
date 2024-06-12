@@ -22,19 +22,32 @@ module reg_file #(parameter pw=4)(
 // writes are sequential (clocked)
   always_ff @(posedge clk) begin
     if(wr_en && oldPC !== prog_ctr) begin				   // anything but stores or no ops
-      $info("RF: time=%t writing %d to reg %d", $time, dat_in, wr_addr); 
+      $display("RF: time=%t writing %d to reg %d", $time, dat_in, wr_addr); 
       core[wr_addr] <= dat_in;
 	    oldPC <= prog_ctr;
 	  end	
   end
   // Debugging code to print the contents of the core register array
-  always_ff @(posedge clk) begin
-    $info("---------- RF CORE ----------");
+  logic [7:0] old_core[2**pw]; // Array to store old values of core for comparison
+
+  initial begin
     for (int i = 0; i < 2**pw; i++) begin
-      $display("RF: core[%0d] = %d", i, core[i]);
+      old_core[i] = 'bx; // Initialize old_core values
     end
-end
-  
+  end
+
+  always_ff @(posedge clk) begin
+    for (int i = 0; i < 2**pw; i++) begin
+      if (core[i] !== old_core[i]) begin
+        $display("RF: core[%0d] changed to %d at time %t", i, core[i], $time);
+        for (int j = 0; j < 2**pw; j++) begin
+          $display("RF: core[%0d] = %d", j, core[j]);
+        end
+        old_core = core; // Update old_core to the current state
+        break;
+      end
+    end
+  end
 
 endmodule
 /*

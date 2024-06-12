@@ -2,8 +2,8 @@
 put 0
 put 0
 li
-//loads value 4 into register 3
-put 3
+//loads value 4 into register 2
+put 2
 put 4
 li
 //loads value 1 into register 1
@@ -25,9 +25,9 @@ put 0
 put 13
 put 1
 add
+put loop
 put 0
 put 2
-put loop
 blt
 //loads 1 into reg 13 when finished
 put 13

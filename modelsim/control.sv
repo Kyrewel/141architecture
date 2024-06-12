@@ -55,7 +55,7 @@ always_comb begin
                       end
               'b1000: begin     //jump
                         regWriteFlag = 'b0;
-                        branchFlag = 'b1;
+                        branchFlag = 1;
                       end
               'b1001: begin     //branch equal to
                         regWriteFlag = 'b0;

@@ -16,13 +16,15 @@ module PC #(parameter D=12)(
     if (reset) begin
       counter <= 0;
       numCyclesPassed <= 0;
-    end else if (numCyclesPassed % 10 === 0) begin
+    end else if (numCyclesPassed > 10) begin
       if (branchFlag) begin
-        $info("PC: branching to: %d", target);
+        $display("PC: branching to: %d", target);
         counter <= target;
+        numCyclesPassed <= 0;
       end else begin
-        $info("PC: incrementing ctr: %d", counter + 1);
+        $display("PC: incrementing ctr: %d", counter + 1);
         counter <= counter + 1;
+        numCyclesPassed <= 0;
       end
     end
     prog_ctr <= counter; // Update every cycle

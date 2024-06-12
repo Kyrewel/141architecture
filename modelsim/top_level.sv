@@ -38,23 +38,19 @@ module top_level(
   wire sc_in = 0;
   wire sc_out;
 
-// mem[0,1] = R3, R4
-// ADD R3  R1  R2
-// R15 = 1
-// Add R4 R15 R0
 
 // program counter module
   PC pc(
     .reset(reset),
     .clk(clk),
-    .branchFlag(aluBranchFlag || controlBranchFlag),
+    .branchFlag(aluBranchFlag === 1 || controlBranchFlag === 1),
     .target(target),
     .prog_ctr(prog_ctr)
   );
 
 // program look up module
   PC_LUT pl1 (
-    .tag  (r2),
+    .tag  (r0),
     .target(target)
   );   
 
@@ -148,8 +144,8 @@ module top_level(
 
   assign done = program_done;
 
-  always_ff @(posedge clk) begin
-    $info("Time: %0t | regWriteFlag: %b | memWriteFlag: %b | aluBranchFlag: %b | controlBranchFlag: %b | branchFlag: %b | memToRegFlag: %b | immtoRegFlag: %b | putEn: %b | opEn: %b | program_done: %b",
+  always_comb begin
+    $monitor("Time: %0t | regWriteFlag: %b | memWriteFlag: %b | aluBranchFlag: %b | controlBranchFlag: %b | branchFlag: %b | memToRegFlag: %b | immtoRegFlag: %b | putEn: %b | opEn: %b | program_done: %b",
              $time, regWriteFlag, memWriteFlag, aluBranchFlag, controlBranchFlag, aluBranchFlag || controlBranchFlag, memToRegFlag, immtoRegFlag, putEn, opEn, program_done);
   end
 endmodule
