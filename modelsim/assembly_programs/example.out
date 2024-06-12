@@ -1,0 +1,62 @@
+//
+li 0 0
+li 1 1
+li 12 63
+// min_value + max_value
+li 5 127
+li 6 0
+
+//outer loop counter
+li 2 0
+outer_loop:
+//load MSB
+ld 7 2
+// add 1 to reg 2
+add 2 2 1
+//load LSB
+ld 8 2
+//inner loop counter
+li 3 0 
+inner_loop:
+//load MSB
+ld 9 3
+// add 1 to reg 3
+add 3 3 1
+//load LSB
+ld 10 3
+//hamming distance loop counter
+li 11 7
+//differences in MSB
+xor 13 7 9
+ld 14 0
+hamming_loop1:
+and 4 13 1
+add 14 14 4
+rsf 13 13
+sub 11 11 1
+bgt hamming_loop1 11 0
+
+//hamming distance loop2 counter
+li 11 7
+//differences in MSB
+xor 13 8 10
+hamming_loop1:
+and 4 13 1
+add 14 14 4
+rsf 13 13
+sub 11 11 1
+bgt hamming_loop1 11 0
+
+
+bgt dont_update_min 14 5
+add 5 14 0
+dont_update_min:
+blt dont_update_max 14 6
+add 6 14 0
+dont_update_max:
+blt inner_loop 3 12
+blt outer_loop 2 12
+
+st  12 6
+add 12 12 1
+st  12 5 
