@@ -43,6 +43,12 @@ module top_level(
   wire sc_in = 0;
   wire sc_out;
 
+  reg accum_print = 0;
+  reg reg_file_print = 0;
+  reg dat_mem_print = 0;
+  reg top_level_print = 0;
+  reg pc_print = 0;
+
 
 // program counter module
   PC pc(
@@ -50,7 +56,8 @@ module top_level(
     .clk(clk),
     .branchFlag(aluBranchFlag === 1 || controlBranchFlag === 1),
     .target(target),
-    .prog_ctr(prog_ctr)
+    .prog_ctr(prog_ctr),
+    .pc_print(pc_print)
   );
 
 // program look up module
@@ -68,6 +75,7 @@ module top_level(
     .r0(r0),
     .r1(r1),
     .r2(r2),
+    .accum_print(accum_print),
     
     .control_ctr(control_ctr),
     .accumulator_ctr(accumulator_ctr)
@@ -130,6 +138,7 @@ module top_level(
     .alu_result(alu_result),
     .sc_out(sc_out),
     .r2(r2),
+    .reg_file_print(reg_file_print),
     
     .dat_mem_ctr(dat_mem_ctr),
     .accumulator_ctr(accumulator_ctr),
@@ -143,15 +152,27 @@ module top_level(
     .wr_en(memWriteFlag),
     .addr(datA),
     .dat_out(mem_data_out),
+    .dat_mem_print(dat_mem_print),
     
     .reg_file_ctr(reg_file_ctr),
     .dat_mem_ctr(dat_mem_ctr)
   );
 
   assign done = program_done;
+  
+  always_comb begin
+    if (done) begin
+      $display("Register Memory State at Completion:");
+      for (int j = 0; j < 2**4; j++) begin
+        $display("RF: core[%0d] = %d", j, $signed(rf.core[j]));
+      end
+    end
+  end
 
   always_comb begin
-    $monitor("Time: %0t | regWriteFlag: %b | memWriteFlag: %b | aluBranchFlag: %b | controlBranchFlag: %b | branchFlag: %b | memToRegFlag: %b | immtoRegFlag: %b | putEn: %b | opEn: %b | program_done: %b",
+    if (top_level_print) begin
+      $monitor("Time: %0t | regWriteFlag: %b | memWriteFlag: %b | aluBranchFlag: %b | controlBranchFlag: %b | branchFlag: %b | memToRegFlag: %b | immtoRegFlag: %b | putEn: %b | opEn: %b | program_done: %b",
              $time, regWriteFlag, memWriteFlag, aluBranchFlag, controlBranchFlag, aluBranchFlag || controlBranchFlag, memToRegFlag, immtoRegFlag, putEn, opEn, program_done);
+    end
   end
 endmodule

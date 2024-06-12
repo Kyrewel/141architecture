@@ -2,7 +2,7 @@
 // default address pointer width = 4, for 16 registers
 module reg_file #(parameter pw=4)(
   input[7:0] r1, r2, mem_data_out, alu_result,
-  input immtoRegFlag, memToRegFlag, sc_out,
+  input immtoRegFlag, memToRegFlag, sc_out, 
   input      clk,
   input      wr_en,           // write enable
   input[pw-1:0] wr_addr,		  // write address pointer
@@ -11,6 +11,8 @@ module reg_file #(parameter pw=4)(
   input wire [11:0] dat_mem_ctr,
                     accumulator_ctr,
                     alu_ctr,
+  input wire reg_file_print,
+  
   output logic [11:0] reg_file_ctr,
   output logic[7:0] datA_out, // read data
                     datB_out);
@@ -51,10 +53,12 @@ module reg_file #(parameter pw=4)(
 
       // Write operation
       if(wr_en) begin				   // anything but stores or no ops
-        $display("RF: time=%t writing %d to reg %d", $time, data_in, wr_addr); 
         core[wr_addr] = data_in;
-        for (int j = 0; j < 2**pw; j++) begin
-          $display("RF: core[%0d] = %d", j, $signed(core[j]));
+        if (reg_file_print) begin
+          $display("RF: time=%t writing %d to reg %d", $time, data_in, wr_addr); 
+          for (int j = 0; j < 2**pw; j++) begin
+            $display("RF: core[%0d] = %d", j, $signed(core[j]));
+          end
         end
       end	
       old_dat_mem_ctr = dat_mem_ctr;
@@ -64,7 +68,6 @@ module reg_file #(parameter pw=4)(
       if ((sc_out === 'b0 || sc_out === 'b1) && r1 !== 15 && r2 !== 15) begin
         core[15] = sc_out;
       end
-
     end
   end
   // Debugging code to print the contents of the core register array

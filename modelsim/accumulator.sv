@@ -2,6 +2,7 @@ module Accumulator(
     input wire clk,    // Clock input
     input wire putEn,    // Put signal to trigger accumulation
     input wire opEn,     // Op signal to trigger output
+    input wire accum_print,
     input wire [7:0] value, // 8-bit input value
     input wire [11:0] control_ctr,
 
@@ -23,20 +24,28 @@ always_comb begin
         if (putEn && !opEn) begin
             // Accumulation logics
             if (!r0_valid) begin
-                $display("AC: time=%t putting %d in r0", $time, value);
+                if (accum_print) begin
+                    $display("AC: time=%t putting %d in r0", $time, value);
+                end
                 r0 = value;
                 r0_valid = 1;
             end else if (!r1_valid) begin
-                $display("AC: time=%t putting %d in r1", $time, value);
+                if (accum_print) begin
+                    $display("AC: time=%t putting %d in r1", $time, value);
+                end
                 r1 = value;
                 r1_valid = 1;
             end else if (!r2_valid) begin
-                $display("AC: time=%t putting %d in r2", $time, value);
+                if (accum_print) begin
+                    $display("AC: time=%t putting %d in r2", $time, value);
+                end
                 r2 = value;
                 r2_valid = 1;
             end
         end else if (opEn && !putEn) begin
-            $display("AC: time=%t resetting valid bits", $time);
+            if (accum_print) begin
+                $display("AC: time=%t resetting valid bits", $time);
+            end
             r0_valid = 0;
             r1_valid = 0;
             r2_valid = 0;
@@ -45,7 +54,9 @@ always_comb begin
         end 
         old_control_ctr = control_ctr;
         accumulator_ctr = control_ctr;
-        $monitor("AC: values -- r0: %d, r1: %d, r2: %d, r0_valid: %b, r1_valid: %b, r2_valid: %b", r0, r1, r2, r0_valid, r1_valid, r2_valid);
+        if (accum_print) begin
+            $monitor("AC: values -- r0: %d, r1: %d, r2: %d, r0_valid: %b, r1_valid: %b, r2_valid: %b", r0, r1, r2, r0_valid, r1_valid, r2_valid);
+        end
     end
 end
 endmodule

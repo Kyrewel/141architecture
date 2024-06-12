@@ -3,6 +3,8 @@ module dat_mem (
   input[7:0] dat_in,
   input      clk,
   input      wr_en,	          // write enable
+  input     dat_mem_print,
+
   input[7:0] addr,		      // address pointer
   input logic [11:0] reg_file_ctr,
   output logic [7:0] dat_out,
@@ -17,7 +19,9 @@ module dat_mem (
       dat_out = core[addr];
       if(wr_en) begin				  // wr_en usually = 0; = 1 	
         core[addr] = dat_in;
-        $display("DM: time=%t writing %d to addr %d, Core value: %d", $time, dat_in, addr, core[addr]); 	
+        if (dat_mem_print) begin
+          $display("DM: time=%t writing %d to addr %d, Core value: %d", $time, dat_in, addr, core[addr]); 	
+        end
       end
       oldRegFileCtr = reg_file_ctr;
       dat_mem_ctr = reg_file_ctr;

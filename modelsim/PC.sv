@@ -6,6 +6,7 @@ module PC #(parameter D=12)(
   input reset,					// synchronous reset
         clk,
         branchFlag,				// abs. jump enable
+        pc_print,
   input       [D-1:0] target,	// how far/where to jump
   output logic[D-1:0] prog_ctr
 );
@@ -14,16 +15,22 @@ module PC #(parameter D=12)(
   
   always_ff @(posedge clk) begin
     if (reset) begin
-      $display("PC: resetting");
+      if (pc_print) begin
+        $display("PC: resetting");
+      end
       counter <= 0;
       numCyclesPassed <= 1;
-    end else if (numCyclesPassed % 10 == 0) begin
+    end else if (numCyclesPassed % 5 == 0) begin
       if (branchFlag) begin
-        $display("PC: branching to: %d", target);
+        if (pc_print) begin
+          $display("PC: branching to: %d", target);
+        end
         counter <= target;
         numCyclesPassed <= 1;
       end else begin
-        $display("PC: time: %t incrementing ctr: %d", $time, counter + 1);
+        if (pc_print) begin
+          $display("PC: time: %t incrementing ctr: %d", $time, counter + 1);
+        end
         counter <= counter + 1;
         numCyclesPassed <= 1;
       end
