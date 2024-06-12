@@ -1,3 +1,6 @@
+# Opcode Table for Accumulator Designs
+# Accumulator can accumulate up to 3 values, opcode with run the corresponding command
+
 opcodes = {
     "li": "0000",
     "ld": "0001",       # reg-destination, reg w/ source_mem, __      accum -> reg -> mem -> reg
