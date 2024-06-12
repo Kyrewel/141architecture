@@ -1,18 +1,21 @@
+# Opcode Table for Accumulator Designs
+# Accumulator can accumulate up to 3 values, opcode with run the corresponding command
+
 opcodes = {
-    "li": "0000",
-    "ld": "0001",
-    "st": "0010",
-    "add": "0011",
-    "sub": "0100",
-    "xor": "0101",
-    "or": "0110",
-    "and": "0111",
-    "j": "1000",
-    "beq": "1001",
-    "blt": "1010",
-    "bgt": "1011",
-    "lsf": "1100",
-    "rsf": "1101"
+    "li": "0000",   # load immediate            load in this order: destination register, immediate value, opcode
+    "ld": "0001",   # load                      load in this order: destination register, memory address, opcode
+    "st": "0010",   # store                     load in this order: register containing memory address, source register, opcode
+    "add": "0011",  # add                       load in this order: destination register, source register, source register, opcode
+    "sub": "0100",  # subtract                  load in this order: destination register, source register, source register, opcode
+    "xor": "0101",  # xor                       load in this order: destination register, source register, source register, opcode
+    "or": "0110",   # or                        load in this order: destination register, source register, source register, opcode
+    "and": "0111",  # and                       load in this order: destination register, source register, source register, opcode
+    "j": "1000",    # jump                      load in this order: register containing index of next instruction, opcode
+    "beq": "1001",  # branch if equal           load in this order: register containing index of next instruction, source register, source register, opcode
+    "blt": "1010",  # branch if less than       load in this order: register containing index of next instruction, source register, source register, opcode
+    "bgt": "1011",  # branch if greater than    load in this order: register containing index of next instruction, source register, source register, opcode
+    "lsf": "1100",  # left logical shift        load in this order: destination register, source register, register containing bits to shift bys, opcode
+    "rsf": "1101"   # right logical shift       load in this order: destination register, source register, register containing bits to shift by, opcode
 }
 
 
