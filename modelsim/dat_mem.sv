@@ -17,7 +17,7 @@ module dat_mem (
 // writes are sequential (clocked) -- occur on stores or pushes 
   always_ff @(posedge clk) begin
     if(wr_en) begin				  // wr_en usually = 0; = 1 
-      $display("DM: time=%t writing %d to addr %h", $time, dat_in, addr); 		
+      $display("DM: time=%t writing %d to addr %d", $time, dat_in, addr); 		
       core[addr] <= dat_in;
       oldPC <= prog_ctr;
       oldClk <= clk;

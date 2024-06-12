@@ -1,12 +1,16 @@
-//loads value 9 into register 0
 put 0
+put 0
+li
+put 1
 put 9
 li
-//st value from reg 0 into addr 0
+//stores value in register 1 into address in register 0
 put 0
 put 0
+put 1
 st
-//loads value from addr 0 into register 2
+//loads value in address in register 0 into register 2
+put 0
 put 2
 put 0
 ld

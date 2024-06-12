@@ -1,0 +1,26 @@
+put 0
+put 0 
+li
+
+put 1
+put 1
+li
+
+put 2
+put 127
+li
+
+put 3
+put 0
+li
+
+put 4
+put 0
+li
+
+put 5
+put 0
+li
+
+outerloop:
+ld 

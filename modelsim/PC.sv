@@ -16,13 +16,13 @@ module PC #(parameter D=12)(
     if (reset) begin
       counter <= 0;
       numCyclesPassed <= 0;
-    end else if (numCyclesPassed > 10) begin
+    end else if (numCyclesPassed > 11) begin
       if (branchFlag) begin
         $display("PC: branching to: %d", target);
         counter <= target;
         numCyclesPassed <= 0;
       end else begin
-        $display("PC: incrementing ctr: %d", counter + 1);
+        $display("PC: time: %t incrementing ctr: %d", $time, counter + 1);
         counter <= counter + 1;
         numCyclesPassed <= 0;
       end

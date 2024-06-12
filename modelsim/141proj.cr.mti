@@ -12,6 +12,20 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	instr_ROM
 
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dat_mem
+
+Top level modules:
+	dat_mem
+
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Accumulator
+
+Top level modules:
+	Accumulator
+
 } {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/control.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/control.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module control
@@ -25,13 +39,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	top_level
-
-} {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module PC
-
-Top level modules:
-	PC
 
 } {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
