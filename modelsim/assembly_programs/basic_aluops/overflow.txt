@@ -1,26 +1,21 @@
 put 0
-put 64
+put -128
 li
 
 put 1
-put 64
+put 127
 li
 
-put 4
+put 2
 put 0
-li
+put 1
+sub
 
 put 5
 put 0
 li
 
-put 3
-put 0
-put 1
-add
-
-put 4
+put 5
 put 5
 put 15
 add
-

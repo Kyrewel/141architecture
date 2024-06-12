@@ -17,14 +17,19 @@ module top_level(
       opEn,
       program_done;    
   //machine code
-  wire[8:0]   mach_code;
+  logic [8:0]   mach_code;
   //value to put into accumulator
-  wire[7:0]   put_value;
+  logic [7:0]   put_value;
   //accumulator registers and valid bits
-  wire [7:0]  r0, r1, r2;
-  wire r0_valid, r1_valid, r2_valid;
+  logic [7:0]  r0, r1, r2;
   //program counter
-  wire [11:0] prog_ctr;
+  wire [11:0] prog_ctr,
+              instr_ROM_ctr,
+              alu_ctr,
+              accumulator_ctr,
+              reg_file_ctr,
+              dat_mem_ctr,
+              control_ctr;
   //ALU operation and result
   wire [3:0]  ALUOp;
   wire [7:0]  alu_result;
@@ -63,10 +68,9 @@ module top_level(
     .r0(r0),
     .r1(r1),
     .r2(r2),
-    .r0_valid(r0_valid),
-    .r1_valid(r1_valid),
-    .r2_valid(r2_valid),
-    .prog_ctr(prog_ctr)
+    
+    .control_ctr(control_ctr),
+    .accumulator_ctr(accumulator_ctr)
   );
 
 // control module
@@ -80,14 +84,19 @@ module top_level(
     .putEn(putEn),
     .opEn(opEn),
     .ALUOp(ALUOp),
-    .value(put_value)
+    .value(put_value),
+
+    .instr_ROM_ctr(instr_ROM_ctr),
+    .control_ctr(control_ctr)
   );
 
 // instruction memory module
   instr_ROM rom(
     .mach_code(mach_code),
+    .program_done(program_done),
+
     .prog_ctr(prog_ctr),
-    .program_done(program_done)
+    .instr_ROM_ctr(instr_ROM_ctr)
   );
 
 // arithimetic logic unit module
@@ -98,31 +107,15 @@ module top_level(
   .shiftcarry_in(sc_in), 
   .rslt(alu_result),
   .shiftcarry_out(sc_out), 
-  .branchFlag(aluBranchFlag)
+  .branchFlag(aluBranchFlag),
+  
+  .reg_file_ctr(reg_file_ctr),
+  .alu_ctr(alu_ctr)
   );
   
-  // CAREFUL FOR TIMING
-  always_comb begin
-    if ((sc_out === 'b0 || sc_out === 'b1) && r1 !== 15 && r2 !== 15) begin
-      rf.core[15] = sc_out;
-    end
-  end
-
-
-  logic[7:0] reg_file_data_in; // Changed from wire to logic to allow procedural assignments
-  always_comb begin
-    if (immtoRegFlag) begin
-      reg_file_data_in = r1;
-    end else if (memToRegFlag) begin
-      reg_file_data_in = mem_data_out;
-    end else begin
-      reg_file_data_in = alu_result;
-    end
-  end
 
 // register file module
   reg_file rf(
-    .dat_in(reg_file_data_in),
     .clk(clk),
     .wr_en(regWriteFlag),
     .rd_addrA(r1[3:0]),
@@ -130,16 +123,29 @@ module top_level(
     .wr_addr(r0[3:0]),
     .datA_out(datA),
     .datB_out(datB),
-    .prog_ctr(prog_ctr)
+    .immtoRegFlag(immtoRegFlag),
+    .r1(r1),
+    .memToRegFlag(memToRegFlag),
+    .mem_data_out(mem_data_out),
+    .alu_result(alu_result),
+    .sc_out(sc_out),
+    .r2(r2),
+    
+    .dat_mem_ctr(dat_mem_ctr),
+    .accumulator_ctr(accumulator_ctr),
+    .alu_ctr(alu_ctr),
+    .reg_file_ctr(reg_file_ctr)
   ); 
 
   dat_mem dm (
-    .dat_in(datA),
+    .dat_in(datB),
     .clk(clk),
     .wr_en(memWriteFlag),
-    .addr(memWriteFlag ? r0 : r1),
-    .prog_ctr(prog_ctr),
-    .dat_out(mem_data_out)
+    .addr(datA),
+    .dat_out(mem_data_out),
+    
+    .reg_file_ctr(reg_file_ctr),
+    .dat_mem_ctr(dat_mem_ctr)
   );
 
   assign done = program_done;

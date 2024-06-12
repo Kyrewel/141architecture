@@ -4,28 +4,26 @@ module dat_mem (
   input      clk,
   input      wr_en,	          // write enable
   input[7:0] addr,		      // address pointer
-  input wire [11:0] prog_ctr,
-  output logic[7:0] dat_out);
+  input logic [11:0] reg_file_ctr,
+  output logic [7:0] dat_out,
+  output logic [11:0] dat_mem_ctr);
 
   logic[7:0] core[256];       // 2-dim array  8 wide  256 deep
-  logic [11:0] oldPC = -1;
-  logic oldClk = 0;
-
-// reads are combinational; no enable or clock required
-  assign dat_out = core[addr];
+  logic [11:0] oldRegFileCtr = -1;
 
 // writes are sequential (clocked) -- occur on stores or pushes 
-  always_ff @(posedge clk) begin
-    if(wr_en) begin				  // wr_en usually = 0; = 1 
-      $display("DM: time=%t writing %d to addr %d", $time, dat_in, addr); 		
-      core[addr] <= dat_in;
-      oldPC <= prog_ctr;
-      oldClk <= clk;
-    end
-  end
-
   always_comb begin
-    $monitor("Data Output: %d at time %t", dat_out, $time);
+    if (oldRegFileCtr !== reg_file_ctr) begin
+      dat_out = core[addr];
+      if(wr_en) begin				  // wr_en usually = 0; = 1 	
+        core[addr] = dat_in;
+        $display("DM: time=%t writing %d to addr %d, Core value: %d", $time, dat_in, addr, core[addr]); 	
+      end
+      oldRegFileCtr = reg_file_ctr;
+      dat_mem_ctr = reg_file_ctr;
+    end
+
+    // $monitor("Data Output: %d at time %t", dat_out, $time);
   end
 
 endmodule

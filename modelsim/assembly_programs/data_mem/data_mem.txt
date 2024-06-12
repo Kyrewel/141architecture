@@ -4,13 +4,12 @@ li
 put 1
 put 9
 li
-//stores value in register 1 into address in register 0
+//stores __, reg with destination addr, reg with value to be stored
 put 0
 put 0
 put 1
 st
-//loads value in address in register 0 into register 2
-put 0
+//loads reg to be stored to, reg with address to read from, __
 put 2
 put 0
 ld

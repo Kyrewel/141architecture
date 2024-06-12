@@ -1,8 +1,8 @@
 opcodes = {
     "li": "0000",
-    "ld": "0001",
-    "st": "0010",
-    "add": "0011",
+    "ld": "0001",       # reg-destination, reg w/ source_mem, __      accum -> reg -> mem -> reg
+    "st": "0010",       # __, reg w/ dest address, source_reg         accum -> reg 1,2 -> mem
+    "add": "0011",      # dest_reg, source_reg, source_reg            accum -> reg 1,2 -> alu -> reg 0
     "sub": "0100",
     "xor": "0101",
     "or": "0110",
@@ -35,7 +35,7 @@ def convert_line(line, tag_to_id):
     if len(args) > 0 and args[0] in tag_to_id:
         mach_line += str(bin(int(tag_to_id[args[0]]))[2:].zfill(8))    
     elif len(args) > 0:
-        mach_line += str(bin(int(args[0]))[2:].zfill(8))
+        mach_line += str(bin(int(args[0]) & 0xff)[2:].zfill(8))
     
     if instr == "put":
         mach_line += "1"
