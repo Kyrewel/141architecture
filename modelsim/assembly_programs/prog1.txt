@@ -1,0 +1,150 @@
+put 0
+put 0
+li
+put 1
+put 1
+li
+put 12
+put 63
+li
+put 5
+put 127
+li
+put 6
+put 0
+li
+put 2
+put 0
+li
+outer_loop:
+put 7
+put 2
+ld
+put 2
+put 2
+put 1
+add
+//load LSB
+put 8
+put 2
+ld
+//inner loop counter
+put 3
+put 0
+li 
+inner_loop:
+//load MSB
+put 9
+put 3
+ld
+// add 1 to reg 3
+put 3
+put 3
+put 1
+add
+//load LSB
+put 10
+put 3
+ld
+//hamming distance loop counter
+put 11
+put 7
+li
+//differences in MSB
+put 13
+put 7
+put 9
+xor
+put 14
+put 0
+ld
+hamming_loop1:
+put 4
+put 13
+put 1
+and
+put 14
+put 14
+put 4
+add
+put 13
+put 13
+rsf
+put 11
+put 11
+put 1
+sub
+put hamming_loop1
+put 11
+put 0
+bgt
+
+//hamming distance loop2 counter
+put 11
+put 7
+li
+//differences in MSB
+put 13
+put 8
+put 10
+xor
+hamming_loop2:
+put 4
+put 13
+put 1
+and
+put 14
+put 14
+put 4
+add
+put 13
+put 13
+rsf
+put 11
+put 11
+put 1
+sub
+put hamming_loop2
+put 11
+put 0
+bgt
+
+put dont_update_min
+put 14
+put 5
+bgt
+put 5
+put 14
+put 0
+add
+dont_update_min:
+put dont_update_max
+put 14
+put 6
+blt
+put 6
+put 14
+put 0
+add
+dont_update_max:
+put inner_loop
+put 3
+put 12
+blt
+put outer_loop
+put 2
+put 12
+blt
+
+put 0
+put 12
+put 5
+st
+put 12
+put 12
+put 1
+sub
+put 0
+put 12
+put 6
+st
