@@ -21,10 +21,16 @@ jumps = []
 jumpDict = {}
 
 def translate(line):
-    parts = re.split(r'[(),]', line)
-    if ':' or '//' in line:
+    if '//' in line:
         return
     
+    if ':' in line:
+        label = line[:-1]
+        jumpDict[label] = len(javaLOL)
+        jumps.append(len(javaLOL))
+        return
+    
+    parts = re.split(r'[(),]', line)
     parts = [part.strip() for part in parts if part.strip()]
     cmd = parts[0]
     args = parts[1:]
@@ -32,19 +38,9 @@ def translate(line):
     if (cmd == "store"):
         javaLOL.append(f"put 0 // placeholder")
     for i in args:
-        if i in jumpDict:
-            javaLOL.append(f"put {jumpDict[i]}")
-        else:
             javaLOL.append(f"put {i}")
     javaLOL.append(f"{cmds[cmd]}")
     
-def parseJumps(line):
-    parts = re.split(r'[(),]', line)
-    if ':' in line:
-        label = line[:-1]
-        jumpDict[label] = len(javaLOL)
-        jumps.append(len(javaLOL))
-        return
 
 def readFile(filename):
     with open(filename, 'r') as file:
@@ -54,13 +50,18 @@ def readFile(filename):
 
 lines = readFile('input_file.txt')
 for line in lines:
-    parseJumps(line)
-for line in lines:
     translate(line)
 
 with open('output_file.txt', 'w') as output_file:
     for item in javaLOL:
-        output_file.write(f"{item}\n")
+        parts = item.split(" ")
+        if len(parts) > 1:
+            if parts[1] in jumpDict:
+                output_file.write(f"put {jumpDict[parts[1]]}\n")
+            else:
+                output_file.write(f"{item}\n")
+        else:
+            output_file.write(f"{item}\n")
 
 with open('jumps_output.txt', 'w') as jump_file:
     for jump in jumps:
