@@ -2,3 +2,14 @@
 modelsim/141proj.cr.mti
 modelsim/141proj.mpf
 modelsim/transcript
+modelsim/141proj.cr.mti
+modelsim/141proj.mpf
+modelsim/transcript
+modelsim/work/_lib.qdb
+modelsim/work/_lib1_28.qdb
+modelsim/work/_lib1_28.qpg
+modelsim/work/_lib1_28.qtl
+*.mti
+*.mpf
+*.qdb
+*.qtl
