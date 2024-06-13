@@ -49,7 +49,7 @@ def convert_line(line, tag_to_id):
     if instr == "put":
         mach_line += "1"
     elif instr in opcodes:
-        mach_line += f"0000{opcodes[instr]}0"
+        mach_line += f"000{opcodes[instr]}0"
 
     return mach_line
 
