@@ -15,7 +15,7 @@ module test_bench;
 
   top_level D1 (
     .clk(clk),
-    .reset(!start),
+    .reset(reset),
     .req(req),
     .done(done)
   );
@@ -77,7 +77,9 @@ initial begin
         end
 	  end
     end   
+
 	#200ns start = 'b0; 
+  reset = 0;
   #200ns wait (done);						 // avoid false done signals on startup
 
 // check results in data_mem[64] and [65] (Minimum and Maximum distances, respectively)
@@ -106,6 +108,7 @@ initial begin
         $stop;
 	end
 	#200ns start = 'b0;
+  reset = 1;
   end
 end
 // Hamming distance (anticorrelation) between two 16-bit numbers 
