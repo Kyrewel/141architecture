@@ -12,8 +12,13 @@ module PC #(parameter D=12)(
 );
   logic [4:0] numCyclesPassed = 1;
   logic [D-1:0] counter = 0;
+  logic [15:0] cyclesToPrint = 0;
   
   always_ff @(posedge clk) begin
+    // if (cyclesToPrint % 10000000 == 0) begin
+    //   $display("PC: time: %t", $time);
+    //   cyclesToPrint <= 0;
+    // end
     if (reset) begin
       if (pc_print) begin
         $display("PC: resetting");
@@ -37,6 +42,7 @@ module PC #(parameter D=12)(
     end
     prog_ctr <= counter; // Update every cycle
     numCyclesPassed <= numCyclesPassed + 1;
+    cyclesToPrint <= cyclesToPrint + 1;
   end
 
 endmodule

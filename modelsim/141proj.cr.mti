@@ -12,6 +12,15 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	alu_tb
 
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv {2 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dat_mem
+** Warning: C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv(19): (vlog-2182) 'core' might be read before written in always_comb or always @* block.
+** Warning: C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv(18): (vlog-2182) 'oldRegFileCtr' might be read before written in always_comb or always @* block.
+
+Top level modules:
+	dat_mem
+
 } {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv {2 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Accumulator
@@ -30,6 +39,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	control
+
+} {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv {1 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top_level
+
+Top level modules:
+	top_level
 
 } {} {}} C:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv {2 {vlog -work work -sv -stats=none C:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

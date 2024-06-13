@@ -21,7 +21,7 @@ module instr_ROM #(parameter D=12)(
         program_done = 'b0;
       end
 
-      $monitor("Instruction: %d", mach_code);
+      // $monitor("Instruction: %d", mach_code);
 
       old_prog_ctr = prog_ctr;
       instr_ROM_ctr = old_prog_ctr;

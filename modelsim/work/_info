@@ -11,249 +11,249 @@ cModel Technology
 dC:/intelFPGA_lite/20.1
 vAccumulator
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1718235975
+Z1 !s110 1718236973
 !i10b 1
 !s100 [0@CiF9A>Ym_oYoEm7=Tl1
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IoXB4UQZDo0SmF]M`:QDa]3
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z3 dC:/Users/Max/Documents/GitHub/141architecture/modelsim
+Z4 dC:/Users/Max/Documents/GitHub/141architecture/modelsim
 w1718235960
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv
-!i122 491
+!i122 504
 L0 1 62
-Z4 OV;L;2020.1;71
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1718235975.000000
+Z6 !s108 1718236973.000000
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/accumulator.sv|
 !i113 1
-Z5 o-work work -sv
-Z6 tCvgOpt 0
+Z7 o-work work -sv
+Z8 tCvgOpt 0
 n@accumulator
 valu
 R0
-Z7 !s110 1718233927
+R1
 !i10b 1
 !s100 _iYHT1K]0b1N11^E9:`8k3
-R1
-I:SIV8oE]02CogmA[CigN23
 R2
-S1
+I:SIV8oE]02CogmA[CigN23
 R3
+S1
+R4
 w1718162856
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/alu.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/alu.sv
-!i122 474
+!i122 505
 L0 2 112
-R4
+R5
 r1
 !s85 0
 31
-!s108 1718233926.000000
+R6
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/alu.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/alu.sv|
 !i113 1
-R5
-R6
+R7
+R8
 valu_tb
 R0
-Z8 !s110 1718233929
+Z9 !s110 1718236974
 !i10b 1
 !s100 NBnXQ`[0X;k[jd6N]e^cn1
-R1
-IR?FK0HdLjaPmJli2OXn4U0
 R2
-S1
+IR?FK0HdLjaPmJli2OXn4U0
 R3
+S1
+R4
 w1717028290
 8C:/Users/Max/Documents/GitHub/141architecture/testbenches/alu_tb.sv
 FC:/Users/Max/Documents/GitHub/141architecture/testbenches/alu_tb.sv
-!i122 482
+!i122 513
 L0 4 75
-R4
+R5
 r1
 !s85 0
 31
-!s108 1718233928.000000
+Z10 !s108 1718236974.000000
 !s107 C:/Users/Max/Documents/GitHub/141architecture/testbenches/alu_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/testbenches/alu_tb.sv|
 !i113 1
-R5
-R6
+R7
+R8
 vcontrol
 R0
-Z9 !s110 1718235938
+R1
 !i10b 1
 !s100 Z]OE7BUSSm`I;<?noz2^W3
-R1
-I@bC8]HS7B0RclBcGHY1Z10
 R2
-S1
+I@bC8]HS7B0RclBcGHY1Z10
 R3
+S1
+R4
 w1718235141
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/control.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/control.sv
-!i122 487
+!i122 506
 L0 2 99
-R4
+R5
 r1
 !s85 0
 31
-Z10 !s108 1718235938.000000
+R6
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/control.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/control.sv|
 !i113 1
-R5
-R6
+R7
+R8
 vdat_mem
 R0
-!s110 1718236416
+R1
 !i10b 1
 !s100 11GFe]_`1KRW^WUzJ12>N3
-R1
-IkEY?z4[m0lBaRAFnlk]JU2
 R2
-S1
+IkEY?z4[m0lBaRAFnlk]JU2
 R3
+S1
+R4
 w1718236375
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv
-!i122 496
+!i122 507
 L0 2 32
-R4
+R5
 r1
 !s85 0
 31
-Z11 !s108 1718236416.000000
+R6
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/dat_mem.sv|
 !i113 1
-R5
-R6
+R7
+R8
 vdat_mem_tb
 R0
-R8
+Z11 !s110 1718236975
 !i10b 1
 !s100 TIYbKL8Gc=49RndM47JI61
-R1
-IIkfGZ>S1_a:IE_KbRz@LP2
 R2
-S1
+IIkfGZ>S1_a:IE_KbRz@LP2
 R3
+S1
+R4
 w1717033924
 8C:/Users/Max/Documents/GitHub/141architecture/testbenches/dat_mem_tb.sv
 FC:/Users/Max/Documents/GitHub/141architecture/testbenches/dat_mem_tb.sv
-!i122 483
+!i122 514
 L0 3 71
-R4
+R5
 r1
 !s85 0
 31
-Z12 !s108 1718233929.000000
+R10
 !s107 C:/Users/Max/Documents/GitHub/141architecture/testbenches/dat_mem_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/testbenches/dat_mem_tb.sv|
 !i113 1
-R5
-R6
+R7
+R8
 vinstr_ROM
 R0
-R7
+R9
 !i10b 1
-!s100 `ED<5lKYezJ:91GC@^I0o1
-R1
-I^b6a1]LiWh>m9ZM`AGX=l2
+!s100 oOVnkNz9A?74^TkY>I?1:1
 R2
-S1
+IHRhl6zc;kbGoa30_0g6_?2
 R3
-w1718162333
+S1
+R4
+w1718236753
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/instr_ROM.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/instr_ROM.sv
-!i122 477
+!i122 508
 L0 4 30
-R4
+R5
 r1
 !s85 0
 31
-Z13 !s108 1718233927.000000
+R6
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/instr_ROM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/instr_ROM.sv|
 !i113 1
-R5
-R6
+R7
+R8
 ninstr_@r@o@m
 vPC
 R0
-Z14 !s110 1718236417
+R9
 !i10b 1
-!s100 >Po]B;94:DoLQG8C`Q52E3
-R1
-IJ0AALP8nAeJNfXVaLIBii2
+!s100 ]AEYF_I?;8kmUM]AiaXgV1
 R2
-S1
+ILUiWnHI:k>ABPb]=HYGFn3
 R3
-w1718236391
+S1
+R4
+w1718236898
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv
-!i122 497
-L0 5 38
-R4
+!i122 509
+L0 5 44
+R5
 r1
 !s85 0
 31
-R11
+R10
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv|
 !i113 1
-R5
-R6
+R7
+R8
 n@p@c
 vPC_LUT
 R0
-!s110 1718233928
+R9
 !i10b 1
 !s100 NRKIST[I?a5:6n]XkXW033
-R1
-IP^5Bh;RA0Y5OAofz7Y;gm1
 R2
-S1
+IP^5Bh;RA0Y5OAofz7Y;gm1
 R3
+S1
+R4
 w1718063661
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC_LUT.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/PC_LUT.sv
-!i122 479
+!i122 510
 L0 1 14
-R4
+R5
 r1
 !s85 0
 31
-R13
+R10
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC_LUT.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC_LUT.sv|
 !i113 1
-R5
-R6
+R7
+R8
 n@p@c_@l@u@t
 vpcAcc_tb
 R0
 !s110 1717633166
 !i10b 1
 !s100 gJDk[4HXA]=IFSXH_dSoh3
-R1
-IK[7XD@b7Y7R;U4BQCIWO:3
 R2
-S1
+IK[7XD@b7Y7R;U4BQCIWO:3
 R3
+S1
+R4
 w1717633137
 8C:/Users/Max/Documents/GitHub/141architecture/testbenches/pcAcc_tb.sv
 FC:/Users/Max/Documents/GitHub/141architecture/testbenches/pcAcc_tb.sv
 !i122 12
 L0 1 122
-R4
+R5
 r1
 !s85 0
 31
@@ -261,25 +261,25 @@ r1
 !s107 C:/Users/Max/Documents/GitHub/141architecture/testbenches/pcAcc_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/testbenches/pcAcc_tb.sv|
 !i113 1
-R5
-R6
+R7
+R8
 npc@acc_tb
 vreg_file
 R0
 R9
 !i10b 1
 !s100 7=mb9[O;8Tb9I@AFMVZfm2
-R1
-I_RmBnDD@M9B]G]i:835CG1
 R2
-S1
+I_RmBnDD@M9B]G]i:835CG1
 R3
+S1
+R4
 w1718235488
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv
-!i122 489
+!i122 511
 L0 3 73
-R4
+R5
 r1
 !s85 0
 31
@@ -287,80 +287,80 @@ R10
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/reg_file.sv|
 !i113 1
-R5
-R6
+R7
+R8
 vtest_bench
 R0
-!s110 1718236131
+!s110 1718238872
 !i10b 1
-!s100 F2?n9hdEfm=UKdYBcO``@1
-R1
-I;Qi0zfQU70i]G3o=cCXE81
+!s100 zV<1g^n8F]ia8gBEU`8UI0
 R2
-S1
+In<^NAl:l4_DlF]dVbQX1@3
 R3
-w1718236102
+S1
+R4
+w1718238864
 8C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench1.sv
 FC:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench1.sv
-!i122 494
+!i122 518
 L0 2 117
-R4
+R5
 r1
 !s85 0
 31
-!s108 1718236131.000000
+!s108 1718238872.000000
 !s107 C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench1.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench1.sv|
 !i113 1
-R5
-R6
+R7
+R8
 vtop_level
 R0
-R14
+R9
 !i10b 1
 !s100 LJh0:MLEie^MRAa5Gl0D=2
-R1
-INii1:GaSNzIQLn334CGQL2
 R2
-S1
+INii1:GaSNzIQLn334CGQL2
 R3
+S1
+R4
 w1718236409
 8C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv
 FC:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv
-!i122 498
+!i122 512
 L0 1 178
-R4
+R5
 r1
 !s85 0
 31
-!s108 1718236417.000000
+R10
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv|
 !i113 1
-R5
-R6
+R7
+R8
 vtop_level_tb
 R0
-R8
+R11
 !i10b 1
 !s100 8KdGB?KD=_o;NeFbn]QXa0
-R1
-IS6WOLSiXHNgm;J33_HGFl3
 R2
-S1
+IS6WOLSiXHNgm;J33_HGFl3
 R3
+S1
+R4
 w1717866858
 8C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv
 FC:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv
-!i122 484
+!i122 515
 L0 1 36
-R4
+R5
 r1
 !s85 0
 31
-R12
+!s108 1718236975.000000
 !s107 C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv|
 !i113 1
-R5
-R6
+R7
+R8
