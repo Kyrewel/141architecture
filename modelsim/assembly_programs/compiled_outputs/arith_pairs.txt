@@ -1,0 +1,100 @@
+// Find closest and farthest arithmetic pairs in list of signed 16-bit numberes
+// 0: used for moving values for max/min
+// 1: += 1 
+// 2: i
+// 3: j
+// 4: MSB of smallest diff
+// 5: LSB of smallest diff
+// 6: MSB of largest diff
+// 7: LSB of smallest diff
+// 8: addr read from mem 1.1
+// 9: addr read from mem 1.2
+// 10: addr read from mem 2.1
+// 11: addr read from mem 2.2
+// 12: difference in MSB
+// 13: difference in LSB
+// 14: max i,j value
+// 15: Overflow bit
+
+li(0,0)
+li(1,1)
+li(2,0)
+
+// initialize min/max
+li(4, 127)
+li(5, 255)
+li(6, 0)
+li(7, 0)
+
+outer_loop:
+ld(7,2)
+add(2,2,1)
+ld(8,2)
+add(3,2,0)
+
+inner_loop:
+ld(9,3)
+add(3,3,1)
+ld(10,3)
+add(3,3,1)
+
+// find difference
+blt(case1,8,9)
+bgt(case2,8,9)
+blt(case1,10,11)
+bgt(case2,10,11)
+li(12, 0)
+li(13, 0)
+j(dont_update_max)
+
+// 8/9 < 10/11
+case1:
+usub(12,10,8)
+usub(13,11,9)
+usub(12,12,15)
+j(update)
+
+// 8/9 > 10/11
+case2:
+usub(12,8,10)
+usub(13,9,11)
+usub(12,12,15)
+
+
+update:
+// check_min
+bgt(dont_update_min, 12, 4)
+beq(lower_check_min, 12, 4)
+j(dont_update_min)
+lower_check_min:
+bgt(dont_update_min, 13, 5)
+add(4,12,0)
+add(5,13,0)
+dont_update_min:
+
+// check_max
+blt(dont_update_max, 12, 6)
+beq(lower_check_max, 12, 6)
+
+lower_check_max:
+blt(dont_update_max, 13, 7)
+update_max:
+add(6,12,0)
+add(7,13,0)
+dont_update_max:
+
+//branch back to inner loop
+li(14,61)
+blt(inner_loop,3,14)
+//branch back to outer loop
+li(14,63)
+blt(outer_loop,2,14)
+
+li(14,66)
+st(0,14,4)
+li(14,67)
+st(0,14,4)
+li(14,68)
+st(0,14,5)
+li(14,69)
+st(0,14,7)

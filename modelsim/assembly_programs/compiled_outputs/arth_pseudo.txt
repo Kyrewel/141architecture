@@ -1,0 +1,58 @@
+.data
+    numbers: .space 128  # Space for 64 16-bit numbers
+
+.text
+.globl main
+main:
+    la $t0, numbers       # Load base address of numbers into $t0
+    li $t1, 0             # Initialize outer loop index i
+    li $t2, 0x7FFF        # Initialize min_diff to largest positive 16-bit number
+    li $t3, 0             # Initialize max_diff to 0
+
+outer_loop:
+    bge $t1, 126, store_results  # If i >= 126, all pairs are processed
+    add $t4, $t0, $t1            # Address of numbers[i]
+    lh $t5, 0($t4)               # Load numbers[i]
+
+    li $t6, 2                    # Initialize inner loop index j = i + 1
+    add $t6, $t6, $t1
+
+inner_loop:
+    bge $t6, 128, update_i       # If j >= 128, go to next i
+    add $t7, $t0, $t6            # Address of numbers[j]
+    lh $t8, 0($t7)               # Load numbers[j]
+
+    sub $t9, $t5, $t8            # t9 = numbers[i] - numbers[j]
+    bgez $t9, check_min          # If t9 >= 0, skip abs calculation
+    neg $t9, $t9                 # t9 = abs(t9) if t9 was negative
+
+check_min:
+    blt $t9, $t2, update_min     # If current diff < min_diff, update min_diff
+    bgt $t9, $t3, update_max     # If current diff > max_diff, update max_diff
+    addi $t6, $t6, 2             # Increment j by 1 (next element)
+    j inner_loop
+
+update_min:
+    move $t2, $t9                # Update min_diff
+    j check_min
+
+update_max:
+    move $t3, $t9                # Update max_diff
+    j check_min
+
+update_i:
+    addi $t1, $t1, 2             # Increment i by 1 (next element)
+    j outer_loop
+
+store_results:
+    sra $t2, $t2, 8              # Shift right to separate MSB and LSB of min_diff
+    sb $t2, 66($t0)              # Store MSB of min_diff at mem[66]
+    andi $t2, $t2, 0xFF          # Isolate LSB
+    sb $t2, 67($t0)              # Store LSB of min_diff at mem[67]
+
+    sra $t3, $t3, 8              # Shift right to separate MSB and LSB of max_diff
+    sb $t3, 68($t0)              # Store MSB of max_diff at mem[68]
+    andi $t3, $t3, 0xFF          # Isolate LSB
+    sb $t3, 69($t0)              # Store LSB of max_diff at mem[69]
+
+    jr $ra                       # Return from main

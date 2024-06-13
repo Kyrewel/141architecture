@@ -99,6 +99,17 @@ always_comb begin
         if (inA == inB)
           branchFlag = 1;
       end
+      4'b1010: begin // subtract unsigned
+        {shiftcarry_out, rslt} = inA - inB + shiftcarry_in;
+      end
+      4'b1011: begin // signed branch if less than
+        if ($signed(inA) < $signed(inB))
+          branchFlag = 1;
+      end
+      4'b1100: begin // signed branch if greater than
+        if ($signed(inA) > $signed(inB))
+          branchFlag = 1;
+      end
       default:
         rslt = inA;
     endcase

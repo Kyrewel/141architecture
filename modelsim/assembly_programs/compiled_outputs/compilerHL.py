@@ -15,7 +15,10 @@ cmds = {
     "blt":"blt",
     "bgt":"bgt",
     "ls":"lsf",
-    "rs":"rsf"
+    "rs":"rsf",
+    "usub":"usub",
+    "ublt":"ublt",
+    "ubgt":"ubgt"
 }
 
 javaLOL = []

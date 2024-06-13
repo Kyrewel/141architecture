@@ -25,57 +25,66 @@ always_comb begin
     putEn       = 'b0;
     opEn        = 'b1;
     itype = instruction[0:0];
-    opcode = instruction[4:1];
+    opcode = instruction[5:1];
     value = instruction[8:1];
     case(itype)  
       'b0:  begin          // run type
               case (opcode)
-                'b0000: begin     // load immediate
+                'b00000: begin     // load immediate
                           immtoRegFlag = 'b1;
                         end
-                'b0001: begin     // load from memory
+                'b00001: begin     // load from memory
                           memToRegFlag = 'b1;
                         end
-                'b0010: begin     //store to memory
+                'b00010: begin     //store to memory
                           memWriteFlag = 'b1;
                           regWriteFlag = 'b0;
                         end
-                'b0011: begin     //add
+                'b00011: begin     //add
                           ALUOp = 4'b0101;
                         end
-                'b0100: begin     //sub
+                'b00100: begin     //sub
                           ALUOp = 4'b0110;
                         end
-                'b0101: begin     //xor
+                'b00101: begin     //xor
                           ALUOp = 4'b0001;
                         end
-                'b0110: begin     //or
+                'b00110: begin     //or
                           ALUOp = 4'b0010;
                         end
-                'b0111: begin     //and
+                'b00111: begin     //and
                           ALUOp = 4'b0000;
                         end
-                'b1000: begin     //jump
+                'b01000: begin     //jump
                           regWriteFlag = 'b0;
                           branchFlag = 1;
                         end
-                'b1001: begin     //branch equal to
+                'b01001: begin     //branch equal to
                           regWriteFlag = 'b0;
                           ALUOp = 4'b1001;
                         end
-                'b1010: begin     //branch less than
+                'b01010: begin     //branch less than
                           regWriteFlag = 'b0;
                           ALUOp = 4'b0111;
                         end
-                'b1011: begin     //branch greater than
+                'b01011: begin     //branch greater than
                           regWriteFlag = 'b0;
                           ALUOp = 4'b1000;
                         end
-                'b1100: begin     //left shift
+                'b01100: begin     //left shift
                           ALUOp = 4'b0011;
                         end
-                'b1101: begin     //right shift
+                'b01101: begin     //right shift
                           ALUOp = 4'b0100;
+                        end
+                'b01110: begin // unsigned sub
+                          ALUOp = 4'b1010;
+                        end
+                'b01111: begin // signed less than
+                          ALUOp = 4'b1011;
+                        end
+                'b10000: begin // signed less than
+                          ALUOp = 4'b1100;
                         end
                 default: begin
                   ALUOp = 4'b1111;
