@@ -38,7 +38,10 @@ def convert_line(line, tag_to_id):
     if len(args) > 0 and args[0] in tag_to_id:
         mach_line += str(bin(int(tag_to_id[args[0]]))[2:].zfill(8))    
     elif len(args) > 0:
-        mach_line += str(bin(int(args[0]) & 0xff)[2:].zfill(8))
+        if int(args[0]) < 0:
+            mach_line += str(bin((int(args[0]) + (1 << 8)) & 0xff)[2:].zfill(8))
+        else:
+            mach_line += str(bin(int(args[0]) & 0xff)[2:].zfill(8))
     
     if instr == "put":
         mach_line += "1"

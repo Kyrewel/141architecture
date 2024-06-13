@@ -4,9 +4,6 @@ li
 put 1
 put 1
 li
-put 12
-put 63
-li
 put 5
 put 127
 li
@@ -26,13 +23,13 @@ add
 put 8
 put 2
 ld
+put 2
+put 2
+put 1
+add
 put 3
 put 2
 put 0
-add
-put 3
-put 3
-put 1
 add
 put 9
 put 3
@@ -44,6 +41,10 @@ add
 put 10
 put 3
 ld
+put 3
+put 3
+put 1
+add
 put 11
 put 8
 li
@@ -115,18 +116,23 @@ put 6
 put 14
 put 0
 add
+put 12
+put 61
+li
 put 1
 put 3
 put 12
 blt
+put 12
+put 63
+li
 put 0
 put 2
 put 12
 blt
 put 12
-put 12
-put 1
-add
+put 64
+li
 put 0
 put 12
 put 5
