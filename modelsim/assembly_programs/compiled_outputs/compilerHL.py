@@ -17,8 +17,8 @@ cmds = {
     "ls":"lsf",
     "rs":"rsf",
     "usub":"usub",
-    "sblt":"ublt",
-    "sbgt":"ubgt"
+    "sblt":"sblt",
+    "sbgt":"sbgt"
 }
 
 javaLOL = []
@@ -29,7 +29,7 @@ count = 0
 
 def translate(line):
     global count
-    if line == "":
+    if line == "" or line == " " or line == "\n":
         return
     if '//' in line:
         return
@@ -83,6 +83,6 @@ def compileHL(input_file, output_file_path):
     convertfile(output_file_path)
 
 
-input_file = 'arith_pairs.txt'   # USE THE WHOLE FILE PATH
-output_file = 'arith_assembly'           # USE NO .TXT
+input_file = 'onesub.txt'   # USE THE WHOLE FILE PATH
+output_file = 'onesub_assembly'           # USE NO .TXT
 compileHL(input_file, output_file)

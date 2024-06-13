@@ -13,6 +13,10 @@ module dat_mem (
   logic[7:0] core[256];       // 2-dim array  8 wide  256 deep
   logic [11:0] oldRegFileCtr = -1;
 
+
+initial begin
+    $readmemb("onesub_data.txt", core); // Load data into memory
+end
 // writes are sequential (clocked) -- occur on stores or pushes 
   always_comb begin
     if (oldRegFileCtr !== reg_file_ctr) begin

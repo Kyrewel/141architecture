@@ -43,11 +43,12 @@ module top_level(
   wire sc_in = 0;
   wire sc_out;
 
-  reg accum_print = 0;
-  reg reg_file_print = 0;
-  reg dat_mem_print = 0;
-  reg top_level_print = 0;
-  reg pc_print = 0;
+  reg accum_print = 1;
+  reg reg_file_print = 1;
+  reg dat_mem_print = 1;
+  reg top_level_print = 1;
+  reg pc_print = 1;
+  reg ctr_print = 1;
 
 
 // program counter module
@@ -93,6 +94,7 @@ module top_level(
     .opEn(opEn),
     .ALUOp(ALUOp),
     .value(put_value),
+    .ctr_print(ctr_print),
 
     .instr_ROM_ctr(instr_ROM_ctr),
     .control_ctr(control_ctr)

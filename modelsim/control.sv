@@ -3,7 +3,7 @@ module control (
   input[8:0] instruction,
   input logic [12-1:0] instr_ROM_ctr,
   output logic branchFlag, memToRegFlag, memWriteFlag, 
-                regWriteFlag, putEn, opEn, immtoRegFlag,
+                regWriteFlag, putEn, opEn, immtoRegFlag, ctr_print,
   output logic[3:0] ALUOp,
   output logic[7:0] value,
   output logic[12-1:0] control_ctr
@@ -11,7 +11,7 @@ module control (
 
 logic [12-1:0] old_instr_ROM_ctr = -1;
 logic itype;
-logic[3:0] opcode;
+logic[4:0] opcode;
 
 
 always_comb begin
@@ -81,9 +81,11 @@ always_comb begin
                           ALUOp = 4'b1010;
                         end
                 'b01111: begin // signed less than
+                          regWriteFlag = 'b0;
                           ALUOp = 4'b1011;
                         end
-                'b10000: begin // signed less than
+                'b10000: begin // signed greater than
+                          regWriteFlag = 'b0;
                           ALUOp = 4'b1100;
                         end
                 default: begin
@@ -102,8 +104,12 @@ always_comb begin
         regWriteFlag = 'b0;
       end
     endcase
+    $display("CTR: opcode: %b , aluop: %b", opcode, ALUOp);
     old_instr_ROM_ctr = instr_ROM_ctr;
     control_ctr = instr_ROM_ctr;
+
   end
 end
+
+
 endmodule
