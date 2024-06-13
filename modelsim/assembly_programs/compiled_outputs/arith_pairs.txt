@@ -49,7 +49,7 @@ j(case0_2)
 case0_1:
 blt(case1,9,11)
 bgt(case2,9,11)
-j case_equal
+j(case_equal)
 
 case0_2:
 blt(case1,11,9)

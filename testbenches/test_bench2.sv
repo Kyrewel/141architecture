@@ -81,6 +81,7 @@ initial begin
 	  end
     end   
 	  #200ns start = 'b0; 
+      reset = 0;
     #200ns wait (done);						 // avoid false done signals on startup
 
 // check results in data_mem[66:67] and [68:69] (Minimum and Maximum distances, respectively)
@@ -112,6 +113,7 @@ initial begin
         $stop;
 	end
 	#200ns start = 'b0;
+    reset = 1;
   end
 end
 // magnitude of distance between two 16-bit numbers 

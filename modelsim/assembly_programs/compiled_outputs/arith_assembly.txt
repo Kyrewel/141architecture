@@ -1,0 +1,203 @@
+put 0
+put 0
+li
+put 1
+put 1
+li
+put 2
+put 0
+li
+put 4
+put 127
+li
+put 5
+put 255
+li
+put 6
+put 0
+li
+put 7
+put 0
+li
+put 7
+put 2
+ld
+put 2
+put 2
+put 1
+add
+put 8
+put 2
+ld
+put 3
+put 2
+put 0
+add
+put 9
+put 3
+ld
+put 3
+put 3
+put 1
+add
+put 10
+put 3
+ld
+put 3
+put 3
+put 1
+add
+put 5
+put 8
+put 10
+ublt
+put 6
+put 8
+put 10
+ubgt
+put 2
+put 8
+put 0
+ubgt
+put 2
+put 10
+put 0
+ubgt
+put 3
+j
+put 5
+put 9
+put 11
+blt
+put 6
+put 9
+put 11
+bgt
+put 4
+j
+put 5
+put 11
+put 9
+blt
+put 6
+put 11
+put 9
+bgt
+put 12
+put 0
+li
+put 13
+put 0
+li
+put 12
+j
+put 12
+put 10
+put 8
+usub
+put 13
+put 11
+put 9
+usub
+put 12
+put 12
+put 15
+usub
+put 7
+j
+put 12
+put 8
+put 10
+usub
+put 13
+put 9
+put 11
+usub
+put 12
+put 12
+put 15
+usub
+put 9
+put 12
+put 4
+bgt
+put 8
+put 12
+put 4
+beq
+put 9
+j
+put 9
+put 13
+put 5
+bgt
+put 4
+put 12
+put 0
+add
+put 5
+put 13
+put 0
+add
+put 12
+put 12
+put 6
+blt
+put 10
+put 12
+put 6
+beq
+put 12
+put 13
+put 7
+blt
+put 6
+put 12
+put 0
+add
+put 7
+put 13
+put 0
+add
+put 14
+put 61
+li
+put 1
+put 3
+put 14
+blt
+put 14
+put 63
+li
+put 0
+put 2
+put 14
+blt
+put 14
+put 66
+li
+put 0
+put 14
+put 4
+st
+put 14
+put 67
+li
+put 0
+put 14
+put 4
+st
+put 14
+put 68
+li
+put 0
+put 14
+put 5
+st
+put 14
+put 69
+li
+put 0
+put 14
+put 7
+st
