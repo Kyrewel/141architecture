@@ -39,10 +39,24 @@ ld(10,3)
 add(3,3,1)
 
 // find difference
-blt(case1,8,9)
-bgt(case2,8,9)
-blt(case1,10,11)
-bgt(case2,10,11)
+sblt(case1,8,10)
+sbgt(case2,8,10)
+
+sbgt(case0_1,8,0)
+sbgt(case0_1,10,0)
+j(case0_2)
+
+case0_1:
+blt(case1,9,11)
+bgt(case2,9,11)
+j(case_equal)
+
+case0_2:
+blt(case1,11,9)
+bgt(case2,11,9)
+//j case_equal
+
+case_equal:
 li(12, 0)
 li(13, 0)
 j(dont_update_max)

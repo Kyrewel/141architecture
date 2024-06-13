@@ -17,8 +17,8 @@ cmds = {
     "ls":"lsf",
     "rs":"rsf",
     "usub":"usub",
-    "ublt":"ublt",
-    "ubgt":"ubgt"
+    "sblt":"ublt",
+    "sbgt":"ubgt"
 }
 
 javaLOL = []
@@ -83,6 +83,6 @@ def compileHL(input_file, output_file_path):
     convertfile(output_file_path)
 
 
-input_file = 'hamming.txt'   # USE THE WHOLE FILE PATH
-output_file = 'hamming_assembly'           # USE NO .TXT
+input_file = 'arith_pairs.txt'   # USE THE WHOLE FILE PATH
+output_file = 'arith_assembly'           # USE NO .TXT
 compileHL(input_file, output_file)
