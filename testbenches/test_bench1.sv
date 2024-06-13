@@ -15,7 +15,7 @@ module test_bench;
 
   top_level D1 (
     .clk(clk),
-    .reset(reset),
+    .reset(!start),
     .req(req),
     .done(done)
   );
@@ -27,7 +27,7 @@ always begin
 end
 
 // number of tests
-int itrs = 1;
+int itrs = 10;
 int min_pass = 0;
 int max_pass = 0;
 
