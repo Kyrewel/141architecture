@@ -57,7 +57,7 @@ module reg_file #(parameter pw=4)(
         if (reg_file_print) begin
           $display("RF: time=%t writing %d to reg %d", $time, data_in, wr_addr); 
           for (int j = 0; j < 2**pw; j++) begin
-            $display("RF: core[%0d] = %d", j, $signed(core[j]));
+            $display("RF: core[%0d] = %d, %d, %b", j, $signed(core[j]), core[j], core[j]);
           end
         end
       end	

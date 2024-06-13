@@ -3,12 +3,25 @@ module alu(
   input[3:0] ALUOp,         // ALU instructions
   input [7:0] inA, inB,	  // 8-bit wide data path
   input shiftcarry_in,            // carry in bit
+  // input clk,
   input [12-1:0] reg_file_ctr,
   output logic [7:0] rslt,       // output result
   output logic shiftcarry_out,     // carry out bit
   output logic branchFlag,
   output logic [12-1:0] alu_ctr
 );
+
+// logic reset = 0;
+// logic [3:0] a, b;
+// logic [7:0] product;
+
+// robertsons mult(
+//   .clk(clk),
+//   .reset(reset),
+//   .q(a),
+//   .m(b),
+//   .p(product),
+// );
 
 logic [12-1:0] old_reg_file_ctr = -1;
 
@@ -110,6 +123,10 @@ always_comb begin
         if ($signed(inA) > $signed(inB))
           branchFlag = 1;
       end
+      4'b1101: begin // add unsigned
+        {shiftcarry_out, rslt} = inA + inB + shiftcarry_in;
+      end
+        
       default:
         rslt = inA;
     endcase

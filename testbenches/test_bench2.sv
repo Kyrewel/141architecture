@@ -1,6 +1,6 @@
 // program 2    CSE141L   min & max arithmetic distances in double precision data pairs
 // this version repeats Program 1 four times, reading in four sets of incoming data
-module test_bench;
+module test_bench2;
 
 // connections to DUT: clock, start (request), done (acknowledge) 
   bit  clk,
@@ -29,7 +29,7 @@ always begin
 end
 
 // number of tests
-int itrs = 1;
+int itrs = 10;
 int min_pass = 0;
 int max_pass = 0;
 

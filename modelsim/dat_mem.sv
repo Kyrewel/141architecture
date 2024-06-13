@@ -14,9 +14,9 @@ module dat_mem (
   logic [11:0] oldRegFileCtr = -1;
 
 
-initial begin
-    $readmemb("onesub_data.txt", core); // Load data into memory
-end
+// initial begin
+//     $readmemb("onesub_data.txt", core); // Load data into memory
+// end
 // writes are sequential (clocked) -- occur on stores or pushes 
   always_comb begin
     if (oldRegFileCtr !== reg_file_ctr) begin

@@ -28,87 +28,128 @@ li(7, 0)
 
 outer_loop:
 ld(8,2)
-add(2,2,1)
+uadd(2,2,1)
 ld(9,2)
-add(3,2,0)
+uadd(2,2,1)
+uadd(3,2,0)
 
 inner_loop:
 ld(10,3)
-add(3,3,1)
+uadd(3,3,1)
 ld(11,3)
-add(3,3,1)
+uadd(3,3,1)
 
-// find difference
-sblt(case1,8,10)
-sbgt(case2,8,10)
+sbgt(upper_larger_check_lower,8,10) 
+beq(upper_equal_check_lower,8,10) 
+sblt(upper_smaller_check_lower,8,10) 
 
-sbgt(case0_1,8,0)
-sbgt(case0_1,10,0)
-j(case0_2)
+upper_larger_check_lower:
+blt(case2,9,11)
+j(case1) 
 
-case0_1:
-blt(case1,9,11)
-bgt(case2,9,11)
-j(case_equal)
+upper_smaller_check_lower:
+blt(case4,11,9)
+j(case3) 
 
-case0_2:
-blt(case1,11,9)
-bgt(case2,11,9)
-//j case_equal
+upper_equal_check_lower:
+bgt(case5,9,11)
+j(case6)
 
-case_equal:
-li(12, 0)
-li(13, 0)
-j(dont_update_max)
-
-// 8/9 < 10/11
+// 8 > 10, 9 >= 11
 case1:
-usub(12,10,8)
-usub(13,11,9)
-usub(12,12,15)
-j(update)
-
-// 8/9 > 10/11
-case2:
+//top half
+li(14, 255)
 usub(12,8,10)
+//bottom half
 usub(13,9,11)
-usub(12,12,15)
+j(check_min)
+
+// 8 > 10, 9 < 11
+case2:
+//top half
+li(14, 255)
+usub(12,8,10)
+usub(12,12,1)
+//bottom half
+usub(13,9,11)
+j(check_min)
 
 
-update:
-// check_min
-bgt(dont_update_min, 12, 4)
-beq(lower_check_min, 12, 4)
-j(dont_update_min)
-lower_check_min:
-bgt(dont_update_min, 13, 5)
-add(4,12,0)
-add(5,13,0)
-dont_update_min:
+// 10 > 8, 11 >= 9
+case3:
+//top half
+li(14, 255)
+usub(12,10,8)
+//bottom half
+usub(13,11,9)
+j(check_min)
 
-// check_max
-blt(dont_update_max, 12, 6)
-beq(lower_check_max, 12, 6)
+// 10 > 8, 11 < 9
+case4:
+//top half
+li(14, 255)
+usub(12,10,8)
+usub(12,12,1)
+//bottom half
+usub(13,11,9)
+j(check_min)
 
-lower_check_max:
-blt(dont_update_max, 13, 7)
+
+//10 == 8, 9>11
+case5: 
+li(12,0)
+usub(13,9,11)
+j(check_min)
+
+//10==8, 11>9
+case6:
+li(12,0)
+usub(13,11,9)
+j(check_min)
+
+check_min:
+bgt(update_min,4,12)
+beq(check_lower_min,4,12)
+j(check_max)
+
+check_lower_min:
+bgt(update_min,5,13)
+j(check_max)
+
+//4 > 12 or 4 == 12 and 5 > 13
+update_min:
+uadd(4,12,0)
+uadd(5,13,0)
+
+check_max:
+blt(update_max,6,12)
+beq(check_lower_max,6,12)
+j(loop_check)
+
+check_lower_max:
+blt(update_max,7,13)
+j(loop_check)
+
+//6 < 12 or 6 == 12 and 7 < 13
 update_max:
-add(6,12,0)
-add(7,13,0)
-dont_update_max:
+uadd(6,12,0)
+uadd(7,13,0)
 
+loop_check:
 //branch back to inner loop
-li(14,61)
-blt(inner_loop,3,14)
-//branch back to outer loop
 li(14,63)
+blt(inner_loop,3,14)
+
+//branch back to outer loop
+li(14,61)
 blt(outer_loop,2,14)
 
+//store into correct places in datamem
 li(14,66)
 st(0,14,4)
 li(14,67)
-st(0,14,4)
-li(14,68)
 st(0,14,5)
+li(14,68)
+st(0,14,6)
 li(14,69)
 st(0,14,7)

@@ -43,12 +43,12 @@ module top_level(
   wire sc_in = 0;
   wire sc_out;
 
-  reg accum_print = 1;
-  reg reg_file_print = 1;
-  reg dat_mem_print = 1;
-  reg top_level_print = 1;
-  reg pc_print = 1;
-  reg ctr_print = 1;
+  reg accum_print = 0;
+  reg reg_file_print = 0;
+  reg dat_mem_print = 0;
+  reg top_level_print = 0;
+  reg pc_print = 0;
+  reg ctr_print = 0;
 
 
 // program counter module
@@ -166,7 +166,7 @@ module top_level(
     if (done) begin
       $display("Register Memory State at Completion:");
       for (int j = 0; j < 2**4; j++) begin
-        $display("RF: core[%0d] = %d", j, $signed(rf.core[j]));
+        $display("RF: core[%0d] = %d, %d, %b", j, $signed(rf.core[j]), rf.core[j], rf.core[j]);
       end
     end
   end

@@ -19,155 +19,203 @@ li
 put 7
 put 0
 li
-put 7
-put 2
-ld
-put 2
-put 2
-put 1
-add
 put 8
 put 2
 ld
+put 2
+put 2
+put 1
+uadd
+put 9
+put 2
+ld
+put 2
+put 2
+put 1
+uadd
 put 3
 put 2
 put 0
-add
-put 9
-put 3
-ld
-put 3
-put 3
-put 1
-add
+uadd
 put 10
 put 3
 ld
 put 3
 put 3
 put 1
-add
-put 5
-put 8
-put 10
-ublt
-put 6
-put 8
-put 10
-ubgt
-put 2
-put 8
-put 0
-ubgt
-put 2
-put 10
-put 0
-ubgt
+uadd
+put 11
 put 3
-j
-put 5
-put 9
-put 11
-blt
-put 6
-put 9
-put 11
-bgt
-put 4
-j
-put 5
-put 11
-put 9
-blt
-put 6
-put 11
-put 9
-bgt
-put 12
-put 0
-li
-put 13
-put 0
-li
-put 12
-j
-put 12
-put 10
-put 8
-usub
-put 13
-put 11
-put 9
-usub
-put 12
-put 12
-put 15
-usub
-put 7
-j
-put 12
+ld
+put 3
+put 3
+put 1
+uadd
+put 2
 put 8
 put 10
-usub
-put 13
-put 9
-put 11
-usub
-put 12
-put 12
-put 15
-usub
-put 9
-put 12
+sbgt
 put 4
-bgt
 put 8
-put 12
-put 4
+put 10
 beq
+put 3
+put 8
+put 10
+sblt
+put 6
 put 9
+put 11
+blt
+put 5
+j
+put 8
+put 11
+put 9
+blt
+put 7
 j
 put 9
+put 9
+put 11
+bgt
+put 10
+j
+put 14
+put 255
+li
+put 12
+put 8
+put 10
+usub
+put 13
+put 9
+put 11
+usub
+put 11
+j
+put 14
+put 255
+li
+put 12
+put 8
+put 10
+usub
+put 12
+put 12
+put 1
+usub
+put 13
+put 9
+put 11
+usub
+put 11
+j
+put 14
+put 255
+li
+put 12
+put 10
+put 8
+usub
+put 13
+put 11
+put 9
+usub
+put 11
+j
+put 14
+put 255
+li
+put 12
+put 10
+put 8
+usub
+put 12
+put 12
+put 1
+usub
+put 13
+put 11
+put 9
+usub
+put 11
+j
+put 12
+put 0
+li
+put 13
+put 9
+put 11
+usub
+put 11
+j
+put 12
+put 0
+li
+put 13
+put 11
+put 9
+usub
+put 11
+j
+put 13
+put 4
+put 12
+bgt
+put 12
+put 4
+put 12
+beq
+put 14
+j
 put 13
 put 5
+put 13
 bgt
+put 14
+j
 put 4
 put 12
 put 0
-add
+uadd
 put 5
 put 13
 put 0
-add
-put 12
-put 12
+uadd
+put 16
 put 6
+put 12
 blt
-put 10
-put 12
+put 15
 put 6
+put 12
 beq
-put 12
-put 13
+put 17
+j
+put 16
 put 7
+put 13
 blt
+put 17
+j
 put 6
 put 12
 put 0
-add
+uadd
 put 7
 put 13
 put 0
-add
-put 14
-put 61
-li
-put 1
-put 3
-put 14
-blt
+uadd
 put 14
 put 63
+li
+put 1
+put 3
+put 14
+blt
+put 14
+put 61
 li
 put 0
 put 2
@@ -185,14 +233,14 @@ put 67
 li
 put 0
 put 14
-put 4
+put 5
 st
 put 14
 put 68
 li
 put 0
 put 14
-put 5
+put 6
 st
 put 14
 put 69

@@ -18,7 +18,8 @@ cmds = {
     "rs":"rsf",
     "usub":"usub",
     "sblt":"sblt",
-    "sbgt":"sbgt"
+    "sbgt":"sbgt",
+    "uadd":"uadd"
 }
 
 javaLOL = []
@@ -83,6 +84,6 @@ def compileHL(input_file, output_file_path):
     convertfile(output_file_path)
 
 
-input_file = 'onesub.txt'   # USE THE WHOLE FILE PATH
-output_file = 'onesub_assembly'           # USE NO .TXT
+input_file = 'arith_pairs.txt'   # USE THE WHOLE FILE PATH
+output_file = 'arith_assembly'           # USE NO .TXT
 compileHL(input_file, output_file)

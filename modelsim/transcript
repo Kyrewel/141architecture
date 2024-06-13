@@ -13,11 +13,10 @@
 # Compile of test_bench1.sv was successful.
 # Compile of test_bench2.sv was successful.
 # 14 compiles, 0 failed with no errors.
-vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
-# vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
-# Start time: 23:10:03 on Jun 12,2024
+vsim -gui work.top_level work.test_bench2 work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
+# vsim -gui work.top_level work.test_bench2 work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
+# Start time: 16:01:27 on Jun 13,2024
 # Loading sv_std.std
-# Loading work.top_level_tb
 # Loading work.top_level
 # Loading work.PC
 # Loading work.PC_LUT
@@ -27,2345 +26,1585 @@ vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC wor
 # Loading work.alu
 # Loading work.reg_file
 # Loading work.dat_mem
+# Loading work.test_bench2
 run -all
-# Time =                    0, Reset = x, Request = x, Done = x
-# AC: time=                   5 putting   0 in r0
-# AC: values -- r0:   0, r1:   x, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                   45 incrementing ctr:          1
-# AC: time=                  55 putting   0 in r1
-# AC: values -- r0:   0, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                   95 incrementing ctr:          2
-# AC: time=                 105 resetting valid bits
-# RF: time=                 105 writing   0 to reg  0
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    x
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   0, r1:   0, r2:   x, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                  145 incrementing ctr:          3
-# AC: time=                 155 putting   4 in r0
-# AC: values -- r0:   4, r1:   0, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                  195 incrementing ctr:          4
-# AC: time=                 205 putting   0 in r1
-# AC: values -- r0:   4, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  245 incrementing ctr:          5
-# AC: time=                 255 resetting valid bits
-# RF: time=                 255 writing   0 to reg  4
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   4, r1:   0, r2:   x, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                  295 incrementing ctr:          6
-# AC: time=                 305 putting   0 in r0
-# AC: values -- r0:   0, r1:   0, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                  315 incrementing ctr:          7
-# AC: time=                 325 putting   1 in r1
-# AC: values -- r0:   0, r1:   1, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  365 incrementing ctr:          8
-# AC: time=                 375 resetting valid bits
-# RF: time=                 375 writing   1 to reg  0
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   0, r1:   1, r2:   x, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                  415 incrementing ctr:          9
-# AC: time=                 425 putting   5 in r0
-# AC: values -- r0:   5, r1:   1, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                  465 incrementing ctr:         10
-# AC: time=                 475 putting   0 in r1
-# AC: values -- r0:   5, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  515 incrementing ctr:         11
-# AC: time=                 525 resetting valid bits
-# RF: time=                 525 writing   0 to reg  5
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   5, r1:   0, r2:   x, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                  565 incrementing ctr:         12
-# AC: time=                 575 putting   0 in r0
-# AC: values -- r0:   0, r1:   0, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                  615 incrementing ctr:         13
-# AC: time=                 625 putting   2 in r1
-# AC: values -- r0:   0, r1:   2, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  635 incrementing ctr:         14
-# AC: time=                 645 resetting valid bits
-# RF: time=                 645 writing   2 to reg  0
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   0, r1:   2, r2:   x, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                  685 incrementing ctr:         15
-# AC: time=                 695 putting   6 in r0
-# AC: values -- r0:   6, r1:   2, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                  735 incrementing ctr:         16
-# AC: time=                 745 putting   0 in r1
-# AC: values -- r0:   6, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  785 incrementing ctr:         17
-# AC: time=                 795 resetting valid bits
-# RF: time=                 795 writing   0 to reg  6
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   6, r1:   0, r2:   x, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                  835 incrementing ctr:         18
-# AC: time=                 845 putting   0 in r0
-# AC: values -- r0:   0, r1:   0, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                  885 incrementing ctr:         19
-# AC: time=                 895 putting   3 in r1
-# AC: values -- r0:   0, r1:   3, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  935 incrementing ctr:         20
-# AC: time=                 945 resetting valid bits
-# RF: time=                 945 writing   3 to reg  0
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   0, r1:   3, r2:   x, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                  955 incrementing ctr:         21
-# AC: time=                 965 putting   7 in r0
-# AC: values -- r0:   7, r1:   3, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 1005 incrementing ctr:         22
-# AC: time=                1015 putting   0 in r1
-# AC: values -- r0:   7, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1055 incrementing ctr:         23
-# AC: time=                1065 resetting valid bits
-# RF: time=                1065 writing   1 to reg  7
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   7, r1:   0, r2:   x, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 1105 incrementing ctr:         24
-# AC: time=                1115 putting   3 in r0
-# AC: values -- r0:   3, r1:   0, r2:   x, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 1155 incrementing ctr:         25
-# AC: time=                1165 putting   4 in r1
-# AC: values -- r0:   3, r1:   4, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1205 incrementing ctr:         26
-# AC: time=                1215 putting   6 in r2
-# AC: values -- r0:   3, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1255 incrementing ctr:         27
-# AC: time=                1265 resetting valid bits
-# AC: values -- r0:   3, r1:   4, r2:   6, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 1275 incrementing ctr:         28
-# AC: time=                1285 putting   4 in r0
-# AC: values -- r0:   4, r1:   4, r2:   6, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 1325 incrementing ctr:         29
-# AC: time=                1335 putting   5 in r1
-# AC: values -- r0:   4, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1375 incrementing ctr:         30
-# AC: time=                1385 putting   7 in r2
-# AC: values -- r0:   4, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1425 incrementing ctr:         31
-# AC: time=                1435 resetting valid bits
-# RF: time=                1435 writing   5 to reg  4
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   4, r1:   5, r2:   7, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 1475 incrementing ctr:         32
-# AC: time=                1485 putting   0 in r0
-# AC: values -- r0:   0, r1:   5, r2:   7, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 1525 incrementing ctr:         33
-# AC: time=                1535 putting   4 in r1
-# AC: values -- r0:   0, r1:   4, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1575 incrementing ctr:         34
-# AC: time=                1585 putting   0 in r2
-# AC: values -- r0:   0, r1:   4, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1595 incrementing ctr:         35
-# AC: time=                1605 resetting valid bits
-# RF: time=                1605 writing   4 to reg  0
-# RF: core[0] =    4
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   0, r1:   4, r2:   0, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 1645 incrementing ctr:         36
-# AC: time=                1655 putting   0 in r0
-# AC: values -- r0:   0, r1:   4, r2:   0, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 1695 incrementing ctr:         37
-# AC: time=                1705 putting   6 in r1
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1745 incrementing ctr:         38
-# AC: time=                1755 putting   0 in r2
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1795 incrementing ctr:         39
-# AC: time=                1805 resetting valid bits
-# RF: time=                1805 writing   6 to reg  0
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 1845 incrementing ctr:         40
-# AC: time=                1855 putting   1 in r0
-# AC: values -- r0:   1, r1:   6, r2:   0, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 1895 incrementing ctr:         41
-# AC: time=                1905 resetting valid bits
-# AC: values -- r0:   1, r1:   6, r2:   0, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: branching to:   52
-# AC: time=                1925 putting   3 in r0
-# AC: values -- r0:   3, r1:   6, r2:   0, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 1965 incrementing ctr:         53
-# AC: time=                1975 putting   7 in r1
-# AC: values -- r0:   3, r1:   7, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2015 incrementing ctr:         54
-# AC: time=                2025 putting   5 in r2
-# AC: values -- r0:   3, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2065 incrementing ctr:         55
-# AC: time=                2075 resetting valid bits
-# AC: values -- r0:   3, r1:   7, r2:   5, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 2115 incrementing ctr:         56
-# AC: time=                2125 putting   4 in r0
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 2165 incrementing ctr:         57
-# AC: time=                2175 putting   7 in r1
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2215 incrementing ctr:         58
-# AC: time=                2225 putting   5 in r2
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2235 incrementing ctr:         59
-# AC: time=                2245 resetting valid bits
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: branching to:   82
-# AC: time=                2295 putting   8 in r0
-# AC: values -- r0:   8, r1:   7, r2:   5, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 2335 incrementing ctr:         83
-# AC: time=                2345 putting   4 in r1
-# AC: values -- r0:   8, r1:   4, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2385 incrementing ctr:         84
-# AC: time=                2395 putting   6 in r2
-# AC: values -- r0:   8, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2435 incrementing ctr:         85
-# AC: time=                2445 resetting valid bits
-# RF: time=                2445 writing   5 to reg  8
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    5
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# AC: values -- r0:   8, r1:   4, r2:   6, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 2485 incrementing ctr:         86
-# AC: time=                2495 putting   9 in r0
-# AC: values -- r0:   9, r1:   4, r2:   6, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 2535 incrementing ctr:         87
-# AC: time=                2545 putting   5 in r1
-# AC: values -- r0:   9, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2555 incrementing ctr:         88
-# AC: time=                2565 putting   7 in r2
-# AC: values -- r0:   9, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2605 incrementing ctr:         89
-# AC: time=                2615 resetting valid bits
-# RF: time=                2615 writing 255 to reg  9
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    5
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    0
-# AC: values -- r0:   9, r1:   5, r2:   7, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 2655 incrementing ctr:         90
-# AC: time=                2665 putting   8 in r0
-# AC: values -- r0:   8, r1:   5, r2:   7, r0_valid: 1, r1_valid: 0, r2_valid: 0
-# PC: time:                 2705 incrementing ctr:         91
-# AC: time=                2715 putting   8 in r1
-# AC: values -- r0:   8, r1:   8, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2755 incrementing ctr:         92
-# AC: time=                2765 putting  15 in r2
-# AC: values -- r0:   8, r1:   8, r2:  15, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2805 incrementing ctr:         93
-# AC: time=                2815 resetting valid bits
-# RF: time=                2815 writing   4 to reg  8
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    4
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    1
-# AC: values -- r0:   8, r1:   8, r2:  15, r0_valid: 0, r1_valid: 0, r2_valid: 0
-# PC: time:                 2855 incrementing ctr:         94
-# ** Note: $finish    : C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv(27)
-#    Time: 2865 ps  Iteration: 3  Instance: /top_level_tb
-# 1
-# Break in Module top_level_tb at C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv line 27
-quit -sim
-# End time: 23:22:40 on Jun 12,2024, Elapsed time: 0:12:37
-# Errors: 0, Warnings: 2
-# Compile of control.sv failed with 1 errors.
-# Compile of top_level.sv was successful.
-# 2 compiles, 1 failed with 1 error.
-# Compile of control.sv failed with 1 errors.
-# Compile of control.sv was successful with warnings.
-vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
-# vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
-# Start time: 23:23:31 on Jun 12,2024
-# Loading sv_std.std
-# Loading work.top_level_tb
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.Accumulator
-# Loading work.control
-# Loading work.instr_ROM
-# Loading work.alu
-# Loading work.reg_file
-# Loading work.dat_mem
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'ctl'.  Expected 13, found 12.
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tb/tl/ctl File: C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv Line: 86
-# ** Warning: (vsim-3722) C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv(86): [TFMPC] - Missing connection for port 'ctr_print'.
-# ** Error (suppressible): (vsim-3389) Port 'alu_print' not found in the connected module (8th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /top_level_tb/tl/alu File: C:/Users/Max/Documents/GitHub/141architecture/modelsim/top_level.sv Line: 112
-# Error loading design
-# End time: 23:23:32 on Jun 12,2024, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 6
-# Compile of top_level.sv was successful.
-vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
-# vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
-# Start time: 23:24:06 on Jun 12,2024
-# Loading sv_std.std
-# Loading work.top_level_tb
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.Accumulator
-# Loading work.control
-# Loading work.instr_ROM
-# Loading work.alu
-# Loading work.reg_file
-# Loading work.dat_mem
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# good Min =     1
+# good Max = 65535
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    1,   1, 00000001
+# RF: core[6] =   -1, 255, 11111111
+# RF: core[7] =   -1, 255, 11111111
+# RF: core[8] =  -64, 192, 11000000
+# RF: core[9] =    0,   0, 00000000
+# RF: core[10] = -128, 128, 10000000
+# RF: core[11] =    0,   0, 00000000
+# RF: core[12] =   64,  64, 01000000
+# RF: core[13] =    0,   0, 00000000
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# good Min =     0
+# MAD  Max = 32768
+# Max pair = 16, 15
+# Max valu =     -1,  32767
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    0,   0, 00000000
+# RF: core[6] =  -98, 158, 10011110
+# RF: core[7] =    0,   0, 00000000
+# RF: core[8] =    0,   0, 00000000
+# RF: core[9] =    7,   7, 00000111
+# RF: core[10] =    0,   0, 00000000
+# RF: core[11] =    3,   3, 00000011
+# RF: core[12] =    0,   0, 00000000
+# RF: core[13] =    4,   4, 00000100
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# good Min =     0
+# good Max = 65535
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    0,   0, 00000000
+# RF: core[6] =   -1, 255, 11111111
+# RF: core[7] =   -1, 255, 11111111
+# RF: core[8] = -128, 128, 10000000
+# RF: core[9] =    0,   0, 00000000
+# RF: core[10] =    0,   0, 00000000
+# RF: core[11] =   -1, 255, 11111111
+# RF: core[12] = -128, 128, 10000000
+# RF: core[13] =   -1, 255, 11111111
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# good Min =     9
+# MAD  Max = 63144
+# Max pair =  6,  4
+# Max valu = -31643,  31501
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    9,   9, 00001001
+# RF: core[6] =   -9, 247, 11110111
+# RF: core[7] =  -42, 214, 11010110
+# RF: core[8] =   98,  98, 01100010
+# RF: core[9] =   99,  99, 01100011
+# RF: core[10] =  121, 121, 01111001
+# RF: core[11] =   10,  10, 00001010
+# RF: core[12] =  -37, 219, 11011011
+# RF: core[13] =   89,  89, 01011001
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# fail Min =    75
+# Min addr = 30, 21
+# Min valu = -23351 -23276
+# MAD  Max = 60591
+# Max pair = 19,  3
+# Max valu =  30436, -30155
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =  -81, 175, 10101111
+# RF: core[6] =  -21, 235, 11101011
+# RF: core[7] =   36,  36, 00100100
+# RF: core[8] =   92,  92, 01011100
+# RF: core[9] =  -55, 201, 11001001
+# RF: core[10] =   92,  92, 01011100
+# RF: core[11] =  -31, 225, 11100001
+# RF: core[12] =  -72, 184, 10111000
+# RF: core[13] =   24,  24, 00011000
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# fail Min =    52
+# Min addr = 29, 15
+# Min valu =  -6964  -7016
+# good Max = 62257
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   13,  13, 00001101
+# RF: core[6] =  -13, 243, 11110011
+# RF: core[7] =   49,  49, 00110001
+# RF: core[8] =   20,  20, 00010100
+# RF: core[9] =   76,  76, 01001100
+# RF: core[10] =  112, 112, 01110000
+# RF: core[11] =  -31, 225, 11100001
+# RF: core[12] = -124, 132, 10000100
+# RF: core[13] = -107, 149, 10010101
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# good Min =    75
+# good Max = 64881
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   75,  75, 01001011
+# RF: core[6] =   -3, 253, 11111101
+# RF: core[7] =  113, 113, 01110001
+# RF: core[8] =    2,   2, 00000010
+# RF: core[9] =    5,   5, 00000101
+# RF: core[10] =  115, 115, 01110011
+# RF: core[11] =  -25, 231, 11100111
+# RF: core[12] =  116, 116, 01110100
+# RF: core[13] =  -20, 236, 11101100
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# good Min =    44
+# MAD  Max = 62390
+# Max pair = 18, 12
+# Max valu =  31698, -30692
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   44,  44, 00101100
+# RF: core[6] =  -18, 238, 11101110
+# RF: core[7] =  -53, 203, 11001011
+# RF: core[8] =  117, 117, 01110101
+# RF: core[9] =   30,  30, 00011110
+# RF: core[10] =  115, 115, 01110011
+# RF: core[11] =    7,   7, 00000111
+# RF: core[12] =  -24, 232, 11101000
+# RF: core[13] =   23,  23, 00010111
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# fail Min =    23
+# Min addr = 24, 12
+# Min valu = -23302 -23279
+# good Max = 60486
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   34,  34, 00100010
+# RF: core[6] =  -20, 236, 11101100
+# RF: core[7] =   70,  70, 01000110
+# RF: core[8] =  -32, 224, 11100000
+# RF: core[9] =   16,  16, 00010000
+# RF: core[10] =   91,  91, 01011011
+# RF: core[11] =   18,  18, 00010010
+# RF: core[12] =   58,  58, 00111010
+# RF: core[13] =   34,  34, 00100010
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# fail Min =    24
+# Min addr = 10,  3
+# Min valu = -32168 -32192
+# MAD  Max = 64645
+# Max pair = 12,  3
+# Max valu =  32453, -32192
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =  109, 109, 01101101
+# RF: core[6] =   -5, 251, 11111011
+# RF: core[7] =  -24, 232, 11101000
+# RF: core[8] =   54,  54, 00110110
+# RF: core[9] = -109, 147, 10010011
+# RF: core[10] =  116, 116, 01110100
+# RF: core[11] =   82,  82, 01010010
+# RF: core[12] =  -86, 170, 10101010
+# RF: core[13] =   65,  65, 01000001
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+# Minimum correct           6/         10
+# Maximum correct           5/         10
+# ** Note: $stop    : C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv(113)
+#    Time: 18111665 ns  Iteration: 0  Instance: /test_bench2
+# Break in Module test_bench2 at C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv line 113
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run -all
-# Time: 0 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: x | controlBranchFlag: 0 | branchFlag: x | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 0 | program_done: x
-# AC: time=                   5 putting   0 in r0
-# Time: 5 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: x | controlBranchFlag: 0 | branchFlag: x | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                   45 incrementing ctr:          1
-# AC: time=                  55 putting   0 in r1
-# Time: 55 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                   95 incrementing ctr:          2
-# AC: time=                 105 resetting valid bits
-# RF: time=                 105 writing   0 to reg  0
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    x
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 105 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  145 incrementing ctr:          3
-# AC: time=                 155 putting   4 in r0
-# Time: 155 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  195 incrementing ctr:          4
-# AC: time=                 205 putting   0 in r1
-# AC: values -- r0:   4, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  245 incrementing ctr:          5
-# AC: time=                 255 resetting valid bits
-# RF: time=                 255 writing   0 to reg  4
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 255 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  295 incrementing ctr:          6
-# AC: time=                 305 putting   0 in r0
-# Time: 305 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  315 incrementing ctr:          7
-# AC: time=                 325 putting   1 in r1
-# AC: values -- r0:   0, r1:   1, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  365 incrementing ctr:          8
-# AC: time=                 375 resetting valid bits
-# RF: time=                 375 writing   1 to reg  0
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 375 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  415 incrementing ctr:          9
-# AC: time=                 425 putting   5 in r0
-# Time: 425 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  465 incrementing ctr:         10
-# AC: time=                 475 putting   0 in r1
-# AC: values -- r0:   5, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  515 incrementing ctr:         11
-# AC: time=                 525 resetting valid bits
-# RF: time=                 525 writing   0 to reg  5
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 525 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  565 incrementing ctr:         12
-# AC: time=                 575 putting   0 in r0
-# Time: 575 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  615 incrementing ctr:         13
-# AC: time=                 625 putting   2 in r1
-# AC: values -- r0:   0, r1:   2, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  635 incrementing ctr:         14
-# AC: time=                 645 resetting valid bits
-# RF: time=                 645 writing   2 to reg  0
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 645 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  685 incrementing ctr:         15
-# AC: time=                 695 putting   6 in r0
-# Time: 695 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  735 incrementing ctr:         16
-# AC: time=                 745 putting   0 in r1
-# AC: values -- r0:   6, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  785 incrementing ctr:         17
-# AC: time=                 795 resetting valid bits
-# RF: time=                 795 writing   0 to reg  6
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 795 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  835 incrementing ctr:         18
-# AC: time=                 845 putting   0 in r0
-# Time: 845 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  885 incrementing ctr:         19
-# AC: time=                 895 putting   3 in r1
-# AC: values -- r0:   0, r1:   3, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  935 incrementing ctr:         20
-# AC: time=                 945 resetting valid bits
-# RF: time=                 945 writing   3 to reg  0
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 945 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  955 incrementing ctr:         21
-# AC: time=                 965 putting   7 in r0
-# Time: 965 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1005 incrementing ctr:         22
-# AC: time=                1015 putting   0 in r1
-# AC: values -- r0:   7, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1055 incrementing ctr:         23
-# AC: time=                1065 resetting valid bits
-# RF: time=                1065 writing   1 to reg  7
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1065 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1105 incrementing ctr:         24
-# AC: time=                1115 putting   3 in r0
-# Time: 1115 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1155 incrementing ctr:         25
-# AC: time=                1165 putting   4 in r1
-# AC: values -- r0:   3, r1:   4, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1205 incrementing ctr:         26
-# AC: time=                1215 putting   6 in r2
-# AC: values -- r0:   3, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1255 incrementing ctr:         27
-# AC: time=                1265 resetting valid bits
-# Time: 1265 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1275 incrementing ctr:         28
-# AC: time=                1285 putting   4 in r0
-# Time: 1285 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1325 incrementing ctr:         29
-# AC: time=                1335 putting   5 in r1
-# AC: values -- r0:   4, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1375 incrementing ctr:         30
-# AC: time=                1385 putting   7 in r2
-# AC: values -- r0:   4, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1425 incrementing ctr:         31
-# AC: time=                1435 resetting valid bits
-# RF: time=                1435 writing   5 to reg  4
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1435 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1475 incrementing ctr:         32
-# AC: time=                1485 putting   0 in r0
-# Time: 1485 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1525 incrementing ctr:         33
-# AC: time=                1535 putting   4 in r1
-# AC: values -- r0:   0, r1:   4, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1575 incrementing ctr:         34
-# AC: time=                1585 putting   0 in r2
-# AC: values -- r0:   0, r1:   4, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1595 incrementing ctr:         35
-# AC: time=                1605 resetting valid bits
-# RF: time=                1605 writing   4 to reg  0
-# RF: core[0] =    4
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1605 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1645 incrementing ctr:         36
-# AC: time=                1655 putting   0 in r0
-# Time: 1655 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1695 incrementing ctr:         37
-# AC: time=                1705 putting   6 in r1
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1745 incrementing ctr:         38
-# AC: time=                1755 putting   0 in r2
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1795 incrementing ctr:         39
-# AC: time=                1805 resetting valid bits
-# RF: time=                1805 writing   6 to reg  0
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1805 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1845 incrementing ctr:         40
-# AC: time=                1855 putting   1 in r0
-# Time: 1855 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1895 incrementing ctr:         41
-# AC: time=                1905 resetting valid bits
-# Time: 1905 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 1 | branchFlag: 1 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: branching to:   52
-# AC: time=                1925 putting   3 in r0
-# Time: 1925 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1965 incrementing ctr:         53
-# AC: time=                1975 putting   7 in r1
-# AC: values -- r0:   3, r1:   7, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2015 incrementing ctr:         54
-# AC: time=                2025 putting   5 in r2
-# AC: values -- r0:   3, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2065 incrementing ctr:         55
-# AC: time=                2075 resetting valid bits
-# Time: 2075 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2115 incrementing ctr:         56
-# AC: time=                2125 putting   4 in r0
-# Time: 2125 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2165 incrementing ctr:         57
-# AC: time=                2175 putting   7 in r1
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2215 incrementing ctr:         58
-# AC: time=                2225 putting   5 in r2
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2235 incrementing ctr:         59
-# AC: time=                2245 resetting valid bits
-# Time: 2245 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 1 | controlBranchFlag: 0 | branchFlag: 1 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: branching to:   82
-# AC: time=                2295 putting   8 in r0
-# Time: 2295 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2335 incrementing ctr:         83
-# AC: time=                2345 putting   4 in r1
-# AC: values -- r0:   8, r1:   4, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2385 incrementing ctr:         84
-# AC: time=                2395 putting   6 in r2
-# AC: values -- r0:   8, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2435 incrementing ctr:         85
-# AC: time=                2445 resetting valid bits
-# RF: time=                2445 writing   5 to reg  8
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    5
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 2445 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2485 incrementing ctr:         86
-# AC: time=                2495 putting   9 in r0
-# Time: 2495 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2535 incrementing ctr:         87
-# AC: time=                2545 putting   5 in r1
-# AC: values -- r0:   9, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2555 incrementing ctr:         88
-# AC: time=                2565 putting   7 in r2
-# AC: values -- r0:   9, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2605 incrementing ctr:         89
-# AC: time=                2615 resetting valid bits
-# RF: time=                2615 writing 255 to reg  9
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    5
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    0
-# Time: 2615 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2655 incrementing ctr:         90
-# AC: time=                2665 putting   8 in r0
-# Time: 2665 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2705 incrementing ctr:         91
-# AC: time=                2715 putting   8 in r1
-# AC: values -- r0:   8, r1:   8, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2755 incrementing ctr:         92
-# AC: time=                2765 putting  15 in r2
-# AC: values -- r0:   8, r1:   8, r2:  15, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2805 incrementing ctr:         93
-# AC: time=                2815 resetting valid bits
-# RF: time=                2815 writing   4 to reg  8
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    4
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    1
-# Time: 2815 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2855 incrementing ctr:         94
-# ** Note: $finish    : C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv(27)
-#    Time: 2865 ps  Iteration: 3  Instance: /top_level_tb
-# 1
-# Break in Module top_level_tb at C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv line 27
-# Compile of accumulator.sv was successful with warnings.
-# Compile of alu.sv was successful with warnings.
-# Compile of control.sv was successful with warnings.
-# Compile of dat_mem.sv was successful with warnings.
-# Compile of instr_ROM.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful with warnings.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of dat_mem_tb.sv was successful.
-# Compile of top_level_tb.sv was successful.
-# Compile of test_bench1.sv was successful.
-# Compile of test_bench2.sv was successful.
-# 14 compiles, 0 failed with no errors.
-vsim -gui work.top_level_tb work.test_bench work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
-# End time: 23:28:37 on Jun 12,2024, Elapsed time: 0:04:31
-# Errors: 0, Warnings: 3
-# vsim -gui work.top_level_tb work.test_bench work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
-# Start time: 23:28:37 on Jun 12,2024
-# Loading sv_std.std
-# Loading work.top_level_tb
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.Accumulator
-# Loading work.control
-# Loading work.instr_ROM
-# Loading work.alu
-# Loading work.reg_file
-# Loading work.dat_mem
-# Loading work.test_bench
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# good Min =     1
+# good Max = 65535
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    1,   1, 00000001
+# RF: core[6] =   -1, 255, 11111111
+# RF: core[7] =   -1, 255, 11111111
+# RF: core[8] =  -64, 192, 11000000
+# RF: core[9] =    0,   0, 00000000
+# RF: core[10] = -128, 128, 10000000
+# RF: core[11] =    0,   0, 00000000
+# RF: core[12] =   64,  64, 01000000
+# RF: core[13] =    0,   0, 00000000
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# good Min =     0
+# good Max = 32768
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    0,   0, 00000000
+# RF: core[6] = -128, 128, 10000000
+# RF: core[7] =    0,   0, 00000000
+# RF: core[8] =    0,   0, 00000000
+# RF: core[9] =    7,   7, 00000111
+# RF: core[10] =    0,   0, 00000000
+# RF: core[11] =    3,   3, 00000011
+# RF: core[12] =    0,   0, 00000000
+# RF: core[13] =    4,   4, 00000100
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# good Min =     0
+# good Max = 65535
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    0,   0, 00000000
+# RF: core[6] =   -1, 255, 11111111
+# RF: core[7] =   -1, 255, 11111111
+# RF: core[8] = -128, 128, 10000000
+# RF: core[9] =    0,   0, 00000000
+# RF: core[10] =    0,   0, 00000000
+# RF: core[11] =   -1, 255, 11111111
+# RF: core[12] = -128, 128, 10000000
+# RF: core[13] =   -1, 255, 11111111
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# good Min =     9
+# MAD  Max = 63144
+# Max pair =  6,  4
+# Max valu = -31643,  31501
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    9,   9, 00001001
+# RF: core[6] =  -10, 246, 11110110
+# RF: core[7] =  -83, 173, 10101101
+# RF: core[8] =   98,  98, 01100010
+# RF: core[9] =   99,  99, 01100011
+# RF: core[10] = -121, 135, 10000111
+# RF: core[11] =   10,  10, 00001010
+# RF: core[12] =  -37, 219, 11011011
+# RF: core[13] =   89,  89, 01011001
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# good Min =    75
+# good Max = 60591
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   75,  75, 01001011
+# RF: core[6] =  -20, 236, 11101100
+# RF: core[7] =  -81, 175, 10101111
+# RF: core[8] =  -92, 164, 10100100
+# RF: core[9] =  -55, 201, 11001001
+# RF: core[10] =   92,  92, 01011100
+# RF: core[11] =  -31, 225, 11100001
+# RF: core[12] =  -72, 184, 10111000
+# RF: core[13] =   24,  24, 00011000
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# good Min =    52
+# good Max = 62257
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   52,  52, 00110100
+# RF: core[6] =  -13, 243, 11110011
+# RF: core[7] =   49,  49, 00110001
+# RF: core[8] =  -20, 236, 11101100
+# RF: core[9] =   76,  76, 01001100
+# RF: core[10] =  112, 112, 01110000
+# RF: core[11] =  -31, 225, 11100001
+# RF: core[12] = -124, 132, 10000100
+# RF: core[13] = -107, 149, 10010101
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# good Min =    75
+# good Max = 64881
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   75,  75, 01001011
+# RF: core[6] =   -3, 253, 11111101
+# RF: core[7] =  113, 113, 01110001
+# RF: core[8] =    2,   2, 00000010
+# RF: core[9] =    5,   5, 00000101
+# RF: core[10] = -115, 141, 10001101
+# RF: core[11] =  -25, 231, 11100111
+# RF: core[12] =  116, 116, 01110100
+# RF: core[13] =  -20, 236, 11101100
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# fail Min =    44
+# Min addr = 24,  8
+# Min valu =  14232  14276
+# good Max = 62390
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   92,  92, 01011100
+# RF: core[6] =  -13, 243, 11110011
+# RF: core[7] =  -74, 182, 10110110
+# RF: core[8] =  117, 117, 01110101
+# RF: core[9] =   30,  30, 00011110
+# RF: core[10] = -115, 141, 10001101
+# RF: core[11] =    7,   7, 00000111
+# RF: core[12] =  -24, 232, 11101000
+# RF: core[13] =   23,  23, 00010111
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# fail Min =    23
+# Min addr = 24, 12
+# Min valu = -23302 -23279
+# good Max = 60486
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    1,   1, 00000001
+# RF: core[6] =  -20, 236, 11101100
+# RF: core[7] =   70,  70, 01000110
+# RF: core[8] =  -32, 224, 11100000
+# RF: core[9] =   16,  16, 00010000
+# RF: core[10] =  -91, 165, 10100101
+# RF: core[11] =   18,  18, 00010010
+# RF: core[12] =   58,  58, 00111010
+# RF: core[13] =   34,  34, 00100010
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# good Min =    24
+# good Max = 64645
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   24,  24, 00011000
+# RF: core[6] =   -4, 252, 11111100
+# RF: core[7] = -123, 133, 10000101
+# RF: core[8] =   54,  54, 00110110
+# RF: core[9] = -109, 147, 10010011
+# RF: core[10] = -116, 140, 10001100
+# RF: core[11] =   82,  82, 01010010
+# RF: core[12] =  -86, 170, 10101010
+# RF: core[13] =   65,  65, 01000001
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+# Minimum correct           8/         10
+# Maximum correct           9/         10
+# ** Note: $stop    : C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv(113)
+#    Time: 16619385 ns  Iteration: 0  Instance: /test_bench2
+# Break in Module test_bench2 at C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv line 113
+restart -f
 run -all
-# Time: 0 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: x | controlBranchFlag: 0 | branchFlag: x | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 0 | program_done: x
-# AC: time=                   5 putting   0 in r0
-# Time: 5 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: x | controlBranchFlag: 0 | branchFlag: x | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                   45 incrementing ctr:          1
-# AC: time=                  55 putting   0 in r1
-# Time: 55 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                   95 incrementing ctr:          2
-# AC: time=                 105 resetting valid bits
-# RF: time=                 105 writing   0 to reg  0
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    x
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 105 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  145 incrementing ctr:          3
-# AC: time=                 155 putting   4 in r0
-# Time: 155 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  195 incrementing ctr:          4
-# AC: time=                 205 putting   0 in r1
-# AC: values -- r0:   4, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  245 incrementing ctr:          5
-# AC: time=                 255 resetting valid bits
-# RF: time=                 255 writing   0 to reg  4
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 255 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  295 incrementing ctr:          6
-# AC: time=                 305 putting   0 in r0
-# Time: 305 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  315 incrementing ctr:          7
-# AC: time=                 325 putting   1 in r1
-# AC: values -- r0:   0, r1:   1, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  365 incrementing ctr:          8
-# AC: time=                 375 resetting valid bits
-# RF: time=                 375 writing   1 to reg  0
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 375 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  415 incrementing ctr:          9
-# AC: time=                 425 putting   5 in r0
-# Time: 425 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  465 incrementing ctr:         10
-# AC: time=                 475 putting   0 in r1
-# AC: values -- r0:   5, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  515 incrementing ctr:         11
-# AC: time=                 525 resetting valid bits
-# RF: time=                 525 writing   0 to reg  5
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 525 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  565 incrementing ctr:         12
-# AC: time=                 575 putting   0 in r0
-# Time: 575 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  615 incrementing ctr:         13
-# AC: time=                 625 putting   2 in r1
-# AC: values -- r0:   0, r1:   2, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  635 incrementing ctr:         14
-# AC: time=                 645 resetting valid bits
-# RF: time=                 645 writing   2 to reg  0
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 645 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  685 incrementing ctr:         15
-# AC: time=                 695 putting   6 in r0
-# Time: 695 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  735 incrementing ctr:         16
-# AC: time=                 745 putting   0 in r1
-# AC: values -- r0:   6, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  785 incrementing ctr:         17
-# AC: time=                 795 resetting valid bits
-# RF: time=                 795 writing   0 to reg  6
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 795 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  835 incrementing ctr:         18
-# AC: time=                 845 putting   0 in r0
-# Time: 845 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  885 incrementing ctr:         19
-# AC: time=                 895 putting   3 in r1
-# AC: values -- r0:   0, r1:   3, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  935 incrementing ctr:         20
-# AC: time=                 945 resetting valid bits
-# RF: time=                 945 writing   3 to reg  0
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 945 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  955 incrementing ctr:         21
-# AC: time=                 965 putting   7 in r0
-# Time: 965 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1005 incrementing ctr:         22
-# AC: time=                1015 putting   0 in r1
-# AC: values -- r0:   7, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1055 incrementing ctr:         23
-# AC: time=                1065 resetting valid bits
-# RF: time=                1065 writing   1 to reg  7
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1065 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1105 incrementing ctr:         24
-# AC: time=                1115 putting   3 in r0
-# Time: 1115 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1155 incrementing ctr:         25
-# AC: time=                1165 putting   4 in r1
-# AC: values -- r0:   3, r1:   4, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1205 incrementing ctr:         26
-# AC: time=                1215 putting   6 in r2
-# AC: values -- r0:   3, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1255 incrementing ctr:         27
-# AC: time=                1265 resetting valid bits
-# Time: 1265 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1275 incrementing ctr:         28
-# AC: time=                1285 putting   4 in r0
-# Time: 1285 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1325 incrementing ctr:         29
-# AC: time=                1335 putting   5 in r1
-# AC: values -- r0:   4, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1375 incrementing ctr:         30
-# AC: time=                1385 putting   7 in r2
-# AC: values -- r0:   4, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1425 incrementing ctr:         31
-# AC: time=                1435 resetting valid bits
-# RF: time=                1435 writing   5 to reg  4
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1435 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1475 incrementing ctr:         32
-# AC: time=                1485 putting   0 in r0
-# Time: 1485 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1525 incrementing ctr:         33
-# AC: time=                1535 putting   4 in r1
-# AC: values -- r0:   0, r1:   4, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1575 incrementing ctr:         34
-# AC: time=                1585 putting   0 in r2
-# AC: values -- r0:   0, r1:   4, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1595 incrementing ctr:         35
-# AC: time=                1605 resetting valid bits
-# RF: time=                1605 writing   4 to reg  0
-# RF: core[0] =    4
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1605 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1645 incrementing ctr:         36
-# AC: time=                1655 putting   0 in r0
-# Time: 1655 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1695 incrementing ctr:         37
-# AC: time=                1705 putting   6 in r1
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1745 incrementing ctr:         38
-# AC: time=                1755 putting   0 in r2
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1795 incrementing ctr:         39
-# AC: time=                1805 resetting valid bits
-# RF: time=                1805 writing   6 to reg  0
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1805 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1845 incrementing ctr:         40
-# AC: time=                1855 putting   1 in r0
-# Time: 1855 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1895 incrementing ctr:         41
-# AC: time=                1905 resetting valid bits
-# Time: 1905 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 1 | branchFlag: 1 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: branching to:   52
-# AC: time=                1925 putting   3 in r0
-# Time: 1925 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1965 incrementing ctr:         53
-# AC: time=                1975 putting   7 in r1
-# AC: values -- r0:   3, r1:   7, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2015 incrementing ctr:         54
-# AC: time=                2025 putting   5 in r2
-# AC: values -- r0:   3, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2065 incrementing ctr:         55
-# AC: time=                2075 resetting valid bits
-# Time: 2075 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2115 incrementing ctr:         56
-# AC: time=                2125 putting   4 in r0
-# Time: 2125 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2165 incrementing ctr:         57
-# AC: time=                2175 putting   7 in r1
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2215 incrementing ctr:         58
-# AC: time=                2225 putting   5 in r2
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2235 incrementing ctr:         59
-# AC: time=                2245 resetting valid bits
-# Time: 2245 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 1 | controlBranchFlag: 0 | branchFlag: 1 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: branching to:   82
-# AC: time=                2295 putting   8 in r0
-# Time: 2295 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2335 incrementing ctr:         83
-# AC: time=                2345 putting   4 in r1
-# AC: values -- r0:   8, r1:   4, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2385 incrementing ctr:         84
-# AC: time=                2395 putting   6 in r2
-# AC: values -- r0:   8, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2435 incrementing ctr:         85
-# AC: time=                2445 resetting valid bits
-# RF: time=                2445 writing   5 to reg  8
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    5
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 2445 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2485 incrementing ctr:         86
-# AC: time=                2495 putting   9 in r0
-# Time: 2495 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2535 incrementing ctr:         87
-# AC: time=                2545 putting   5 in r1
-# AC: values -- r0:   9, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2555 incrementing ctr:         88
-# AC: time=                2565 putting   7 in r2
-# AC: values -- r0:   9, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2605 incrementing ctr:         89
-# AC: time=                2615 resetting valid bits
-# RF: time=                2615 writing 255 to reg  9
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    5
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    0
-# Time: 2615 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2655 incrementing ctr:         90
-# AC: time=                2665 putting   8 in r0
-# Time: 2665 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2705 incrementing ctr:         91
-# AC: time=                2715 putting   8 in r1
-# AC: values -- r0:   8, r1:   8, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2755 incrementing ctr:         92
-# AC: time=                2765 putting  15 in r2
-# AC: values -- r0:   8, r1:   8, r2:  15, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2805 incrementing ctr:         93
-# AC: time=                2815 resetting valid bits
-# RF: time=                2815 writing   4 to reg  8
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    4
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    1
-# Time: 2815 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2855 incrementing ctr:         94
-# ** Note: $finish    : C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv(27)
-#    Time: 2865 ps  Iteration: 3  Instance: /top_level_tb
-# 1
-# Break in Module top_level_tb at C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv line 27
-# Compile of control.sv was successful with warnings.
-vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
-# End time: 23:32:32 on Jun 12,2024, Elapsed time: 0:03:55
-# Errors: 0, Warnings: 2
-# vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
-# Start time: 23:32:32 on Jun 12,2024
-# Loading sv_std.std
-# Loading work.top_level_tb
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.Accumulator
-# Loading work.control
-# Loading work.instr_ROM
-# Loading work.alu
-# Loading work.reg_file
-# Loading work.dat_mem
-run -all
-# CTR: opcode: zzzz , aluop: 1111
-# CTR: opcode: xxxx , aluop: 1111
-# CTR: opcode: xxxx , aluop: 1111
-# Time: 0 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: x | controlBranchFlag: 0 | branchFlag: x | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 0 | program_done: x
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                   5 putting   0 in r0
-# Time: 5 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: x | controlBranchFlag: 0 | branchFlag: x | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                   45 incrementing ctr:          1
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                  55 putting   0 in r1
-# Time: 55 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                   95 incrementing ctr:          2
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 105 resetting valid bits
-# RF: time=                 105 writing   0 to reg  0
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    x
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 105 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  145 incrementing ctr:          3
-# CTR: opcode: 0100 , aluop: 1111
-# AC: time=                 155 putting   4 in r0
-# Time: 155 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  195 incrementing ctr:          4
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 205 putting   0 in r1
-# AC: values -- r0:   4, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  245 incrementing ctr:          5
-# CTR: opcode: 0001 , aluop: 1111
-# AC: time=                 255 resetting valid bits
-# RF: time=                 255 writing   0 to reg  4
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 255 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  295 incrementing ctr:          6
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 305 putting   0 in r0
-# Time: 305 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  315 incrementing ctr:          7
-# CTR: opcode: 0001 , aluop: 1111
-# AC: time=                 325 putting   1 in r1
-# AC: values -- r0:   0, r1:   1, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  365 incrementing ctr:          8
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 375 resetting valid bits
-# RF: time=                 375 writing   1 to reg  0
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 375 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  415 incrementing ctr:          9
-# CTR: opcode: 0101 , aluop: 1111
-# AC: time=                 425 putting   5 in r0
-# Time: 425 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  465 incrementing ctr:         10
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 475 putting   0 in r1
-# AC: values -- r0:   5, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  515 incrementing ctr:         11
-# CTR: opcode: 0001 , aluop: 1111
-# AC: time=                 525 resetting valid bits
-# RF: time=                 525 writing   0 to reg  5
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 525 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  565 incrementing ctr:         12
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 575 putting   0 in r0
-# Time: 575 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  615 incrementing ctr:         13
-# CTR: opcode: 0010 , aluop: 1111
-# AC: time=                 625 putting   2 in r1
-# AC: values -- r0:   0, r1:   2, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  635 incrementing ctr:         14
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 645 resetting valid bits
-# RF: time=                 645 writing   2 to reg  0
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 645 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  685 incrementing ctr:         15
-# CTR: opcode: 0110 , aluop: 1111
-# AC: time=                 695 putting   6 in r0
-# Time: 695 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  735 incrementing ctr:         16
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 745 putting   0 in r1
-# AC: values -- r0:   6, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  785 incrementing ctr:         17
-# CTR: opcode: 0001 , aluop: 1111
-# AC: time=                 795 resetting valid bits
-# RF: time=                 795 writing   0 to reg  6
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 795 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  835 incrementing ctr:         18
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 845 putting   0 in r0
-# Time: 845 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  885 incrementing ctr:         19
-# CTR: opcode: 0011 , aluop: 1111
-# AC: time=                 895 putting   3 in r1
-# AC: values -- r0:   0, r1:   3, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  935 incrementing ctr:         20
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                 945 resetting valid bits
-# RF: time=                 945 writing   3 to reg  0
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 945 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  955 incrementing ctr:         21
-# CTR: opcode: 0111 , aluop: 1111
-# AC: time=                 965 putting   7 in r0
-# Time: 965 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1005 incrementing ctr:         22
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                1015 putting   0 in r1
-# AC: values -- r0:   7, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1055 incrementing ctr:         23
-# CTR: opcode: 0001 , aluop: 1111
-# AC: time=                1065 resetting valid bits
-# RF: time=                1065 writing   1 to reg  7
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1065 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1105 incrementing ctr:         24
-# CTR: opcode: 0011 , aluop: 1111
-# AC: time=                1115 putting   3 in r0
-# Time: 1115 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1155 incrementing ctr:         25
-# CTR: opcode: 0100 , aluop: 1111
-# AC: time=                1165 putting   4 in r1
-# AC: values -- r0:   3, r1:   4, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1205 incrementing ctr:         26
-# CTR: opcode: 0110 , aluop: 1111
-# AC: time=                1215 putting   6 in r2
-# AC: values -- r0:   3, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1255 incrementing ctr:         27
-# CTR: opcode: 1111 , aluop: 1011
-# AC: time=                1265 resetting valid bits
-# Time: 1265 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1275 incrementing ctr:         28
-# CTR: opcode: 0100 , aluop: 1111
-# AC: time=                1285 putting   4 in r0
-# Time: 1285 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1325 incrementing ctr:         29
-# CTR: opcode: 0101 , aluop: 1111
-# AC: time=                1335 putting   5 in r1
-# AC: values -- r0:   4, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1375 incrementing ctr:         30
-# CTR: opcode: 0111 , aluop: 1111
-# AC: time=                1385 putting   7 in r2
-# AC: values -- r0:   4, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1425 incrementing ctr:         31
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                1435 resetting valid bits
-# RF: time=                1435 writing   5 to reg  4
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1435 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1475 incrementing ctr:         32
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                1485 putting   0 in r0
-# Time: 1485 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1525 incrementing ctr:         33
-# CTR: opcode: 0100 , aluop: 1111
-# AC: time=                1535 putting   4 in r1
-# AC: values -- r0:   0, r1:   4, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1575 incrementing ctr:         34
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                1585 putting   0 in r2
-# AC: values -- r0:   0, r1:   4, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1595 incrementing ctr:         35
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                1605 resetting valid bits
-# RF: time=                1605 writing   4 to reg  0
-# RF: core[0] =    4
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1605 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1645 incrementing ctr:         36
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                1655 putting   0 in r0
-# Time: 1655 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1695 incrementing ctr:         37
-# CTR: opcode: 0110 , aluop: 1111
-# AC: time=                1705 putting   6 in r1
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1745 incrementing ctr:         38
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                1755 putting   0 in r2
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1795 incrementing ctr:         39
-# CTR: opcode: 0000 , aluop: 1111
-# AC: time=                1805 resetting valid bits
-# RF: time=                1805 writing   6 to reg  0
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1805 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1845 incrementing ctr:         40
-# CTR: opcode: 0001 , aluop: 1111
-# AC: time=                1855 putting   1 in r0
-# Time: 1855 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1895 incrementing ctr:         41
-# CTR: opcode: 1000 , aluop: 1111
-# AC: time=                1905 resetting valid bits
-# Time: 1905 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 1 | branchFlag: 1 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: branching to:   52
-# CTR: opcode: 0011 , aluop: 1111
-# AC: time=                1925 putting   3 in r0
-# Time: 1925 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1965 incrementing ctr:         53
-# CTR: opcode: 0111 , aluop: 1111
-# AC: time=                1975 putting   7 in r1
-# AC: values -- r0:   3, r1:   7, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2015 incrementing ctr:         54
-# CTR: opcode: 0101 , aluop: 1111
-# AC: time=                2025 putting   5 in r2
-# AC: values -- r0:   3, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2065 incrementing ctr:         55
-# CTR: opcode: 1010 , aluop: 0111
-# AC: time=                2075 resetting valid bits
-# Time: 2075 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2115 incrementing ctr:         56
-# CTR: opcode: 0100 , aluop: 1111
-# AC: time=                2125 putting   4 in r0
-# Time: 2125 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2165 incrementing ctr:         57
-# CTR: opcode: 0111 , aluop: 1111
-# AC: time=                2175 putting   7 in r1
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2215 incrementing ctr:         58
-# CTR: opcode: 0101 , aluop: 1111
-# AC: time=                2225 putting   5 in r2
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2235 incrementing ctr:         59
-# CTR: opcode: 1011 , aluop: 1000
-# AC: time=                2245 resetting valid bits
-# Time: 2245 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 1 | controlBranchFlag: 0 | branchFlag: 1 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: branching to:   82
-# CTR: opcode: 1000 , aluop: 1111
-# AC: time=                2295 putting   8 in r0
-# Time: 2295 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2335 incrementing ctr:         83
-# CTR: opcode: 0100 , aluop: 1111
-# AC: time=                2345 putting   4 in r1
-# AC: values -- r0:   8, r1:   4, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2385 incrementing ctr:         84
-# CTR: opcode: 0110 , aluop: 1111
-# AC: time=                2395 putting   6 in r2
-# AC: values -- r0:   8, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2435 incrementing ctr:         85
-# CTR: opcode: 1110 , aluop: 1010
-# AC: time=                2445 resetting valid bits
-# RF: time=                2445 writing   5 to reg  8
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    5
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 2445 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2485 incrementing ctr:         86
-# CTR: opcode: 1001 , aluop: 1111
-# AC: time=                2495 putting   9 in r0
-# Time: 2495 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2535 incrementing ctr:         87
-# CTR: opcode: 0101 , aluop: 1111
-# AC: time=                2545 putting   5 in r1
-# AC: values -- r0:   9, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2555 incrementing ctr:         88
-# CTR: opcode: 0111 , aluop: 1111
-# AC: time=                2565 putting   7 in r2
-# AC: values -- r0:   9, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2605 incrementing ctr:         89
-# CTR: opcode: 1110 , aluop: 1010
-# AC: time=                2615 resetting valid bits
-# RF: time=                2615 writing 255 to reg  9
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    5
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    0
-# Time: 2615 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2655 incrementing ctr:         90
-# CTR: opcode: 1000 , aluop: 1111
-# AC: time=                2665 putting   8 in r0
-# Time: 2665 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2705 incrementing ctr:         91
-# CTR: opcode: 1000 , aluop: 1111
-# AC: time=                2715 putting   8 in r1
-# AC: values -- r0:   8, r1:   8, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2755 incrementing ctr:         92
-# CTR: opcode: 1111 , aluop: 1111
-# AC: time=                2765 putting  15 in r2
-# AC: values -- r0:   8, r1:   8, r2:  15, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2805 incrementing ctr:         93
-# CTR: opcode: 1110 , aluop: 1010
-# AC: time=                2815 resetting valid bits
-# RF: time=                2815 writing   4 to reg  8
-# RF: core[0] =    6
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    5
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    4
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    1
-# Time: 2815 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2855 incrementing ctr:         94
-# ** Note: $finish    : C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv(27)
-#    Time: 2865 ps  Iteration: 3  Instance: /top_level_tb
-# 1
-# Break in Module top_level_tb at C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv line 27
-# Compile of control.sv was successful with warnings.
-vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator
-# End time: 23:35:23 on Jun 12,2024, Elapsed time: 0:02:51
-# Errors: 0, Warnings: 2
-# vsim -gui work.top_level_tb work.top_level work.reg_file work.PC_LUT work.PC work.instr_ROM work.dat_mem work.control work.alu work.Accumulator 
-# Start time: 23:35:23 on Jun 12,2024
-# Loading sv_std.std
-# Loading work.top_level_tb
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.Accumulator
-# Loading work.control
-# Loading work.instr_ROM
-# Loading work.alu
-# Loading work.reg_file
-# Loading work.dat_mem
-run -all
-# CTR: opcode: zzzzz , aluop: 1111
-# CTR: opcode: xxxxx , aluop: 1111
-# CTR: opcode: xxxxx , aluop: 1111
-# Time: 0 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: x | controlBranchFlag: 0 | branchFlag: x | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 0 | program_done: x
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                   5 putting   0 in r0
-# Time: 5 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: x | controlBranchFlag: 0 | branchFlag: x | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                   45 incrementing ctr:          1
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                  55 putting   0 in r1
-# Time: 55 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                   95 incrementing ctr:          2
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 105 resetting valid bits
-# RF: time=                 105 writing   0 to reg  0
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    x
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 105 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  145 incrementing ctr:          3
-# CTR: opcode: 00100 , aluop: 1111
-# AC: time=                 155 putting   4 in r0
-# Time: 155 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  195 incrementing ctr:          4
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 205 putting   0 in r1
-# AC: values -- r0:   4, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  245 incrementing ctr:          5
-# CTR: opcode: 00001 , aluop: 1111
-# AC: time=                 255 resetting valid bits
-# RF: time=                 255 writing   0 to reg  4
-# RF: core[0] =    0
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 255 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  295 incrementing ctr:          6
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 305 putting   0 in r0
-# Time: 305 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  315 incrementing ctr:          7
-# CTR: opcode: 00001 , aluop: 1111
-# AC: time=                 325 putting   1 in r1
-# AC: values -- r0:   0, r1:   1, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  365 incrementing ctr:          8
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 375 resetting valid bits
-# RF: time=                 375 writing   1 to reg  0
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    x
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 375 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  415 incrementing ctr:          9
-# CTR: opcode: 00101 , aluop: 1111
-# AC: time=                 425 putting   5 in r0
-# Time: 425 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  465 incrementing ctr:         10
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 475 putting   0 in r1
-# AC: values -- r0:   5, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  515 incrementing ctr:         11
-# CTR: opcode: 00001 , aluop: 1111
-# AC: time=                 525 resetting valid bits
-# RF: time=                 525 writing   0 to reg  5
-# RF: core[0] =    1
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 525 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  565 incrementing ctr:         12
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 575 putting   0 in r0
-# Time: 575 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  615 incrementing ctr:         13
-# CTR: opcode: 00010 , aluop: 1111
-# AC: time=                 625 putting   2 in r1
-# AC: values -- r0:   0, r1:   2, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  635 incrementing ctr:         14
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 645 resetting valid bits
-# RF: time=                 645 writing   2 to reg  0
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    x
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 645 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  685 incrementing ctr:         15
-# CTR: opcode: 00110 , aluop: 1111
-# AC: time=                 695 putting   6 in r0
-# Time: 695 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  735 incrementing ctr:         16
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 745 putting   0 in r1
-# AC: values -- r0:   6, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  785 incrementing ctr:         17
-# CTR: opcode: 00001 , aluop: 1111
-# AC: time=                 795 resetting valid bits
-# RF: time=                 795 writing   0 to reg  6
-# RF: core[0] =    2
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 795 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  835 incrementing ctr:         18
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 845 putting   0 in r0
-# Time: 845 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                  885 incrementing ctr:         19
-# CTR: opcode: 00011 , aluop: 1111
-# AC: time=                 895 putting   3 in r1
-# AC: values -- r0:   0, r1:   3, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                  935 incrementing ctr:         20
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                 945 resetting valid bits
-# RF: time=                 945 writing   3 to reg  0
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    x
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 945 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 1 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                  955 incrementing ctr:         21
-# CTR: opcode: 00111 , aluop: 1111
-# AC: time=                 965 putting   7 in r0
-# Time: 965 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1005 incrementing ctr:         22
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                1015 putting   0 in r1
-# AC: values -- r0:   7, r1:   0, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1055 incrementing ctr:         23
-# CTR: opcode: 00001 , aluop: 1111
-# AC: time=                1065 resetting valid bits
-# RF: time=                1065 writing   1 to reg  7
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    x
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 1065 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 1 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1105 incrementing ctr:         24
-# CTR: opcode: 00011 , aluop: 1111
-# AC: time=                1115 putting   3 in r0
-# Time: 1115 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1155 incrementing ctr:         25
-# CTR: opcode: 00100 , aluop: 1111
-# AC: time=                1165 putting   4 in r1
-# AC: values -- r0:   3, r1:   4, r2:   x, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1205 incrementing ctr:         26
-# CTR: opcode: 00110 , aluop: 1111
-# AC: time=                1215 putting   6 in r2
-# AC: values -- r0:   3, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1255 incrementing ctr:         27
-# CTR: opcode: 01111 , aluop: 1011
-# AC: time=                1265 resetting valid bits
-# Time: 1265 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1275 incrementing ctr:         28
-# CTR: opcode: 00100 , aluop: 1111
-# AC: time=                1285 putting   4 in r0
-# Time: 1285 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1325 incrementing ctr:         29
-# CTR: opcode: 00101 , aluop: 1111
-# AC: time=                1335 putting   5 in r1
-# AC: values -- r0:   4, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1375 incrementing ctr:         30
-# CTR: opcode: 00111 , aluop: 1111
-# AC: time=                1385 putting   7 in r2
-# AC: values -- r0:   4, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1425 incrementing ctr:         31
-# CTR: opcode: 10000 , aluop: 1100
-# AC: time=                1435 resetting valid bits
-# Time: 1435 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1475 incrementing ctr:         32
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                1485 putting   0 in r0
-# Time: 1485 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1525 incrementing ctr:         33
-# CTR: opcode: 00100 , aluop: 1111
-# AC: time=                1535 putting   4 in r1
-# AC: values -- r0:   0, r1:   4, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1575 incrementing ctr:         34
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                1585 putting   0 in r2
-# AC: values -- r0:   0, r1:   4, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1595 incrementing ctr:         35
-# CTR: opcode: 10000 , aluop: 1100
-# AC: time=                1605 resetting valid bits
-# Time: 1605 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1645 incrementing ctr:         36
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                1655 putting   0 in r0
-# Time: 1655 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1695 incrementing ctr:         37
-# CTR: opcode: 00110 , aluop: 1111
-# AC: time=                1705 putting   6 in r1
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 1745 incrementing ctr:         38
-# CTR: opcode: 00000 , aluop: 1111
-# AC: time=                1755 putting   0 in r2
-# AC: values -- r0:   0, r1:   6, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 1795 incrementing ctr:         39
-# CTR: opcode: 10000 , aluop: 1100
-# AC: time=                1805 resetting valid bits
-# Time: 1805 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 1845 incrementing ctr:         40
-# CTR: opcode: 00001 , aluop: 1111
-# AC: time=                1855 putting   1 in r0
-# Time: 1855 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1895 incrementing ctr:         41
-# CTR: opcode: 01000 , aluop: 1111
-# AC: time=                1905 resetting valid bits
-# Time: 1905 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 1 | branchFlag: 1 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: branching to:   52
-# CTR: opcode: 00011 , aluop: 1111
-# AC: time=                1925 putting   3 in r0
-# Time: 1925 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 1965 incrementing ctr:         53
-# CTR: opcode: 00111 , aluop: 1111
-# AC: time=                1975 putting   7 in r1
-# AC: values -- r0:   3, r1:   7, r2:   0, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2015 incrementing ctr:         54
-# CTR: opcode: 00101 , aluop: 1111
-# AC: time=                2025 putting   5 in r2
-# AC: values -- r0:   3, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2065 incrementing ctr:         55
-# CTR: opcode: 01010 , aluop: 0111
-# AC: time=                2075 resetting valid bits
-# Time: 2075 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2115 incrementing ctr:         56
-# CTR: opcode: 00100 , aluop: 1111
-# AC: time=                2125 putting   4 in r0
-# Time: 2125 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2165 incrementing ctr:         57
-# CTR: opcode: 00111 , aluop: 1111
-# AC: time=                2175 putting   7 in r1
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2215 incrementing ctr:         58
-# CTR: opcode: 00101 , aluop: 1111
-# AC: time=                2225 putting   5 in r2
-# AC: values -- r0:   4, r1:   7, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2235 incrementing ctr:         59
-# CTR: opcode: 01011 , aluop: 1000
-# AC: time=                2245 resetting valid bits
-# Time: 2245 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 1 | controlBranchFlag: 0 | branchFlag: 1 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: branching to:   82
-# CTR: opcode: 01000 , aluop: 1111
-# AC: time=                2295 putting   8 in r0
-# Time: 2295 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2335 incrementing ctr:         83
-# CTR: opcode: 00100 , aluop: 1111
-# AC: time=                2345 putting   4 in r1
-# AC: values -- r0:   8, r1:   4, r2:   5, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2385 incrementing ctr:         84
-# CTR: opcode: 00110 , aluop: 1111
-# AC: time=                2395 putting   6 in r2
-# AC: values -- r0:   8, r1:   4, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2435 incrementing ctr:         85
-# CTR: opcode: 01110 , aluop: 1010
-# AC: time=                2445 resetting valid bits
-# RF: time=                2445 writing   0 to reg  8
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    0
-# RF: core[9] =    x
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    x
-# Time: 2445 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2485 incrementing ctr:         86
-# CTR: opcode: 01001 , aluop: 1111
-# AC: time=                2495 putting   9 in r0
-# Time: 2495 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2535 incrementing ctr:         87
-# CTR: opcode: 00101 , aluop: 1111
-# AC: time=                2545 putting   5 in r1
-# AC: values -- r0:   9, r1:   5, r2:   6, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2555 incrementing ctr:         88
-# CTR: opcode: 00111 , aluop: 1111
-# AC: time=                2565 putting   7 in r2
-# AC: values -- r0:   9, r1:   5, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2605 incrementing ctr:         89
-# CTR: opcode: 01110 , aluop: 1010
-# AC: time=                2615 resetting valid bits
-# RF: time=                2615 writing 255 to reg  9
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =    0
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    0
-# Time: 2615 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2655 incrementing ctr:         90
-# CTR: opcode: 01000 , aluop: 1111
-# AC: time=                2665 putting   8 in r0
-# Time: 2665 | regWriteFlag: 0 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 1 | opEn: 0 | program_done: 0
-# PC: time:                 2705 incrementing ctr:         91
-# CTR: opcode: 01000 , aluop: 1111
-# AC: time=                2715 putting   8 in r1
-# AC: values -- r0:   8, r1:   8, r2:   7, r0_valid: 1, r1_valid: 1, r2_valid: 0
-# PC: time:                 2755 incrementing ctr:         92
-# CTR: opcode: 01111 , aluop: 1111
-# AC: time=                2765 putting  15 in r2
-# AC: values -- r0:   8, r1:   8, r2:  15, r0_valid: 1, r1_valid: 1, r2_valid: 1
-# PC: time:                 2805 incrementing ctr:         93
-# CTR: opcode: 01110 , aluop: 1010
-# AC: time=                2815 resetting valid bits
-# RF: time=                2815 writing 255 to reg  8
-# RF: core[0] =    3
-# RF: core[1] =    x
-# RF: core[2] =    x
-# RF: core[3] =    x
-# RF: core[4] =    0
-# RF: core[5] =    0
-# RF: core[6] =    0
-# RF: core[7] =    1
-# RF: core[8] =   -1
-# RF: core[9] =   -1
-# RF: core[10] =    x
-# RF: core[11] =    x
-# RF: core[12] =    x
-# RF: core[13] =    x
-# RF: core[14] =    x
-# RF: core[15] =    1
-# Time: 2815 | regWriteFlag: 1 | memWriteFlag: 0 | aluBranchFlag: 0 | controlBranchFlag: 0 | branchFlag: 0 | memToRegFlag: 0 | immtoRegFlag: 0 | putEn: 0 | opEn: 1 | program_done: 0
-# PC: time:                 2855 incrementing ctr:         94
-# ** Note: $finish    : C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv(27)
-#    Time: 2865 ps  Iteration: 3  Instance: /top_level_tb
-# 1
-# Break in Module top_level_tb at C:/Users/Max/Documents/GitHub/141architecture/testbenches/top_level_tb.sv line 27
-# End time: 00:02:08 on Jun 13,2024, Elapsed time: 0:26:45
-# Errors: 0, Warnings: 1
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -2
+#          18:      -4
+#          19:      -8
+#          20:     -16
+#          21:     -32
+#          22:     -64
+#          23:    -128
+#          24:    -256
+#          25:    -512
+#          26:   -1024
+#          27:   -2048
+#          28:   -4096
+#          29:   -8192
+#          30:  -16384
+#          31:  -32768
+# good Min =     1
+# good Max = 65535
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    1,   1, 00000001
+# RF: core[6] =   -1, 255, 11111111
+# RF: core[7] =   -1, 255, 11111111
+# RF: core[8] =  -64, 192, 11000000
+# RF: core[9] =    0,   0, 00000000
+# RF: core[10] = -128, 128, 10000000
+# RF: core[11] =    0,   0, 00000000
+# RF: core[12] =   64,  64, 01000000
+# RF: core[13] =    0,   0, 00000000
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:       0
+#           1:       1
+#           2:       3
+#           3:       7
+#           4:      15
+#           5:      31
+#           6:      63
+#           7:     127
+#           8:     255
+#           9:     511
+#          10:    1023
+#          11:    2047
+#          12:    4095
+#          13:    8191
+#          14:   16383
+#          15:   32767
+#          16:      -1
+#          17:      -1
+#          18:   32767
+#          19:   16383
+#          20:    8191
+#          21:    4095
+#          22:    2047
+#          23:    1023
+#          24:     511
+#          25:     255
+#          26:     127
+#          27:      63
+#          28:      31
+#          29:      15
+#          30:       7
+#          31:       3
+# good Min =     0
+# good Max = 32768
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    0,   0, 00000000
+# RF: core[6] = -128, 128, 10000000
+# RF: core[7] =    0,   0, 00000000
+# RF: core[8] =    0,   0, 00000000
+# RF: core[9] =    7,   7, 00000111
+# RF: core[10] =    0,   0, 00000000
+# RF: core[11] =    3,   3, 00000011
+# RF: core[12] =    0,   0, 00000000
+# RF: core[13] =    4,   4, 00000100
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -32768
+#           1:  -32768
+#           2:  -32768
+#           3:   32767
+#           4:   32767
+#           5:  -32768
+#           6:       0
+#           7:  -32640
+#           8:  -32768
+#           9:       0
+#          10:   32767
+#          11:       0
+#          12:       0
+#          13:   32767
+#          14:     255
+#          15:     255
+#          16:  -32257
+#          17:  -32257
+#          18:   32512
+#          19:   32767
+#          20:   32767
+#          21:   32512
+#          22:      -1
+#          23:    -256
+#          24:    -256
+#          25:      -1
+#          26:     255
+#          27:     256
+#          28:     256
+#          29:     255
+#          30:  -32768
+#          31:     255
+# good Min =     0
+# good Max = 65535
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    0,   0, 00000000
+# RF: core[6] =   -1, 255, 11111111
+# RF: core[7] =   -1, 255, 11111111
+# RF: core[8] = -128, 128, 10000000
+# RF: core[9] =    0,   0, 00000000
+# RF: core[10] =    0,   0, 00000000
+# RF: core[11] =   -1, 255, 11111111
+# RF: core[12] = -128, 128, 10000000
+# RF: core[13] =   -1, 255, 11111111
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   13604
+#           1:   24193
+#           2:  -10743
+#           3:   22115
+#           4:   31501
+#           5:  -26227
+#           6:  -31643
+#           7:   21010
+#           8:   -7423
+#           9:  -13043
+#          10:   -3722
+#          11:  -12995
+#          12:   22509
+#          13:   -2164
+#          14:   -5639
+#          15:    9414
+#          16:  -31547
+#          17:  -11606
+#          18:   -2075
+#          19:   29303
+#          20:  -10734
+#          21:   -9329
+#          22:   27122
+#          23:  -26930
+#          24:   31464
+#          25:   20165
+#          26:   18780
+#          27:   10429
+#          28:   22573
+#          29:    9829
+#          30:   25187
+#          31:  -30966
+# good Min =     9
+# good Max = 63144
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =    9,   9, 00001001
+# RF: core[6] =  -10, 246, 11110110
+# RF: core[7] =  -88, 168, 10101000
+# RF: core[8] =   98,  98, 01100010
+# RF: core[9] =   99,  99, 01100011
+# RF: core[10] = -121, 135, 10000111
+# RF: core[11] =   10,  10, 00001010
+# RF: core[12] =  -37, 219, 11011011
+# RF: core[13] =   89,  89, 01011001
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -17920
+#           1:  -10986
+#           2:     504
+#           3:  -30155
+#           4:   28320
+#           5:   -4360
+#           6:   19353
+#           7:   -3977
+#           8:    4339
+#           9:  -28367
+#          10:  -10403
+#          11:  -17505
+#          12:  -18664
+#          13:   10603
+#          14:    9029
+#          15:   14556
+#          16:   17208
+#          17:   -7818
+#          18:   26171
+#          19:   30436
+#          20:   20469
+#          21:  -23276
+#          22:  -24887
+#          23:   16022
+#          24:   13990
+#          25:    8714
+#          26:  -29760
+#          27:    7440
+#          28:    5257
+#          29:  -15283
+#          30:  -23351
+#          31:   23777
+# good Min =    75
+# good Max = 60591
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   75,  75, 01001011
+# RF: core[6] =  -20, 236, 11101100
+# RF: core[7] =  -81, 175, 10101111
+# RF: core[8] =  -92, 164, 10100100
+# RF: core[9] =  -55, 201, 11001001
+# RF: core[10] =   92,  92, 01011100
+# RF: core[11] =  -31, 225, 11100001
+# RF: core[12] =  -72, 184, 10111000
+# RF: core[13] =   24,  24, 00011000
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -22876
+#           1:   11216
+#           2:  -25919
+#           3:    2764
+#           4:   12129
+#           5:   -3279
+#           6:   20620
+#           7:   -5566
+#           8:   31840
+#           9:   -1631
+#          10:   32302
+#          11:  -18009
+#          12:  -29955
+#          13:  -16655
+#          14:  -17089
+#          15:   -7016
+#          16:   -3944
+#          17:   31317
+#          18:    -260
+#          19:   20046
+#          20:   23234
+#          21:  -25743
+#          22:    3390
+#          23:  -11559
+#          24:    3933
+#          25:   18904
+#          26:    2347
+#          27:  -15081
+#          28:   27397
+#          29:   -6964
+#          30:   -5044
+#          31:   28897
+# good Min =    52
+# good Max = 62257
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   52,  52, 00110100
+# RF: core[6] =  -13, 243, 11110011
+# RF: core[7] =   49,  49, 00110001
+# RF: core[8] =  -20, 236, 11101100
+# RF: core[9] =   76,  76, 01001100
+# RF: core[10] =  112, 112, 01110000
+# RF: core[11] =  -31, 225, 11100001
+# RF: core[12] = -124, 132, 10000100
+# RF: core[13] = -107, 149, 10010101
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:  -22521
+#           1:   10740
+#           2:   32724
+#           3:  -14989
+#           4:   30705
+#           5:   19402
+#           6:   -2671
+#           7:   -5995
+#           8:   -6333
+#           9:   -6408
+#          10:  -21803
+#          11:    3199
+#          12:   -6903
+#          13:   -1810
+#          14:   26768
+#          15:  -30138
+#          16:    6239
+#          17:   15458
+#          18:  -16809
+#          19:  -32157
+#          20:   -3316
+#          21:   11675
+#          22:   -1657
+#          23:  -13102
+#          24:  -24946
+#          25:    2323
+#          26:    8592
+#          27:    1567
+#          28:    1647
+#          29:  -13957
+#          30:     517
+#          31:  -29415
+# good Min =    75
+# good Max = 64881
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   75,  75, 01001011
+# RF: core[6] =   -3, 253, 11111101
+# RF: core[7] =  113, 113, 01110001
+# RF: core[8] =    2,   2, 00000010
+# RF: core[9] =    5,   5, 00000101
+# RF: core[10] = -115, 141, 10001101
+# RF: core[11] =   25,  25, 00011001
+# RF: core[12] =  116, 116, 01110100
+# RF: core[13] =  -20, 236, 11101100
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    1,   1, 00000001
+#           0:   16960
+#           1:  -24010
+#           2:  -24908
+#           3:     500
+#           4:  -26535
+#           5:   -1276
+#           6:  -24378
+#           7:  -29693
+#           8:   14276
+#           9:   21441
+#          10:  -14684
+#          11:   -8009
+#          12:  -30692
+#          13:   10646
+#          14:   24809
+#          15:   -9823
+#          16:  -17305
+#          17:  -18037
+#          18:   31698
+#          19:    3869
+#          20:  -16793
+#          21:    -429
+#          22:   -9201
+#          23:   -7325
+#          24:   14232
+#          25:  -19057
+#          26:    6299
+#          27:   27669
+#          28:  -26661
+#          29:   23160
+#          30:   29982
+#          31:  -29433
+# good Min =    44
+# good Max = 62390
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   44,  44, 00101100
+# RF: core[6] =  -13, 243, 11110011
+# RF: core[7] =  -74, 182, 10110110
+# RF: core[8] =  117, 117, 01110101
+# RF: core[9] =   30,  30, 00011110
+# RF: core[10] = -115, 141, 10001101
+# RF: core[11] =    7,   7, 00000111
+# RF: core[12] =  -24, 232, 11101000
+# RF: core[13] =   23,  23, 00010111
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+#           0:   10240
+#           1:  -25843
+#           2:  -25426
+#           3:  -28742
+#           4:  -27217
+#           5:    7116
+#           6:  -26536
+#           7:   29816
+#           8:    1411
+#           9:   10884
+#          10:  -10206
+#          11:  -29604
+#          12:  -23279
+#          13:     889
+#          14:   26492
+#          15:   29950
+#          16:   25370
+#          17:  -24032
+#          18:    3765
+#          19:  -30536
+#          20:   -5782
+#          21:  -15632
+#          22:   24510
+#          23:   -6756
+#          24:  -23302
+#          25:   -7999
+#          26:  -24297
+#          27:   25783
+#          28:  -15980
+#          29:   14635
+#          30:   -8176
+#          31:  -23058
+# good Min =    23
+# good Max = 60486
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   23,  23, 00010111
+# RF: core[6] =  -20, 236, 11101100
+# RF: core[7] =   70,  70, 01000110
+# RF: core[8] =  -32, 224, 11100000
+# RF: core[9] =   16,  16, 00010000
+# RF: core[10] =  -91, 165, 10100101
+# RF: core[11] =  -18, 238, 11101110
+# RF: core[12] =   58,  58, 00111010
+# RF: core[13] =   34,  34, 00100010
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    1,   1, 00000001
+#           0:   -6143
+#           1:    9304
+#           2:   28984
+#           3:  -32192
+#           4:  -25748
+#           5:  -23945
+#           6:   26894
+#           7:   15754
+#           8:    6387
+#           9:    3451
+#          10:  -32168
+#          11:  -16727
+#          12:   32453
+#          13:  -14285
+#          14:   14915
+#          15:   21079
+#          16:  -22485
+#          17:    1932
+#          18:  -12992
+#          19:    1499
+#          20:   12664
+#          21:  -19802
+#          22:   13456
+#          23:  -23595
+#          24:   30587
+#          25:   30199
+#          26:   12172
+#          27:  -18623
+#          28:  -27726
+#          29:  -17096
+#          30:   13971
+#          31:  -29614
+# good Min =    24
+# good Max = 64645
+# Register Memory State at Completion:
+# RF: core[0] =    0,   0, 00000000
+# RF: core[1] =    1,   1, 00000001
+# RF: core[2] =   62,  62, 00111110
+# RF: core[3] =   64,  64, 01000000
+# RF: core[4] =    0,   0, 00000000
+# RF: core[5] =   24,  24, 00011000
+# RF: core[6] =   -4, 252, 11111100
+# RF: core[7] = -123, 133, 10000101
+# RF: core[8] =   54,  54, 00110110
+# RF: core[9] = -109, 147, 10010011
+# RF: core[10] = -116, 140, 10001100
+# RF: core[11] =   82,  82, 01010010
+# RF: core[12] =  -86, 170, 10101010
+# RF: core[13] =   65,  65, 01000001
+# RF: core[14] =   69,  69, 01000101
+# RF: core[15] =    0,   0, 00000000
+# Minimum correct          10/         10
+# Maximum correct          10/         10
+# ** Note: $stop    : C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv(113)
+#    Time: 16013575 ns  Iteration: 0  Instance: /test_bench2
+# Break in Module test_bench2 at C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv line 113

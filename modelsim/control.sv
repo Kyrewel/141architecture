@@ -88,6 +88,9 @@ always_comb begin
                           regWriteFlag = 'b0;
                           ALUOp = 4'b1100;
                         end
+                'b10001: begin //unsigned addition
+                          ALUOp = 4'b1101;
+                        end
                 default: begin
                   ALUOp = 4'b1111;
                 end                     
@@ -104,7 +107,7 @@ always_comb begin
         regWriteFlag = 'b0;
       end
     endcase
-    $display("CTR: opcode: %b , aluop: %b", opcode, ALUOp);
+    // $display("CTR: opcode: %b , aluop: %b", opcode, ALUOp);
     old_instr_ROM_ctr = instr_ROM_ctr;
     control_ctr = instr_ROM_ctr;
 
