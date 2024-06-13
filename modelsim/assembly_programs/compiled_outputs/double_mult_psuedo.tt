@@ -1,0 +1,47 @@
+.data
+    # Assuming data_mem is already filled with operands as described
+
+.text
+.globl main
+main:
+    la $t0, data_mem       # Base address of data_mem
+    li $t1, 0              # Index N for operands
+
+loop:
+    bge $t1, 16, exit      # Assuming there are 16 pairs of operands
+
+    # Load operand AN
+    lb $t2, 0($t0)         # Load most significant byte of AN (signed)
+    lbu $t3, 1($t0)        # Load least significant byte of AN (unsigned)
+    sll $t2, $t2, 8        # Shift left to make room for the LSB
+    or $t2, $t2, $t3       # Combine MSB and LSB of AN
+
+    # Load operand BN
+    lb $t4, 2($t0)         # Load most significant byte of BN (signed)
+    lbu $t5, 3($t0)        # Load least significant byte of BN (unsigned)
+    sll $t4, $t4, 8        # Shift left to make room for the LSB
+    or $t4, $t4, $t5       # Combine MSB and LSB of BN
+
+    # Multiply AN and BN
+    mult $t2, $t4
+    mflo $t6               # Move the lower 32 bits of the product to $t6
+
+    # Store the result
+    sra $t7, $t6, 24       # Most significant byte
+    sb $t7, 64($t0)        # Store at mem[64+4N+0]
+    srl $t7, $t6, 16
+    andi $t7, $t7, 0xFF
+    sb $t7, 65($t0)        # Store at mem[64+4N+1]
+    srl $t7, $t6, 8
+    andi $t7, $t7, 0xFF
+    sb $t7, 66($t0)        # Store at mem[64+4N+2]
+    andi $t7, $t6, 0xFF
+    sb $t7, 67($t0)        # Store at mem[64+4N+3]
+
+    # Update pointers and indices
+    addi $t0, $t0, 4       # Move to the next set of operands
+    addi $t1, $t1, 1       # Increment index N
+    j loop
+
+exit:
+    jr $ra                 # Return from main

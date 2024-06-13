@@ -2,20 +2,23 @@
 # Accumulator can accumulate up to 3 values, opcode with run the corresponding command
 
 opcodes = {
-    "li": "0000",
-    "ld": "0001",       # reg-destination, reg w/ source_mem, __      accum -> reg -> mem -> reg
-    "st": "0010",       # __, reg w/ dest address, source_reg         accum -> reg 1,2 -> mem
-    "add": "0011",      # dest_reg, source_reg, source_reg            accum -> reg 1,2 -> alu -> reg 0
-    "sub": "0100",
-    "xor": "0101",
-    "or": "0110",
-    "and": "0111",
-    "j": "1000",
-    "beq": "1001",
-    "blt": "1010",
-    "bgt": "1011",
-    "lsf": "1100",
-    "rsf": "1101"
+    "li": "00000",
+    "ld": "00001",       # reg-destination, reg w/ source_mem, __      accum -> reg -> mem -> reg
+    "st": "00010",       # __, reg w/ dest address, source_reg         accum -> reg 1,2 -> mem
+    "add": "00011",      # dest_reg, source_reg, source_reg            accum -> reg 1,2 -> alu -> reg 0
+    "sub": "00100",
+    "xor": "00101",
+    "or": "00110",
+    "and": "00111",
+    "j": "01000",
+    "beq": "01001",
+    "blt": "01010",
+    "bgt": "01011",
+    "lsf": "01100",
+    "rsf": "01101",
+    "usub": "01110",
+    "ublt": "01111",
+    "ubgt": "10000"
 }
 
 
@@ -46,7 +49,7 @@ def convert_line(line, tag_to_id):
     if instr == "put":
         mach_line += "1"
     elif instr in opcodes:
-        mach_line += f"0000{opcodes[instr]}0"
+        mach_line += f"000{opcodes[instr]}0"
 
     return mach_line
 
