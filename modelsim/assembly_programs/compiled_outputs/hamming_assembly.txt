@@ -45,7 +45,7 @@ put 10
 put 3
 ld
 put 11
-put 7
+put 8
 li
 put 13
 put 7
@@ -74,7 +74,7 @@ put 11
 put 0
 bgt
 put 11
-put 7
+put 8
 li
 put 13
 put 8
