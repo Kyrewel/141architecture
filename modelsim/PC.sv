@@ -15,7 +15,7 @@ module PC #(parameter D=12)(
   logic [15:0] cyclesToPrint = 0;
   
   always_ff @(posedge clk) begin
-    // if (cyclesToPrint % 10000000 == 0) begin
+    // if (cyclesToPrint % 1000000000 == 0) begin
     //   $display("PC: time: %t", $time);
     //   cyclesToPrint <= 0;
     // end
