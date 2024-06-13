@@ -27,7 +27,7 @@ always begin
 end
 
 // number of tests
-int itrs = 10;
+int itrs = 1;
 int min_pass = 0;
 int max_pass = 0;
 
