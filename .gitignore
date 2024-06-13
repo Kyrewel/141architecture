@@ -13,3 +13,5 @@ modelsim/work/_lib1_28.qtl
 *.mpf
 *.qdb
 *.qtl
+*.mti
+*.mti

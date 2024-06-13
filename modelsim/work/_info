@@ -188,7 +188,7 @@ R8
 ninstr_@r@o@m
 vPC
 R0
-Z12 !s110 1718239808
+!s110 1718239808
 !i10b 1
 !s100 2@J4DX`j?2N4h`Y^e=>c03
 R2
@@ -205,7 +205,7 @@ R5
 r1
 !s85 0
 31
-Z13 !s108 1718239808.000000
+!s108 1718239808.000000
 !s107 C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/modelsim/PC.sv|
 !i113 1
@@ -291,26 +291,26 @@ R7
 R8
 vtest_bench
 R0
-R12
+!s110 1718256095
 !i10b 1
-!s100 Hc2W^jZB_4L6IfCgNHVla2
+!s100 N2Ui_aGeO<QU`Ee_[h_Df2
 R2
-IAD@Fd3^ACT>G_8LgdLI_40
+IdAN78J`_7kYfW@2UcERHi3
 R3
 S1
 R4
-w1718239796
-8C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench1.sv
-FC:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench1.sv
-!i122 525
-L0 2 120
+w1718255953
+8C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv
+FC:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv
+!i122 526
+L0 3 124
 R5
 r1
 !s85 0
 31
-R13
-!s107 C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench1.sv|
+!s108 1718256095.000000
+!s107 C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Max/Documents/GitHub/141architecture/testbenches/test_bench2.sv|
 !i113 1
 R7
 R8
