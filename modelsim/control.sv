@@ -4,7 +4,7 @@ module control (
   input logic [12-1:0] instr_ROM_ctr,
   output logic branchFlag, memToRegFlag, memWriteFlag, 
                 regWriteFlag, putEn, opEn, immtoRegFlag, ctr_print,
-  output logic[3:0] ALUOp,
+  output logic[4:0] ALUOp,
   output logic[7:0] value,
   output logic[12-1:0] control_ctr
 );
@@ -16,7 +16,7 @@ logic[4:0] opcode;
 
 always_comb begin
   if (old_instr_ROM_ctr !== instr_ROM_ctr) begin
-    ALUOp         = 'b1111;
+    ALUOp         = 'b11111;
     immtoRegFlag  = 'b0;
     regWriteFlag  = 'b1;
     memToRegFlag  = 'b0;
@@ -41,19 +41,19 @@ always_comb begin
                           regWriteFlag = 'b0;
                         end
                 'b00011: begin     //add
-                          ALUOp = 4'b0101;
+                          ALUOp = 4'b00101;
                         end
                 'b00100: begin     //sub
-                          ALUOp = 4'b0110;
+                          ALUOp = 4'b00110;
                         end
                 'b00101: begin     //xor
-                          ALUOp = 4'b0001;
+                          ALUOp = 4'b00001;
                         end
                 'b00110: begin     //or
-                          ALUOp = 4'b0010;
+                          ALUOp = 4'b00010;
                         end
                 'b00111: begin     //and
-                          ALUOp = 4'b0000;
+                          ALUOp = 4'b00000;
                         end
                 'b01000: begin     //jump
                           regWriteFlag = 'b0;
@@ -61,38 +61,38 @@ always_comb begin
                         end
                 'b01001: begin     //branch equal to
                           regWriteFlag = 'b0;
-                          ALUOp = 4'b1001;
+                          ALUOp = 4'b01001;
                         end
                 'b01010: begin     //branch less than
                           regWriteFlag = 'b0;
-                          ALUOp = 4'b0111;
+                          ALUOp = 4'b00111;
                         end
                 'b01011: begin     //branch greater than
                           regWriteFlag = 'b0;
-                          ALUOp = 4'b1000;
+                          ALUOp = 4'b01000;
                         end
                 'b01100: begin     //left shift
-                          ALUOp = 4'b0011;
+                          ALUOp = 4'b00011;
                         end
                 'b01101: begin     //right shift
-                          ALUOp = 4'b0100;
+                          ALUOp = 4'b00100;
                         end
                 'b01110: begin // unsigned sub
-                          ALUOp = 4'b1010;
+                          ALUOp = 4'b01010;
                         end
                 'b01111: begin // signed less than
                           regWriteFlag = 'b0;
-                          ALUOp = 4'b1011;
+                          ALUOp = 4'b01011;
                         end
                 'b10000: begin // signed greater than
                           regWriteFlag = 'b0;
-                          ALUOp = 4'b1100;
+                          ALUOp = 4'b01100;
                         end
                 'b10001: begin //unsigned addition
-                          ALUOp = 4'b1101;
+                          ALUOp = 4'b01101;
                         end
                 default: begin
-                  ALUOp = 4'b1111;
+                  ALUOp = 4'b11111;
                 end                     
               endcase      
             end

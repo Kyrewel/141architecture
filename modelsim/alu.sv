@@ -1,6 +1,6 @@
 // combinational -- no clock
 module alu(
-  input[3:0] ALUOp,         // ALU instructions
+  input[4:0] ALUOp,         // ALU instructions
   input [7:0] inA, inB,	  // 8-bit wide data path
   input shiftcarry_in,            // carry in bit
   // input clk,
@@ -11,17 +11,9 @@ module alu(
   output logic [12-1:0] alu_ctr
 );
 
-// logic reset = 0;
-// logic [3:0] a, b;
-// logic [7:0] product;
-
-// robertsons mult(
-//   .clk(clk),
-//   .reset(reset),
-//   .q(a),
-//   .m(b),
-//   .p(product),
-// );
+logic reset = 0;
+logic [3:0] a, b;
+logic [7:0] product;
 
 logic [12-1:0] old_reg_file_ctr = -1;
 
@@ -33,24 +25,24 @@ always_comb begin
     shiftcarry_out = 'bx;
     branchFlag = 'b0;
     case(ALUOp)
-      4'b0000: begin // bitwise AND
+      5'b00000: begin // bitwise AND
         rslt = inA & inB;
       end
-      4'b0001: begin // bitwise XOR
+      5'b00001: begin // bitwise XOR
         rslt = inA ^ inB;
       end
-      4'b0010: begin// bitwise OR
+      5'b00010: begin// bitwise OR
         rslt = inA | inB;
       end
-      4'b0011: begin // logical left shift
+      5'b00011: begin // logical left shift
         {shiftcarry_out, rslt} = inA << 1;
         rslt[0] = shiftcarry_in; // Fill LSB with carry in
       end
-      4'b0100: begin // logical right shift
+      5'b00100: begin // logical right shift
         {shiftcarry_out, rslt} = inA >> 1;
         rslt[7] = 0; // Clear MSB to ensure it's a logical shift
       end
-      4'b0101: begin  // signed add
+      5'b00101: begin  // signed add
         // Check for overflow, then do add operation
         tempAdd = inA + inB;
         if (inA[7] == 0 && inB[7] == 0) begin // both positive
@@ -75,7 +67,7 @@ always_comb begin
         end
         rslt = tempAdd;
       end
-      4'b0110: begin // signed subtract
+      5'b00110: begin // signed subtract
       // Check for overflow, then do subtract operation
       tempAdd = inA - inB;
       if (inA[7] == 0 && inB[7] == 1) begin // positive - negative
@@ -96,34 +88,34 @@ always_comb begin
           end
       end else begin // both positive or both negative
           // No overflow possible
-          shiftcarry_out = 0;
+            shiftcarry_out = 0;
+        end
+        rslt = tempAdd;
       end
-      rslt = tempAdd;
-      end
-      4'b0111: begin // less than
+      5'b00111: begin // less than
         if(inA < inB)
           branchFlag = 1;
       end
-      4'b1000: begin // greater than
+      5'b01000: begin // greater than
         if(inA > inB)
           branchFlag = 1;
       end
-      4'b1001: begin // equal to
+      5'b01001: begin // equal to
         if (inA == inB)
           branchFlag = 1;
       end
-      4'b1010: begin // subtract unsigned
+      5'b01010: begin // subtract unsigned
         {shiftcarry_out, rslt} = inA - inB + shiftcarry_in;
       end
-      4'b1011: begin // signed branch if less than
+      5'b01011: begin // signed branch if less than
         if ($signed(inA) < $signed(inB))
           branchFlag = 1;
       end
-      4'b1100: begin // signed branch if greater than
+      5'b01100: begin // signed branch if greater than
         if ($signed(inA) > $signed(inB))
           branchFlag = 1;
       end
-      4'b1101: begin // add unsigned
+      5'b01101: begin // add unsigned
         {shiftcarry_out, rslt} = inA + inB + shiftcarry_in;
       end
         

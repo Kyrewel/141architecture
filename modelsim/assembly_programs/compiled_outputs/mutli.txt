@@ -1,0 +1,485 @@
+put 2
+put 4
+li
+put 1
+put 1
+li
+put 7
+put 0
+li
+put 8
+put 2
+ld
+put 2
+put 2
+put 1
+add
+put 9
+put 2
+ld
+put 2
+put 2
+put 1
+add
+put 10
+put 2
+ld
+put 2
+put 2
+put 1
+add
+put 11
+put 2
+ld
+put 2
+put 2
+put 1
+add
+put 1
+put 0
+li
+put 1
+put 8
+put 0
+sblt
+put 2
+j
+put 1
+put 255
+li
+put 8
+put 8
+put 1
+xor
+put 9
+put 9
+put 1
+xor
+put 1
+put 1
+li
+put 9
+put 9
+put 1
+uadd
+put 8
+put 8
+put 15
+uadd
+put 7
+put 7
+put 1
+xor
+put 3
+put 9
+put 0
+sblt
+put 4
+j
+put 1
+put 255
+li
+put 10
+put 10
+put 1
+xor
+put 11
+put 11
+put 1
+xor
+put 1
+put 1
+li
+put 9
+put 9
+put 1
+uadd
+put 8
+put 8
+put 15
+uadd
+put 7
+put 7
+put 1
+xor
+put 12
+put 0
+li
+put 13
+put 0
+li
+put 0
+put 0
+li
+put 3
+put 0
+li
+put 1
+put 1
+li
+put 14
+put 9
+put 1
+and
+put 6
+put 14
+put 1
+beq
+put 7
+j
+put 1
+put 1
+li
+put 8
+put 0
+put 1
+beq
+put 11
+j
+put 1
+put 1
+li
+put 14
+put 0
+put 1
+beq
+put 8
+j
+put 1
+put 1
+li
+put 4
+put 12
+put 1
+and
+put 5
+put 13
+put 1
+and
+put 6
+put 8
+put 1
+and
+put 12
+put 12
+rsf
+put 13
+put 13
+rsf
+put 8
+put 8
+rsf
+put 9
+put 9
+rsf
+put 1
+put 0
+li
+put 9
+put 4
+put 1
+beq
+put 13
+put 13
+put 128
+uadd
+put 1
+put 0
+li
+put 10
+put 5
+put 1
+beq
+put 8
+put 8
+put 128
+uadd
+put 1
+put 0
+li
+put 17
+put 6
+put 1
+beq
+put 9
+put 9
+put 128
+uadd
+put 17
+j
+put 13
+put 13
+put 11
+usub
+put 12
+put 12
+put 15
+usub
+put 12
+put 12
+put 10
+usub
+put 1
+put 1
+li
+put 4
+put 12
+put 1
+and
+put 5
+put 13
+put 1
+and
+put 6
+put 8
+put 1
+and
+put 12
+put 12
+rsf
+put 13
+put 13
+rsf
+put 8
+put 8
+rsf
+put 9
+put 9
+rsf
+put 1
+put 0
+li
+put 12
+put 4
+put 1
+beq
+put 13
+put 13
+put 128
+uadd
+put 1
+put 0
+li
+put 13
+put 5
+put 1
+beq
+put 8
+put 8
+put 128
+uadd
+put 1
+put 0
+li
+put 17
+put 6
+put 1
+beq
+put 9
+put 9
+put 128
+uadd
+put 17
+j
+put 13
+put 13
+put 11
+uadd
+put 12
+put 12
+put 15
+uadd
+put 12
+put 12
+put 10
+uadd
+put 1
+put 1
+li
+put 4
+put 12
+put 1
+and
+put 5
+put 13
+put 1
+and
+put 6
+put 8
+put 1
+and
+put 12
+put 12
+rsf
+put 13
+put 13
+rsf
+put 8
+put 8
+rsf
+put 9
+put 9
+rsf
+put 1
+put 0
+li
+put 15
+put 4
+put 1
+beq
+put 13
+put 13
+put 128
+uadd
+put 1
+put 0
+li
+put 16
+put 5
+put 1
+beq
+put 8
+put 8
+put 128
+uadd
+put 1
+put 0
+li
+put 17
+put 6
+put 1
+beq
+put 9
+put 9
+put 128
+uadd
+put 17
+j
+put 1
+put 0
+li
+put 0
+put 14
+put 1
+add
+put 1
+put 1
+li
+put 3
+put 3
+put 1
+add
+put 14
+put 16
+li
+put 5
+put 3
+put 14
+blt
+put 1
+put 0
+li
+put 18
+put 7
+put 1
+beq
+put 1
+put 255
+li
+put 12
+put 12
+put 1
+xor
+put 13
+put 13
+put 1
+xor
+put 8
+put 8
+put 1
+xor
+put 9
+put 9
+put 1
+xor
+put 1
+put 1
+li
+put 7
+put 0
+li
+put 9
+put 9
+put 1
+uadd
+put 18
+put 15
+put 7
+beq
+put 8
+put 8
+put 1
+uadd
+put 18
+put 15
+put 7
+beq
+put 13
+put 13
+put 1
+uadd
+put 18
+put 15
+put 7
+beq
+put 12
+put 12
+put 1
+uadd
+put 14
+put 60
+li
+put 14
+put 14
+put 2
+uadd
+put 0
+put 14
+put 12
+st
+put 14
+put 61
+li
+put 14
+put 14
+put 2
+uadd
+put 0
+put 14
+put 13
+st
+put 14
+put 62
+li
+put 14
+put 14
+put 2
+uadd
+put 0
+put 14
+put 8
+st
+put 14
+put 63
+li
+put 14
+put 14
+put 2
+uadd
+put 0
+put 14
+put 9
+st
+put 14
+put 63
+li

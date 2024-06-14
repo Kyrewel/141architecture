@@ -1,0 +1,334 @@
+// Find closest and farthest arithmetic pairs in list of signed 16-bit numberes
+// 0: qn+1
+// 1: += 1 
+// 2: i
+// 3: j
+// 4: 
+// 5: 
+// 6: 
+// 7: 
+// 8: operand1 MSB
+// 9: operand1 LSB
+// 10: operand2 MSB
+// 11: operand2 LSB
+// 12: AC MSB
+// 13: AC LSB
+// 14: loop counter, qn
+// 15: Overflow bit
+
+// register to start
+li(2, 0)
+
+// li for 1 for some reason
+li(1,1)
+
+
+outer_loop:
+li(7,0)
+li(1,1)
+ld(8,2)
+add(2,2,1)
+ld(9,2)
+add(2,2,1)
+ld(10,2)
+add(2,2,1)
+ld(11,2)
+add(2,2,1)
+
+
+
+li(1,0)
+beq(no_touch_this,9,1)
+j(touch_this)
+no_touch_this:
+li(1,128)
+beq(swap, 8, 1)
+j(touch_this)
+swap:
+// swaps 9,11
+li(7,0)
+add(1,7,11)
+add(11,9,7)
+add(9,1,7)
+add(1,8,7)
+add(8,10,7)
+add(10,1,7)
+
+
+// DON"T TOUCH UNDER THIS LINE
+touch_this:
+li(7,0)
+
+li(1,0)
+sblt(operand1_neg,8,1)
+j(operand2_check)
+
+operand1_neg:
+li(1,255)
+xor(8,8,1)
+xor(9,9,1)
+li(1,1)
+uadd(9,9,1)
+uadd(8,8,15)
+xor(7,7,1)
+
+
+operand2_check:
+li(1,0)
+sblt(operand2_neg,10,1)
+j(start)
+
+operand2_neg:
+li(1,255)
+xor(10,10,1)
+xor(11,11,1)
+li(1,1)
+uadd(11,11,1)
+uadd(10,10,15)
+xor(7,7,1)
+
+start:
+// store sign to memory
+li(1,128)
+st(0,1,7)
+
+li(12,0)
+li(13,0)
+
+li(0,0)
+li(3,0)
+
+inner_loop:
+li(1,1)
+and(14,9,1)
+
+
+beq(first_is_1,14,1)
+j(first_is_0)
+
+
+first_is_1:
+li(1,1)
+beq(case1,0,1)
+j(case2)
+
+first_is_0:
+li(1,1)
+beq(case3,0,1)
+j(case1)
+
+//qn = 0 and qn+1 = 0 or both 1
+case1:
+//right shift
+
+li(7,128)
+li(1,1)
+and(4,12,1)
+and(5,13,1)
+and(6,8,1)
+li(1,128)
+and(1,12,7)
+
+rsf(12,12)
+rsf(13,13)
+rsf(8,8)
+rsf(9,9)
+
+
+li(7,0)
+beq(case1_accum_not_neg,1,7)
+li(7,128)
+uadd(12,12,7)
+
+case1_accum_not_neg:
+li(1,0)
+beq(case1_accum_msb_0,4,1)
+li(7,128)
+uadd(13,13,7)
+
+case1_accum_msb_0:
+li(1,0)
+beq(case1_accum_lsb_0,5,1)
+li(7,128)
+uadd(8,8,7)
+
+case1_accum_lsb_0:
+li(1,0)
+beq(finish_cases,6,1)
+li(7,128)
+uadd(9,9,7)
+
+j(finish_cases)
+
+
+
+//qn = 1 and qn+1 = 0, AC +  (- M)
+case2:
+//li(1,255)
+//xor(4,1,10)
+//xor(5,1,11)
+//li(1,1)
+//uadd(5,5,1)
+//uadd(4,4,15)
+
+//uadd(13,13,5)
+//uadd(12,12,15)
+//uadd(12,12,4)
+
+usub(13,13,11)
+usub(12,12,15)
+usub(12,12,10)
+
+//right shift
+li(7,128)
+li(1,1)
+and(4,12,1)
+and(5,13,1)
+and(6,8,1)
+li(1,128)
+and(1,12,7)
+
+rsf(12,12)
+rsf(13,13)
+rsf(8,8)
+rsf(9,9)
+
+
+li(7,0)
+beq(case2_accum_not_neg,1,7)
+li(7,128)
+uadd(12,12,7)
+
+case2_accum_not_neg:
+li(1,0)
+beq(case2_accum_msb_0,4,1)
+li(7,128)
+uadd(13,13,7)
+
+case2_accum_msb_0:
+li(1,0)
+beq(case2_accum_lsb_0,5,1)
+li(7,128)
+uadd(8,8,7)
+
+case2_accum_lsb_0:
+li(1,0)
+beq(finish_cases,6,1)
+li(7,128)
+uadd(9,9,7)
+
+j(finish_cases)
+
+//qn = 0 and qn+1 = 1, A + M
+case3:
+uadd(13,13,11)
+uadd(12,12,15)
+uadd(12,12,10)
+
+//right shift
+li(7,128)
+li(1,1)
+and(4,12,1)
+and(5,13,1)
+and(6,8,1)
+li(1,128)
+and(1,12,7)
+
+rsf(12,12)
+rsf(13,13)
+rsf(8,8)
+rsf(9,9)
+
+
+li(7,0)
+beq(case3_accum_not_neg,1,7)
+li(7,128)
+uadd(12,12,7)
+
+case3_accum_not_neg:
+li(1,0)
+beq(case3_accum_msb_0,4,1)
+li(7,128)
+uadd(13,13,7)
+
+case3_accum_msb_0:
+li(1,0)
+beq(case3_accum_lsb_0,5,1)
+li(7,128)
+uadd(8,8,7)
+
+case3_accum_lsb_0:
+li(1,0)
+beq(finish_cases,6,1)
+li(7,128)
+uadd(9,9,7)
+
+j(finish_cases)
+
+
+finish_cases:
+//move qn into qn+1
+li(1,0)
+add(0,14,1)
+
+
+li(1,1)
+add(3,3,1)
+
+//check_inner_loop
+li(14, 16)
+blt(inner_loop, 3, 14)
+
+// load sign from memory
+li(1,128)
+ld(7,1)
+
+li(1,0)
+beq(result_not_neg,7,1)
+li(1,255)
+xor(12,12,1)
+xor(13,13,1)
+xor(8,8,1)
+xor(9,9,1)
+li(1,1)
+li(7,0)
+uadd(9,9,1)
+beq(result_not_neg, 15, 7)
+uadd(8,8,1)
+beq(result_not_neg, 15, 7)
+uadd(13,13,1)
+beq(result_not_neg, 15, 7)
+uadd(12,12,1)
+
+result_not_neg:
+//storing
+// check if number is supposed to be positive
+li(1,128)
+ld(7,1)
+li(1,1)
+beq(not_actually_pos,7,1)
+// and the first bit with 0 if supposed to be positive
+li(1,127)
+and(12,12,1)
+
+not_actually_pos:
+li(14,60)
+uadd(14,14,2)
+st(0,14,12)
+
+li(14,61)
+uadd(14,14,2)
+st(0,14,13)
+
+li(14,62)
+uadd(14,14,2)
+st(0,14,8)
+
+li(14,63)
+uadd(14,14,2)
+st(0,14,9)
+
+
+//outer_loop
+li(14,63)
+blt(outer_loop,2,14)

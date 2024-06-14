@@ -16,6 +16,7 @@ cmds = {
     "bgt":"bgt",
     "ls":"lsf",
     "rs":"rsf",
+    "rsf":"rsf",
     "usub":"usub",
     "sblt":"sblt",
     "sbgt":"sbgt",
@@ -47,8 +48,8 @@ def translate(line):
     cmd = parts[0]
     args = parts[1:]
     # print(f"Command: {cmd}\nArgs: {args}:")
-    if (cmd == "store"):
-        javaLOL.append(f"put 0 // placeholder")
+    # if (cmd == "store"):
+    #     javaLOL.append(f"put 0 // placeholder")
     for i in args:
             javaLOL.append(f"put {i}")
     javaLOL.append(f"{cmds[cmd]}")
@@ -76,7 +77,7 @@ def compileHL(input_file, output_file_path):
             else:
                 output_file.write(f"{item}\n")
 
-    tti_file = output_file_path + '_tag_to_instruction.txt'
+    tti_file = output_file_path + '../../tag_to_instruction_line.txt'
     with open(tti_file, 'w') as jump_file:
         for jump in jumps:
             jump_file.write(f"{bin(jump)[2:]}\n")
@@ -84,6 +85,6 @@ def compileHL(input_file, output_file_path):
     convertfile(output_file_path)
 
 
-input_file = 'arith_pairs.txt'   # USE THE WHOLE FILE PATH
-output_file = 'arith_assembly'           # USE NO .TXT
+input_file = 'multi.txt'   # USE THE WHOLE FILE PATH
+output_file = ''           # USE NO .TXT
 compileHL(input_file, output_file)

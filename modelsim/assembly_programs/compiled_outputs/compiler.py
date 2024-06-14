@@ -90,7 +90,7 @@ def convertfile(file_name):
     tag_to_id, id_to_line, new_program_code = find_all_tags(file_name + ".txt")
     mach_code = convert_assembly(tag_to_id, new_program_code)
 
-    f = open(f"{file_name}_machcode.txt", "w")
+    f = open(f"../../mach_code.txt", "w")
     f.write(mach_code)
     f.close()
 

@@ -31,7 +31,7 @@ module top_level(
               dat_mem_ctr,
               control_ctr;
   //ALU operation and result
-  wire [3:0]  ALUOp;
+  wire [4:0]  ALUOp;
   wire [7:0]  alu_result;
   //register file output
   wire [7:0]  datA,datB;
