@@ -23,7 +23,7 @@ always begin
 end
 
 // number of tests
-int itrs = 1;
+int itrs = 10;
 int test_ctr = 0;
 int tests_passed = 0;
 
@@ -34,7 +34,7 @@ int tests_passed = 0;
     for(int loop_ct=0; loop_ct<itrs; loop_ct++) begin
         #100ns;
         case(loop_ct)
-        0: $readmemb("test2.txt",D1.dm.core);
+        0: $readmemb("test0.txt",D1.dm.core);
 	    1: $readmemb("test1.txt",D1.dm.core);
         2: $readmemb("test2.txt",D1.dm.core);
 	    3: $readmemb("test3.txt",D1.dm.core);
